@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>ACCESS - RETO 4</title>
+  <title>ACCESS - RETO 1</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -89,20 +89,20 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i>Conceptos Básicos</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Base de Datos de Ejemplo</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Videos Tutoriales</a></li>
+        <li><a href="../indexContenido.html" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
+        <li><a href="../indexContenido.html"><i class="bi bi-person navicon"></i>Conceptos Básicos</a></li>
+        <li><a href="../indexContenido.html"><i class="bi bi-file-earmark-text navicon"></i> Base de Datos de Ejemplo</a></li>
+        <li><a href="../indexContenido.html"><i class="bi bi-images navicon"></i> Videos Tutoriales</a></li>
         <li class="dropdown"><a href="../indexContenido.html"><i class="bi bi-menu-button navicon"></i> <span>Desafios y Retos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="./RETO 1.html">Reto 1</a></li>
             <li><a href="./RETO 2.html">Reto 2</a></li>
             <li><a href="./RETO 3.html">Reto 3</a></li>
-            <li><a href="#">Reto 4</a></li>
+            <li><a href="./RETO 4.html">Reto 4</a></li>
           </ul>
         </li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Examen Final</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Certificado </a></li>
+        <li><a href="../indexContenido.html"><i class="bi bi-hdd-stack navicon"></i> Examen Final</a></li>
+        <li><a href="../indexContenido.html"><i class="bi bi-envelope navicon"></i> Certificado </a></li>
       </ul>
     </nav>
 
@@ -139,84 +139,35 @@
   </nav>
   <!-- Navbar End -->
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="../img/Fondo_Access.jpg" alt="" data-aos="fade-in" class="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2 style="color: white;">Bienvenido</h2>
-        <p> A su curso Access: <span class="typed" data-typed-items="Diseño, Creación, Gestión"> </span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-      </div>
-
-    </section><!-- /Hero Section -->
-
     <!-- About Section -->
     <section id="about" class="about section">
       <div class="container mt-5">
         <h2 class="text-center">Juego de Formatos de Celdas en Access</h2>
+        <p class="text-center">Haz clic en los formatos de celda válidos en Access (solo puedes seleccionar 5). Al finalizar, presiona el botón "Revisar" para ver tu puntaje.</p>
 
-        <!-- Instrucciones -->
-        <div class="mb-4">
-            <p><strong>Objetivo:</strong> Arrastra las respuestas correctas a las celdas correspondientes. Tienes que identificar qué formato de celda corresponde a cada tipo de dato en Access.</p>
-            <p><strong>Instrucciones:</strong> A la derecha, verás las celdas en las que deberás arrastrar los tipos de datos (Texto, Número, Fecha, etc.).</p>
+        <div class="row text-center" id="formats-container">
+            <!-- Los formatos se generarán aquí -->
         </div>
 
-        <!-- Tabla de formato de celdas -->
-        <div class="row">
-            <div class="col-6">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Formato de Celda</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cell-table">
-                        <tr>
-                            <td id="cell-1" class="droppable"></td>
-                        </tr>
-                        <tr>
-                            <td id="cell-2" class="droppable"></td>
-                        </tr>
-                        <tr>
-                            <td id="cell-3" class="droppable"></td>
-                        </tr>
-                        <tr>
-                            <td id="cell-4" class="droppable"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Respuestas que el usuario debe arrastrar -->
-            <div class="col-6">
-                <div class="draggable" id="text-format" draggable="true" ondragstart="drag(event)">
-                    Texto
-                </div>
-                <div class="draggable" id="number-format" draggable="true" ondragstart="drag(event)">
-                    Número
-                </div>
-                <div class="draggable" id="date-format" draggable="true" ondragstart="drag(event)">
-                    Fecha
-                </div>
-                <div class="draggable" id="currency-format" draggable="true" ondragstart="drag(event)">
-                    Moneda
-                </div>
-            </div>
+        <!-- Mostrar número de clics -->
+        <div class="text-center mt-3">
+            <p>Clics realizados: <span id="clicks-count">0</span>/5</p>
         </div>
 
-        <!-- Botón para finalizar y ver resultados -->
-        <div class="text-center mt-4">
-            <button class="btn btn-primary" id="finish-btn" onclick="checkAnswers()">Finalizar Juego</button>
+        <!-- Botón de revisar -->
+        <div class="btn-container text-center">
+            <button id="finish-btn" class="btn btn-primary" onclick="finishGame()">Revisar</button>
         </div>
 
         <!-- Resultados -->
-        <div id="result" class="hidden text-center">
+        <div id="result-container" class="hidden text-center">
             <h4>¡Resultado del Juego!</h4>
             <p id="score-message"></p>
-            <button class="btn btn-success" onclick="restartGame()">Reiniciar Juego</button>
+            <button class="btn btn-primary" onclick="restartGame()">Reiniciar Juego</button>
+            <button class="btn btn-secondary" onclick="goToNextChallenge()">Siguiente Reto</button>
         </div>
     </div>
+
     </section><!-- /About Section -->
 
  

@@ -1,0 +1,10 @@
+/* Estilos para la interfaz */
+.locked {
+    color: grey;
+    pointer-events: none;
+    text-decoration: line-through;
+}
+
+.locked:hover {
+    cursor: not-allowed;
+}

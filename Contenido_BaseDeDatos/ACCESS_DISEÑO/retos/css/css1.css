@@ -1,22 +1,15 @@
-.table td {
-    min-height: 100px;
-    width: 100px;
-    border: 2px solid #ddd;
+.format-cell {
+    padding: 10px;
+    margin: 10px;
     text-align: center;
-}
-
-.draggable {
-    padding: 5px;
-    margin: 5px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
     cursor: pointer;
-    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 16px;
 }
 
-.droppable {
-    background-color: #e9ecef;
-    border: 2px dashed #ddd;
+.selected {
+    background-color: #d1a7e1; /* Morado claro */
+    color: white;
 }
 
 .correct {
@@ -29,6 +22,14 @@
     color: white;
 }
 
-#result {
+.btn-container {
     margin-top: 20px;
+}
+
+#result-container {
+    margin-top: 30px;
+}
+
+#result-container.hidden {
+    display: none;
 }
