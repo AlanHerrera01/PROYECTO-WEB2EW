@@ -109,69 +109,97 @@
   </header>
     
   <main class="main">
-   
-    
-
   <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-          <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>BASE DE DATOS ACCESS</h2>
-      </a>
-      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto p-4 p-lg-0">
-              <a href="../indexContenido.html" class="nav-item nav-link">Home</a>
-              <a href="about.html" class="nav-item nav-link"></a>
-              <a href="courses.html" class="nav-item nav-link"></a>
-              <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Curso</a>
-                  <div class="dropdown-menu fade-down m-0">
-                      <a href="team.html" class="dropdown-item">Programación</a>
-                      <a href="testimonial.html" class="dropdown-item">Redes</a>
-                      <a href="404.html" class="dropdown-item">Base de Datos</a>
-                  </div>
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>PROYECTO WEB</h2>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="../indexHOME.html" class="nav-item nav-link">INICIO</a>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Programacion</a>
+              <div class="dropdown-menu fade-down m-0">
+                  <a href="team.html" class="dropdown-item">Algoritmos</a>
+                  <a href="testimonial.html" class="dropdown-item">Diagramas de Flujo</a>
+                  <a href="404.html" class="dropdown-item">Python</a>
               </div>
           </div>
-          <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Conoce a cada Grupo<i class="fa fa-arrow-right ms-3"></i></a>
-      </div>
-  </nav>
-  <!-- Navbar End -->
 
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">REDES</a>
+            <div class="dropdown-menu fade-down m-0">
+                <a href="team.html" class="dropdown-item">Medios de Conexion</a>
+                <a href="testimonial.html" class="dropdown-item">Redes LAN</a>
+                <a href="404.html" class="dropdown-item">Internet</a>
+            </div>
+            
+        </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">BASE DE DATOS</a>
+                <div class="dropdown-menu fade-down m-0">
+                    <a href="team.html" class="dropdown-item">Acces</a>
+                    <a href="testimonial.html" class="dropdown-item">Visual Basic + Access</a>
+                    <a href="404.html" class="dropdown-item">RDBMS - MySQL WorkBench</a>
+                </div>
+            </div>
+        </div>
+        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
     <!-- About Section -->
     <section id="about" class="about section">
-      <div class="container mt-5">
-        <h2 class="text-center">Juego de Formatos de Celdas en Access</h2>
-        <p class="text-center">Haz clic en los formatos de celda válidos en Access (solo puedes seleccionar 5). Al finalizar, presiona el botón "Revisar" para ver tu puntaje.</p>
+    <!-- Contenedor de introducción -->
+    <div id="start-container" class="container text-center my-5">
+      <h1>Juego 1: Identificar el Tipo de Campo</h1>
+      <p>
+          En este juego, debes asociar los conceptos con el tipo de campo correspondiente en Access.  
+          Hay cuatro conceptos y ocho opciones posibles, tanto correctas como incorrectas.  
+          Solo hay una respuesta correcta para cada concepto.  
+      </p>
+      <p>¿Estás listo para comenzar?</p>
+      <button id="start-btn" class="btn btn-primary">¡Iniciar Juego!</button>
+  </div>
 
-        <div class="row text-center" id="formats-container">
-            <!-- Los formatos se generarán aquí -->
-        </div>
-
-        <!-- Mostrar número de clics -->
-        <div class="text-center mt-3">
-            <p>Clics realizados: <span id="clicks-count">0</span>/5</p>
-        </div>
-
-        <!-- Botón de revisar -->
-        <div class="btn-container text-center">
-            <button id="finish-btn" class="btn btn-primary" onclick="finishGame()">Revisar</button>
-        </div>
-
-        <!-- Resultados -->
-        <div id="result-container" class="hidden text-center">
-            <h4>¡Resultado del Juego!</h4>
-            <p id="score-message"></p>
-            <button class="btn btn-primary" onclick="restartGame()">Reiniciar Juego</button>
-            <button class="btn btn-secondary" onclick="goToNextChallenge()">Siguiente Reto</button>
-        </div>
-    </div>
-
+  <!-- Contenedor del juego -->
+  <div id="game-container" class="container my-5" style="display: none;">
+      <div class="row mb-3">
+          <div class="col text-center">
+              <h2>Asocia los Conceptos con el Tipo de Campo Correcto</h2>
+              <p id="timer" class="text-danger fw-bold">Tiempo restante: 1:00</p>
+          </div>
+      </div>
+      <div class="row">
+          <!-- Conceptos -->
+          <div class="col-md-6">
+              <h4>Conceptos</h4>
+              <div id="conceptos-container" class="border p-3">
+                  <!-- Los conceptos se cargarán dinámicamente -->
+              </div>
+          </div>
+          <!-- Opciones -->
+          <div class="col-md-6">
+              <h4>Opciones</h4>
+              <div id="opciones-container" class="border p-3 d-flex flex-wrap">
+                  <!-- Las opciones se cargarán dinámicamente -->
+              </div>
+          </div>
+      </div>
+      <div class="text-center mt-4">
+          <button id="validate-btn" class="btn btn-success" disabled>Validar Respuestas</button>
+        <!-- Mensaje de resultado y botón de redirección -->
+        <div id="result-container" class="mt-4 text-center" style="display: none;">
+          <h3 id="result-message"></h3>
+          <button id="next-btn" class="btn btn-success mt-3" style="display: none;" onclick="window.location.href='retos/RETO%202.html'">
+              Siguiente reto
+          </button>
+      </div>
+  </div>
     </section><!-- /About Section -->
-
- 
-
   </main>
 
   <footer id="footer" class="footer position-relative light-background">

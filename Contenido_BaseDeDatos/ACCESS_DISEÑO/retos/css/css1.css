@@ -1,35 +1,42 @@
-.format-cell {
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    font-size: 16px;
+/* styles.css */
+#conceptos-container, #opciones-container {
+    min-height: 200px;
 }
 
-.selected {
-    background-color: #d1a7e1; /* Morado claro */
-    color: white;
+.draggable {
+    padding: 10px;
+    margin: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    cursor: grab;
+    text-align: center;
+}
+
+.draggable:active {
+    cursor: grabbing;
 }
 
 .correct {
-    background-color: #28a745;
-    color: white;
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
 }
 
 .incorrect {
-    background-color: #dc3545;
-    color: white;
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
 }
 
-.btn-container {
-    margin-top: 20px;
+.category {
+    min-height: 50px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px dashed #6c757d;
+    border-radius: 5px;
+    text-align: center;
 }
 
-#result-container {
-    margin-top: 30px;
-}
-
-#result-container.hidden {
-    display: none;
+.category.over {
+    background-color: #cfe2ff;
 }

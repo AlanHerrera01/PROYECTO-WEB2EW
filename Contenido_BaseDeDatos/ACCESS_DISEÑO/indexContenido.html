@@ -26,7 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <link href="./css/lock.css" rel="stylesheet">
+
   <!-- =======================================================
   * Template Name: iPortfolio
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
@@ -153,12 +153,12 @@
         <li><a href="#contenido"><i class="bi bi-person navicon"></i>Conceptos Básicos</a></li>
         <li><a href="#ejemplo"><i class="bi bi-file-earmark-text navicon"></i> Base de Datos de Ejemplo</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Videos Tutoriales</a></li>
-        <li class="dropdown"><a href="#quest"><i class="bi bi-menu-button navicon"></i> <span>Desafios y Retos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="./retos/RETO 1.html" id="reto1">Reto 1</a></li>
-              <li><a href="./retos/RETO 2.html" id="reto2" class="locked">Reto 2</a></li>
-              <li><a href="./retos/RETO 3.html" id="reto3" class="locked">Reto 3</a></li>
-              <li><a href="./retos/RETO 4.html" id="reto4" class="locked">Reto 4</a></li>
+        <li class="dropdown"><a href="#quest"><i class="bi bi-menu-button navicon"></i> <span>Juegos y Retos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="./retos/RETO_1.html">Reto 1</a></li>
+            <li><a href="./retos/RETO_2.html">Reto 2</a></li>
+            <li><a href="./retos/RETO_3.html">Reto 3</a></li>
+            <li><a href="./retos/RETO_4.html">Reto 4</a></li>
           </ul>
         </li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Examen Final</a></li>
@@ -173,30 +173,46 @@
     
 
   <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-          <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>BASE DE DATOS ACCESS</h2>
-      </a>
-      <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto p-4 p-lg-0">
-              <a href="" class="nav-item nav-link">Home</a>
-              <a href="about.html" class="nav-item nav-link"></a>
-              <a href="courses.html" class="nav-item nav-link"></a>
-              <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Curso</a>
-                  <div class="dropdown-menu fade-down m-0">
-                      <a href="team.html" class="dropdown-item">Programación</a>
-                      <a href="testimonial.html" class="dropdown-item">Redes</a>
-                      <a href="404.html" class="dropdown-item">Base de Datos</a>
-                  </div>
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="./indexContenido.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>PROYECTO WEB</h2>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="../indexHOME.html" class="nav-item nav-link">INICIO</a>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Programacion</a>
+              <div class="dropdown-menu fade-down m-0">
+                  <a href="team.html" class="dropdown-item">Algoritmos</a>
+                  <a href="testimonial.html" class="dropdown-item">Diagramas de Flujo</a>
+                  <a href="404.html" class="dropdown-item">Python</a>
               </div>
           </div>
-          <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Conoce a cada Grupo<i class="fa fa-arrow-right ms-3"></i></a>
-      </div>
-  </nav>
+
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">REDES</a>
+            <div class="dropdown-menu fade-down m-0">
+                <a href="team.html" class="dropdown-item">Medios de Conexion</a>
+                <a href="testimonial.html" class="dropdown-item">Redes LAN</a>
+                <a href="404.html" class="dropdown-item">Internet</a>
+            </div>
+            
+        </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">BASE DE DATOS</a>
+                <div class="dropdown-menu fade-down m-0">
+                    <a href="team.html" class="dropdown-item">Acces</a>
+                    <a href="testimonial.html" class="dropdown-item">Visual Basic + Access</a>
+                    <a href="404.html" class="dropdown-item">RDBMS - MySQL WorkBench</a>
+                </div>
+            </div>
+        </div>
+        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+  </nav>
   <!-- Navbar End -->
 
     <!-- Hero Section -->
@@ -762,9 +778,40 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>DESAFIOS</h2>
-        <p>ESTOS SON DEAFIOS XD</p>
+        <p>¡Prepárate para poner a prueba tus habilidades con Access! En esta sección, encontrarás cuatro retos interactivos diseñados para desafiarte y ayudarte a mejorar tu dominio de las bases de datos. Cada desafío te sumergirá en un escenario único, donde tendrás que resolver problemas y aplicar tus conocimientos en Access de una manera divertida e intuitiva. ¿Estás listo para aceptar el reto?</p>
       </div><!-- End Section Title -->
-
+      
+      <!-- Retos -->
+      <div class="row">
+        <div class="col-md-3">
+          <div class="challenge">
+            <img src="ruta-imagen1.jpg" alt="Reto 1" class="img-fluid">
+            <h3>Reto 1</h3>
+            <p>Descripción breve del primer reto.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="challenge">
+            <img src="ruta-imagen2.jpg" alt="Reto 2" class="img-fluid">
+            <h3>Reto 2</h3>
+            <p>Descripción breve del segundo reto.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="challenge">
+            <img src="ruta-imagen3.jpg" alt="Reto 3" class="img-fluid">
+            <h3>Reto 3</h3>
+            <p>Descripción breve del tercer reto.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="challenge">
+            <img src="ruta-imagen4.jpg" alt="Reto 4" class="img-fluid">
+            <h3>Reto 4</h3>
+            <p>Descripción breve del cuarto reto.</p>
+          </div>
+        </div>
+      </div><!--
     </section><!-- /Testimonials Section -->
 
     <!-- Services Section -->
@@ -1092,7 +1139,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="./js/verificacion.js"></script>
 
 </body>
 

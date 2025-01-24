@@ -1,44 +1,19 @@
-.category {
-    border: 2px dashed #ddd;
-    min-height: 100px;
-    padding: 10px;
-    text-align: center;
-    background-color: #f4f4f4;
-}
-
-.draggable {
-    background-color: lightblue;
-    padding: 10px;
-    margin: 5px;
-    cursor: move;
-    text-align: center;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.over {
-    background-color: #e9e9e9;
-}
-
-.correct {
-    background-color: lightgreen;
-}
-
-.incorrect {
-    background-color: lightcoral;
-}
-
-.dropped {
-    cursor: not-allowed;
-}
-
 #timer {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-#conceptos-container {
-    display: flex;
-    justify-content: space-between;
+    font-size: 24px;
     margin-bottom: 20px;
+}
+.table, .options {
+    margin-top: 20px;
+}
+.option-container {
+    margin-bottom: 15px;
+}
+.container {
+    text-align: center;
+}
+.alert {
+    margin-top: 20px;
+}
+.start-container {
+    margin-top: 50px;
 }

@@ -1,150 +1,165 @@
-// Formatos correctos (existentes en Access)
-const correctFormats = ['Texto', 'Memo', 'Moneda', 'Número', 'Fecha/Hora'];
+// script.js
 
-// Formatos incorrectos (relacionados pero no existentes en Access)
-const incorrectFormats = ['Lista', 'Códigos', 'Imagen', 'Contraseña', 'Dirección', 'Nombre Completo', 'Adjunto'];
+const conceptos = [
+    { nombre: 'Nombre', tipo: 'Texto' },
+    { nombre: 'Fecha de nacimiento', tipo: 'Fecha/Hora' },
+    { nombre: 'Precio', tipo: 'Número' },
+    { nombre: 'Foto', tipo: 'Objeto OLE' }
+];
 
-// Mezcla los formatos correctos e incorrectos
-const allFormats = [...correctFormats, ...incorrectFormats].sort(() => Math.random() - 0.5); // Desordena los elementos
+const opciones = [
+    'Texto', 'Número', 'Fecha/Hora', 'Objeto OLE',
+    'Autonumérico', 'Sí/No', 'Memo', 'Hipervínculo'
+];
 
-// Variables globales
-let selectedFormats = [];  // Almacena los formatos seleccionados por el jugador
-let score = 0;
-let totalQuestions = 5;
-let clickCount = 0;  // Contador de clics
+let droppedConceptos = {};
+let correctAnswers = 0;
+let timer;
+let timeLeft = 60;
 
-// Función para manejar el clic en los formatos
-function handleFormatClick(event) {
-    const clickedElement = event.target;
-    const formatName = clickedElement.innerHTML;
-
-    // Evita seleccionar más de 5 elementos
-    if (selectedFormats.length >= totalQuestions) {
-        return; // No permite más selecciones
-    }
-
-    // Si el formato ya fue seleccionado, no hacer nada
-    if (selectedFormats.includes(formatName)) {
-        return;
-    }
-
-    // Agregar formato seleccionado
-    selectedFormats.push(formatName);
-
-    // Pintar la celda de color morado claro
-    clickedElement.classList.add('selected');
-
-    // Aumentar el contador de clics
-    clickCount++;
-    document.getElementById('clicks-count').innerText = clickCount;
-
-    // Si alcanzó 5 clics, deshabilitar más clics
-    if (clickCount === totalQuestions) {
-        // Deshabilitar todos los clics después de seleccionar 5
-        document.querySelectorAll('.format-cell').forEach(cell => {
-            cell.removeEventListener('click', handleFormatClick);
-        });
-    }
-}
-
-// Función para comprobar si el juego ha terminado
-function finishGame() {
-    // Revisa que solo se hayan seleccionado 5 formatos
-    if (selectedFormats.length < totalQuestions) {
-        alert("Por favor, selecciona 5 formatos antes de finalizar.");
-        return;
-    }
-
-    // Calcular cuántos formatos correctos
-    score = selectedFormats.filter(format => correctFormats.includes(format)).length;
-
-    // Pintar los resultados en la tabla
-    paintResults();
-
-    // Mostrar los resultados
-    showResult();
-}
-
-// Función para pintar los resultados (correcto/incorrecto)
-function paintResults() {
-    const elements = document.querySelectorAll('.format-cell');
-    elements.forEach(element => {
-        const formatName = element.innerHTML;
-
-        if (selectedFormats.includes(formatName)) {
-            if (correctFormats.includes(formatName)) {
-                element.classList.add('correct');
-            } else {
-                element.classList.add('incorrect');
-            }
-        }
-    });
-}
-
-// Función para mostrar los resultados
-function showResult() {
-    const percentage = (score / totalQuestions) * 100;
-    const resultMessage = `Obtuviste ${score} de ${totalQuestions} respuestas correctas (${percentage}%)`;
-
-    document.getElementById('score-message').innerText = resultMessage;
-    document.getElementById('result-container').classList.remove('hidden');
-
-    // Verificar si el jugador alcanzó el 80% para continuar
-    if (percentage >= 80) {
-        document.getElementById('score-message').innerText += " ¡Felicidades! Puedes ir al siguiente reto.";
-    } else {
-        document.getElementById('score-message').innerText += " No has alcanzado el 80%. Intenta nuevamente.";
-    }
-}
-
-// Función para reiniciar el juego
-function restartGame() {
-    score = 0;
-    selectedFormats = [];
-    clickCount = 0;
-
-    // Limpiar colores de las celdas
-    const elements = document.querySelectorAll('.format-cell');
-    elements.forEach(element => {
-        element.classList.remove('correct', 'incorrect', 'selected');
-        element.addEventListener('click', handleFormatClick);
-    });
-
-    // Resetear contador de clics
-    document.getElementById('clicks-count').innerText = clickCount;
-
-    // Ocultar los resultados
-    document.getElementById('result-container').classList.add('hidden');
-}
-
-// Función para ir al siguiente reto (simulación de navegación a otro reto)
-function goToNextChallenge() {
-    const percentage = (score / totalQuestions) * 100;
+function startGame() {
+    document.getElementById('start-container').style.display = 'none';
+    document.getElementById('game-container').style.display = 'block';
     
-    // Verificar si el jugador tiene el 80% o más
-    if (percentage >= 80) {
-        alert('¡Felicidades! Has completado el reto. Ahora irás al siguiente.');
-        // Aquí puedes redirigir a otra página o realizar alguna acción
-    } else {
-        alert('No has alcanzado el 80%. Intenta nuevamente.');
-    }
+    droppedConceptos = {};
+    correctAnswers = 0;
+    timeLeft = 60;
+    document.getElementById('timer').innerText = `Tiempo restante: ${timeLeft}s`;
+    
+    loadConceptos();
+    loadOpciones();
+    startTimer();
 }
 
-// Función para cargar los formatos en el HTML
-function loadFormats() {
-    const container = document.getElementById('formats-container');
-    allFormats.forEach(format => {
+function loadConceptos() {
+    const container = document.getElementById('conceptos-container');
+    container.innerHTML = '';
+
+    conceptos.forEach(concepto => {
         const div = document.createElement('div');
-        div.classList.add('col-3');
-        div.innerHTML = `<div class="format-cell">${format}</div>`;
+        div.classList.add('category');
+        div.id = `concepto-${concepto.nombre}`;
+        div.innerHTML = `<h5>${concepto.nombre}</h5>`;
+        div.ondragover = allowDrop;
+        div.ondrop = (event) => drop(event, concepto.nombre);
         container.appendChild(div);
     });
+}
 
-    // Asignar eventos a los formatos
-    document.querySelectorAll('.format-cell').forEach(element => {
-        element.addEventListener('click', handleFormatClick);
+function loadOpciones() {
+    const container = document.getElementById('opciones-container');
+    container.innerHTML = '';
+
+    const shuffledOpciones = opciones.sort(() => Math.random() - 0.5);
+
+    shuffledOpciones.forEach(opcion => {
+        const div = document.createElement('div');
+        div.classList.add('draggable');
+        div.setAttribute('draggable', 'true');
+        div.id = `opcion-${opcion}`;
+        div.innerText = opcion;
+        div.ondragstart = drag;
+        container.appendChild(div);
     });
 }
 
-// Cargar los formatos al iniciar el juego
-window.onload = loadFormats;
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drag(event) {
+    event.dataTransfer.setData('text', event.target.id);
+}
+
+function drop(event, conceptoNombre) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData('text');
+    const draggedElement = document.getElementById(data);
+
+    if (droppedConceptos[conceptoNombre]) {
+        alert('Ya colocaste una opción en esta categoría.');
+        return;
+    }
+
+    event.target.appendChild(draggedElement);
+    droppedConceptos[conceptoNombre] = draggedElement.innerText;
+
+    if (Object.keys(droppedConceptos).length === conceptos.length) {
+        document.getElementById('validate-btn').disabled = false;
+    }
+}
+
+function validateAnswers() {
+    correctAnswers = 0;
+
+    conceptos.forEach(concepto => {
+        const categoria = document.getElementById(`concepto-${concepto.nombre}`);
+        const respuesta = droppedConceptos[concepto.nombre];
+
+        if (respuesta === concepto.tipo) {
+            categoria.classList.add('correct');
+            correctAnswers++;
+        } else {
+            categoria.classList.add('incorrect');
+        }
+    });
+
+    const resultContainer = document.getElementById('result-container');
+    const resultMessage = document.getElementById('result-message');
+    resultContainer.style.display = 'block';
+    resultContainer.classList.add('animate__animated', 'animate__fadeIn');
+
+    if (correctAnswers >= 3) {
+        resultMessage.innerHTML = `
+            <div class="alert alert-success text-center">
+                <h4 class="mb-3">¡Felicidades! 🎉</h4>
+                <p>Has obtenido una nota de: <strong>${correctAnswers}/${conceptos.length}</strong></p>
+                <button id="next-challenge-btn" class="btn btn-primary mt-3">Siguiente reto</button>
+            </div>
+        `;
+        document.getElementById('next-challenge-btn').addEventListener('click', () => {
+            window.location.href = 'RETO_2.html';
+
+        });
+    } else {
+        resultMessage.innerHTML = `
+            <div class="alert alert-danger text-center">
+                <h4 class="mb-3">¡Juego terminado! 🙁</h4>
+                <p>Tu nota es: <strong>${correctAnswers}/${conceptos.length}</strong></p>
+                <p><strong>¡Intenta nuevamente para mejorar tu puntuación!</strong></p>
+                <button id="restart-btn" class="btn btn-warning mt-3">Reiniciar</button>
+            </div>
+        `;
+
+        document.getElementById('restart-btn').addEventListener('click', restartGame);
+    }
+
+    clearInterval(timer);
+}
+
+function startTimer() {
+    timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById('timer').innerText = `Tiempo restante: ${timeLeft}s`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            validateAnswers();
+        }
+    }, 1000);
+}
+
+function restartGame() {
+    document.getElementById('result-container').style.display = 'none';
+    document.getElementById('game-container').style.display = 'none';
+    document.getElementById('start-container').style.display = 'block';
+    document.getElementById('validate-btn').disabled = true;
+
+    droppedConceptos = {};
+    correctAnswers = 0;
+    timeLeft = 60;
+    document.getElementById('timer').innerText = `Tiempo restante: ${timeLeft}s`;
+}
+
+document.getElementById('start-btn').addEventListener('click', startGame);
+document.getElementById('validate-btn').addEventListener('click', validateAnswers);
