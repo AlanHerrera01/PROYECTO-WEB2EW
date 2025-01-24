@@ -58,6 +58,66 @@
             <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+            <!-- Para un jueguito -->  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".toggle-info").click(function(){
+                $(this).next(".info-content").slideToggle();
+                $(this).find("i").toggleClass("bi-chevron-right bi-chevron-down");
+            });
+        });
+    </script>
+    <script>
+      $(document).ready(function(){
+          $(".toggle-info").click(function(){
+              $(this).next(".info-content").slideToggle();
+              $(this).find("i").toggleClass("bi-chevron-right bi-chevron-down");
+          });
+
+          $(".answer").click(function(){
+              let answer = $(this).data("answer");
+              if (answer === "correcto") {
+                  $("#feedback").text("¡Correcto! 'Uno a Muchos' es la relación más común en Access.").css("color", "#28a745");
+              } else {
+                  $("#feedback").text("Incorrecto, intenta de nuevo.").css("color", "#dc3545");
+              }
+          });
+      });
+  </script>
+    <style>
+      .draggable {
+          width: 150px;
+          padding: 10px;
+          margin: 10px;
+          background-color: #007bff;
+          color: white;
+          text-align: center;
+          cursor: move;
+          border-radius: 5px;
+      }
+      .dropzone {
+          width: 500px;
+          height: 300px;
+          border: 2px dashed #007bff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 20px auto;
+          font-weight: bold;
+          color: #007bff;
+      }
+      .dropzone div {
+            margin: 5px 0;
+        }
+      .correct {
+            background-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #dc3545 !important;
+        }
+  </style>
+
 
 
 </head>
@@ -90,8 +150,8 @@
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i>Conceptos Básicos</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Base de Datos de Ejemplo</a></li>
+        <li><a href="#contenido"><i class="bi bi-person navicon"></i>Conceptos Básicos</a></li>
+        <li><a href="#ejemplo"><i class="bi bi-file-earmark-text navicon"></i> Base de Datos de Ejemplo</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Videos Tutoriales</a></li>
         <li class="dropdown"><a href="#quest"><i class="bi bi-menu-button navicon"></i> <span>Desafios y Retos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
@@ -151,8 +211,184 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <!-- Conceptos Basicos -->
+    <header class="bg-primary text-white text-center py-4">
+      <h1>Teoría de Microsoft Access</h1>
+  </header>
+
+  <main class="container my-5">
+    <section id="contenido" class="about section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Conceptos Básicos de Microsoft Access</h2>
+            <p>Microsoft Access es un sistema de gestión de bases de datos que permite almacenar, organizar y administrar información de manera eficiente.</p>
+        </div>
+        
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-4">
+                    <img src="img/Base_Datos_Seccion_Conceptos.jpg" class="img-fluid" alt="Microsoft Access">
+                </div>
+                <div class="col-lg-8 content">
+                    <h2>¿Qué es Microsoft Access?</h2>
+                    <p class="fst-italic py-3">
+                        Es una herramienta de bases de datos relacionales desarrollada por Microsoft, utilizada para administrar grandes volúmenes de datos de manera estructurada.
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Elemento clave:</strong> Tablas
+                                    <p class="info-content" style="display:none;">Las tablas son la base del almacenamiento de datos en Access, organizadas en filas y columnas.</p>
+                                </li>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Tipo de relación común:</strong> Uno a muchos
+                                    <p class="info-content" style="display:none;">En Access, la relación más utilizada es "uno a muchos", donde una tabla puede estar relacionada con múltiples registros en otra.</p>
+                                </li>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Extensión de archivos:</strong> .mdb o .accdb
+                                    <p class="info-content" style="display:none;">Microsoft Access usa estas extensiones de archivo para almacenar bases de datos.</p>
+                                </li>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Función principal:</strong> Almacenar y gestionar datos
+                                    <p class="info-content" style="display:none;">Access permite gestionar grandes volúmenes de datos mediante estructuras relacionales.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Tipos de objetos:</strong> Tablas, Consultas, Formularios, Informes
+                                    <p class="info-content" style="display:none;">Cada uno de estos objetos cumple un rol fundamental en la gestión de la base de datos.</p>
+                                </li>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Automatización:</strong> Uso de macros
+                                    <p class="info-content" style="display:none;">Las macros permiten automatizar procesos y reducir el trabajo manual.</p>
+                                </li>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Creación de consultas:</strong> A través del Asistente de consultas
+                                    <p class="info-content" style="display:none;">Las consultas permiten filtrar y analizar información almacenada en tablas.</p>
+                                </li>
+                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Importación de datos:</strong> Desde Excel con "Importar datos"
+                                    <p class="info-content" style="display:none;">Access permite importar datos desde Excel para facilitar su manipulación.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="py-3">
+                        Microsoft Access permite gestionar bases de datos mediante consultas, formularios e informes para facilitar la manipulación y visualización de datos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Curso de Microsoft Access</p>
+</footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Stats Section -->
+    <section id="ejempl" class="stats section">
+      <main class="container my-5">
+        <section id="ejemplo" class="example section">
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Ejemplo de Creación de Base de Datos en Access</h2>
+                <p>Para crear una base de datos en Access, sigue estos pasos:</p>
+                <ol>
+                    <li>Abre Microsoft Access y selecciona "Base de Datos en Blanco".</li>
+                    <li>Asigna un nombre al archivo y selecciona una ubicación para guardarlo.</li>
+                    <li>Crea una tabla y define los campos necesarios.</li>
+                    <li>Establece una clave primaria para garantizar la unicidad de los registros.</li>
+                    <li>Guarda la tabla y empieza a ingresar datos.</li>
+                </ol>
+                <img src="img/Ejemplo_Access.png" class="img-fluid" alt="Ejemplo de Access">
+            </div>
+        </section>
+        <main class="container my-5">
+          <section id="game" class="game section">
+              <div class="container section-title" data-aos="fade-up">
+                  <h2>Juego Interactivo: Adivina el Concepto</h2>
+                  <p>Selecciona la respuesta correcta de la siguiente pregunta:</p>
+                  <div class="game-container text-center">
+                      <p><strong>Pregunta:</strong> ¿Cuál es el tipo de relación más común en Access?</p>
+                      <button class="btn btn-primary answer" data-answer="incorrecto">Uno a Uno</button>
+                      <button class="btn btn-primary answer" data-answer="correcto">Uno a Muchos</button>
+                      <button class="btn btn-primary answer" data-answer="incorrecto">Muchos a Muchos</button>
+                      <p id="feedback" class="mt-3"></p>
+                  </div>
+              </div>
+          </section>
+      </main>
+  
+        <main class="container my-5">
+          <section id="drag-game" class="game section">
+              <div class="container section-title" data-aos="fade-up">
+                  <h2>Juego Interactivo: Ordena los Pasos</h2>
+                  <p>Arrastra los pasos en el orden correcto para crear una base de datos en Access.</p>
+                  <div class="dropzone" id="dropzone">Arrastra aquí los pasos en orden</div>
+                  <div id="steps">
+                      <div class="draggable" draggable="true" id="step2">Abrir Microsoft Access</div>
+                      <div class="draggable" draggable="true" id="step1">Crear una tabla</div>
+                      <div class="draggable" draggable="true" id="step3">Definir clave primaria</div>
+                      <div class="draggable" draggable="true" id="step4">Guardar la base de datos</div>
+                  </div>
+                  <button class="btn btn-success mt-3" id="checkOrder">Validar Orden</button>
+                  <button class="btn btn-secondary mt-3" id="resetGame">Volver a Intentar</button>
+                  <p id="feedback-order" class="mt-3"></p>
+              </div>
+          </section>
+      </main>
+  
+      <footer class="bg-dark text-white text-center py-3">
+          <p>&copy; 2025 Curso de Microsoft Access</p>
+      </footer>
+  
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script>
+          document.querySelectorAll(".draggable").forEach(item => {
+              item.addEventListener("dragstart", event => {
+                  event.dataTransfer.setData("text", event.target.id);
+              });
+          });
+  
+          document.querySelector(".dropzone").addEventListener("dragover", event => {
+              event.preventDefault();
+          });
+  
+          document.querySelector(".dropzone").addEventListener("drop", event => {
+              event.preventDefault();
+              let data = event.dataTransfer.getData("text");
+              let droppedElement = document.getElementById(data);
+              if (!event.target.contains(droppedElement)) {
+                  event.target.appendChild(droppedElement);
+              }
+          });
+  
+          document.getElementById("checkOrder").addEventListener("click", function() {
+              let dropzone = document.getElementById("dropzone");
+              let steps = Array.from(dropzone.children).map(el => el.id);
+              let correctOrder = ["step2", "step1", "step3", "step4"];
+  
+              if (JSON.stringify(steps) === JSON.stringify(correctOrder)) {
+                  document.getElementById("feedback-order").textContent = "¡Correcto! Has ordenado bien los pasos.";
+                  dropzone.classList.add("correct");
+              } else {
+                  document.getElementById("feedback-order").textContent = "Inténtalo de nuevo. El orden no es correcto.";
+                  dropzone.classList.add("incorrect");
+                  setTimeout(() => dropzone.classList.remove("incorrect"), 1000);
+              }
+          });
+  
+          document.getElementById("resetGame").addEventListener("click", function() {
+              let dropzone = document.getElementById("dropzone");
+              let stepsContainer = document.getElementById("steps");
+              while (dropzone.firstChild) {
+                  stepsContainer.appendChild(dropzone.firstChild);
+              }
+              document.getElementById("feedback-order").textContent = "";
+              dropzone.classList.remove("correct", "incorrect");
+          });
+      </script>
+    
+    </section><!-- /Stats Section -->
+
+
+    <section id="a" class="about section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -200,51 +436,6 @@
       </div>
 
     </section><!-- /About Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
 
     <!-- Skills Section -->
     <section id="skills" class="skills section light-background">
