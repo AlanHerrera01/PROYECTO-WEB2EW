@@ -117,8 +117,61 @@
             background-color: #dc3545 !important;
         }
   </style>
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('startQuiz').addEventListener('click', function() {
+            document.getElementById('quizContainer').style.display = 'block';
+        });
 
+        document.querySelectorAll('.answer').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.trim() === "Tablas") {
+                    alert("¡Correcto!");
+                } else {
+                    alert("Incorrecto, intenta de nuevo.");
+                }
+            });
+        });
 
+        document.getElementById('startTableGame').addEventListener('click', function() {
+            document.getElementById('tableGameContainer').style.display = 'block';
+        });
+
+        document.querySelectorAll('.game-answer').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.trim() === "Filas y columnas") {
+                    alert("¡Correcto!");
+                } else {
+                    alert("Incorrecto, intenta de nuevo.");
+                }
+            });
+        });
+
+        document.querySelectorAll('.accordion-body button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.trim() === "Uno a muchos") {
+                    alert("¡Correcto!");
+                } else {
+                    alert("Incorrecto, intenta de nuevo.");
+                }
+            });
+        });
+    });
+</script>
+
+                      
+<script>
+  document.querySelectorAll('.query-game').forEach(button => {
+      button.addEventListener('click', function() {
+          if (this.textContent.trim() === "Consulta de selección") {
+              alert("¡Correcto! Las consultas de selección permiten obtener información específica de las tablas.");
+          } else {
+              alert("Incorrecto, intenta de nuevo.");
+          }
+      });
+  });
+</script>
+    
 
 </head>
 
@@ -230,9 +283,9 @@
     <!-- Conceptos Basicos -->
     <header class="bg-primary text-white text-center py-4">
       <h1>Teoría de Microsoft Access</h1>
-  </header>
+    </header>
 
-  <main class="container my-5">
+<main class="container my-5">
     <section id="contenido" class="about section">
         <div class="container section-title" data-aos="fade-up">
             <h2>Conceptos Básicos de Microsoft Access</h2>
@@ -241,60 +294,96 @@
         
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 justify-content-center">
-                <div class="col-lg-4">
-                    <img src="img/Base_Datos_Seccion_Conceptos.jpg" class="img-fluid" alt="Microsoft Access">
+                <div class="col-lg-4 text-center">
+                    <img src="img/Base_Datos_Seccion_Conceptos.jpg" class="img-fluid rounded shadow-sm" alt="Microsoft Access">
                 </div>
                 <div class="col-lg-8 content">
                     <h2>¿Qué es Microsoft Access?</h2>
                     <p class="fst-italic py-3">
                         Es una herramienta de bases de datos relacionales desarrollada por Microsoft, utilizada para administrar grandes volúmenes de datos de manera estructurada.
                     </p>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Elemento clave:</strong> Tablas
-                                    <p class="info-content" style="display:none;">Las tablas son la base del almacenamiento de datos en Access, organizadas en filas y columnas.</p>
-                                </li>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Tipo de relación común:</strong> Uno a muchos
-                                    <p class="info-content" style="display:none;">En Access, la relación más utilizada es "uno a muchos", donde una tabla puede estar relacionada con múltiples registros en otra.</p>
-                                </li>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Extensión de archivos:</strong> .mdb o .accdb
-                                    <p class="info-content" style="display:none;">Microsoft Access usa estas extensiones de archivo para almacenar bases de datos.</p>
-                                </li>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Función principal:</strong> Almacenar y gestionar datos
-                                    <p class="info-content" style="display:none;">Access permite gestionar grandes volúmenes de datos mediante estructuras relacionales.</p>
-                                </li>
-                            </ul>
+                    
+                    <div class="accordion" id="accessConcepts">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    <strong>Elemento clave: </strong> Tablas
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                                <div class="accordion-body">
+                                    <p>Las tablas son la base del almacenamiento de datos en Access, organizadas en filas y columnas.</p>
+                                    <img src="img/Tabla_Access.jpg" style="width: 70%; text-align: center;" class="img-fluid rounded shadow-sm" alt="Ejemplo de Tabla en Access">
+                                    <br></br>
+                                    <p>Práctica: Crea una mini tabla simulada con los siguientes campos:</p>
+                                    <form id="tableCreationForm">
+                                        <label for="field1">Campo 1:</label>
+                                        <input type="text" id="field1" required>
+                                        <label for="field2">Campo 2:</label>
+                                        <input type="text" id="field2" required>
+                                        <button type="submit" class="btn btn-success mt-2">Crear Tabla</button>
+                                    </form>
+                                    <div id="tableResult" class="mt-3"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-6">
-                            <ul>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Tipos de objetos:</strong> Tablas, Consultas, Formularios, Informes
-                                    <p class="info-content" style="display:none;">Cada uno de estos objetos cumple un rol fundamental en la gestión de la base de datos.</p>
-                                </li>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Automatización:</strong> Uso de macros
-                                    <p class="info-content" style="display:none;">Las macros permiten automatizar procesos y reducir el trabajo manual.</p>
-                                </li>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Creación de consultas:</strong> A través del Asistente de consultas
-                                    <p class="info-content" style="display:none;">Las consultas permiten filtrar y analizar información almacenada en tablas.</p>
-                                </li>
-                                <li class="toggle-info"><i class="bi bi-chevron-right"></i> <strong>Importación de datos:</strong> Desde Excel con "Importar datos"
-                                    <p class="info-content" style="display:none;">Access permite importar datos desde Excel para facilitar su manipulación.</p>
-                                </li>
-                            </ul>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    <strong>Tipo de relación común: </strong> Uno a muchos
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                                <div class="accordion-body">
+                                    <p>En Access, la relación más utilizada es "uno a muchos", donde una tabla puede estar relacionada con múltiples registros en otra.
+                                      Aunque existen otras relaciones como de "uno a uno" y de "muchos a muchos" </p>
+                                    <img src="img/Relacion_Access.jpg" style="width: 70%; text-align: center;"class="img-fluid rounded shadow-sm" alt="Relaciones en Access">
+                                    <p>Juego: Identifica la relación correcta en este esquema:</p>
+                                    <button class="btn btn-outline-primary">Uno a muchos</button>
+                                    <button class="btn btn-outline-primary">Muchos a muchos</button>
+                                    <button class="btn btn-outline-primary">Uno a uno</button>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                  <strong>Consultas:</strong> Extraer y organizar datos
+                              </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                              <div class="accordion-body">
+                                  <p>Las consultas permiten filtrar información específica en una base de datos.</p>
+                                  <img src="img/Consulta_Access.png"style="width: 70%; text-align: center;" class="img-fluid rounded shadow-sm" alt="Consultas en Access">
+                                  <p>Juego: Selecciona el tipo de consulta correcto según el criterio dado.</p>
+                                  <button class="btn btn-outline-primary query-game">Consulta de selección</button>
+                                  <button class="btn btn-outline-primary query-game">Consulta de acción</button>
+                                  <button class="btn btn-outline-primary query-game">Consulta de parámetros</button>
+                              </div>
+                          </div>
+                      </div>
                     </div>
-                    <p class="py-3">
-                        Microsoft Access permite gestionar bases de datos mediante consultas, formularios e informes para facilitar la manipulación y visualización de datos.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
+    
+    <script>
+        document.getElementById("tableCreationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const field1 = document.getElementById("field1").value;
+            const field2 = document.getElementById("field2").value;
+            document.getElementById("tableResult").innerHTML = `<table class='table'><tr><th>${field1}</th><th>${field2}</th></tr><tr><td>Dato 1</td><td>Dato 2</td></tr></table>`;
+        });
+    </script>
 </main>
 
-<footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2025 Curso de Microsoft Access</p>
-</footer>
+
+  <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2025 Curso de Microsoft Access</p>
+  </footer>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -312,7 +401,7 @@
                     <li>Establece una clave primaria para garantizar la unicidad de los registros.</li>
                     <li>Guarda la tabla y empieza a ingresar datos.</li>
                 </ol>
-                <img src="img/Ejemplo_Access.png" class="img-fluid" alt="Ejemplo de Access">
+                <img src="img/Ejemplo_Access.png" style="width: 50%; text-align: center;"class="img-fluid" alt="Ejemplo de Access">
             </div>
         </section>
         <main class="container my-5">
