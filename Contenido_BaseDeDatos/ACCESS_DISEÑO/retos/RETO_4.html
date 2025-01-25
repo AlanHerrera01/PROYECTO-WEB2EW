@@ -23,7 +23,7 @@
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="./css/css2.css" rel="stylesheet">
+  <link href="./css/css4.css" rel="stylesheet">
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
 
@@ -170,27 +170,36 @@
 
     <!-- About Section -->
     <section id="about" class="about section">
-      <div class="container text-center my-5">
-        <div id="start-container" class="start-container">
-            <h1>Juego 6: Armar una Base de Datos</h1>
-            <p>
-                En este juego, tu objetivo es observar los datos de las tablas y hacer las relaciones correctas entre ellas. 
-                Tienes 3 minutos para analizar las tablas y responder las preguntas. ¡Buena suerte!
-            </p>
-            <p><strong>Contexto de la base de datos:</strong></p>
-            <p>
-                Esta base de datos simula un sistema de ventas. Tenemos cuatro tablas principales:
-                <ul>
-                    <li><strong>Clientes</strong>: Información sobre los clientes.</li>
-                    <li><strong>Pedidos</strong>: Registros de los pedidos realizados por los clientes.</li>
-                    <li><strong>Productos</strong>: Detalles de los productos disponibles.</li>
-                    <li><strong>Categorías</strong>: Información sobre las categorías a las que pertenecen los productos.</li>
-                </ul>
-                Analiza los datos y selecciona las relaciones correctas entre las tablas.
-            </p>
-            <button id="start-btn" class="btn btn-primary">¡Iniciar Juego!</button>
+      <div class="container">
+        <!-- Contexto del Quiz -->
+        <div id="context-container" class="context-container">
+          <h2>Bienvenido al Quiz de Access</h2>
+          <p>Este quiz tiene como objetivo evaluar tus conocimientos básicos sobre Microsoft Access. Responde correctamente a las preguntas y demuestra tus habilidades en el manejo de bases de datos en Access.</p>
+          <p>Las preguntas están relacionadas con temas como tipos de datos, consultas, relaciones entre tablas, formularios y más. ¡Comienza el desafío!</p>
+          <button id="startQuizBtn" class="start-btn">Iniciar Quiz</button>
         </div>
-
+    
+        <!-- Contenedor del Quiz -->
+        <div id="quiz-container" class="question-container" style="display: none;">
+          <h1>Quiz de Access</h1>
+          <div id="question"></div>
+          <div id="options" class="options-container"></div>
+          <div class="buttons-container">
+            <button id="prevBtn" class="prev-btn" style="display: none;">Anterior</button>
+            <button id="nextBtn" class="next-btn">Siguiente</button>
+          </div>
+        </div>
+    
+        <!-- Resultados -->
+        <div id="result-container" style="display: none;">
+          <h3>Resultados</h3>
+          <div id="result-message" class="result-message"></div>
+          <div class="buttons-container">
+            <button id="retryBtn" class="retry-btn">Reintentar Quiz</button>
+            <button id="homeBtn" class="home-btn">Volver al Inicio</button>
+          </div>
+        </div>
+      </div>
     </section><!-- /About Section -->
   </main>
 
@@ -228,7 +237,7 @@
   <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="./js/main2.js"></script>
+  <script src="./js/main4.js"></script>
   
 
 
