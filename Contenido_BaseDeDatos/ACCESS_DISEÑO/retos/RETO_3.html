@@ -23,7 +23,7 @@
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="./css/css2.css" rel="stylesheet">
+  <link href="./css/css3.css" rel="stylesheet">
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
 
@@ -73,7 +73,7 @@
       <img src="../img/Logo_Access.png" alt="" class="img-fluid rounded-circle">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <a href="../indexContenido.html" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Bases de Datos</h1>
@@ -114,7 +114,7 @@
 
   <!-- Navbar Start -->
   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <a href="../indexContenido.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>PROYECTO WEB</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -170,27 +170,47 @@
 
     <!-- About Section -->
     <section id="about" class="about section">
-      <div class="container text-center my-5">
-        <div id="start-container" class="start-container">
-            <h1>Juego 6: Armar una Base de Datos</h1>
-            <p>
-                En este juego, tu objetivo es observar los datos de las tablas y hacer las relaciones correctas entre ellas. 
-                Tienes 3 minutos para analizar las tablas y responder las preguntas. ¡Buena suerte!
-            </p>
-            <p><strong>Contexto de la base de datos:</strong></p>
-            <p>
-                Esta base de datos simula un sistema de ventas. Tenemos cuatro tablas principales:
-                <ul>
-                    <li><strong>Clientes</strong>: Información sobre los clientes.</li>
-                    <li><strong>Pedidos</strong>: Registros de los pedidos realizados por los clientes.</li>
-                    <li><strong>Productos</strong>: Detalles de los productos disponibles.</li>
-                    <li><strong>Categorías</strong>: Información sobre las categorías a las que pertenecen los productos.</li>
-                </ul>
-                Analiza los datos y selecciona las relaciones correctas entre las tablas.
-            </p>
-            <button id="start-btn" class="btn btn-primary">¡Iniciar Juego!</button>
+      <div class="container">
+        <div class="text-center mb-4">
+          <h1>Reto: Corregir Errores en la Base de Datos</h1>
+          <p>En este reto, tu tarea es corregir los errores en una base de datos de clientes. Algunas filas tienen datos erróneos que debes corregir para pasar al siguiente reto. Si corriges más del 80% de los errores, podrás avanzar.</p>
+          <button id="startBtn" class="btn btn-primary">Iniciar Reto</button>
         </div>
-
+    
+        <div id="gameArea" class="card" style="display: none;">
+          <div class="card-body">
+            <h4>Lista de Clientes con Errores</h4>
+            <div class="table-wrapper">
+              <table class="table table-bordered" id="clientsTable">
+                <thead>
+                  <tr>
+                    <th>Cliente ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo Electrónico</th>
+                    <th>Fecha de Registro</th>
+                    <th>Edad</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Aquí se cargarán dinámicamente los registros -->
+                </tbody>
+              </table>
+            </div>
+            <button id="submitBtn" class="btn btn-success mt-3">Enviar Correcciones</button>
+          </div>
+        </div>
+    
+    
+        <div id="result" style="display: none;" class="mt-4">
+          <p id="resultText"></p>
+          <div id="nextButtonContainer" class="d-none">
+            <a href="siguiente_reto.html" class="btn btn-primary">Siguiente Reto</a>
+          </div>
+          <button id="restartBtn" class="btn btn-warning mt-3">Reiniciar Juego</button>
+        </div>
+      </div>
     </section><!-- /About Section -->
   </main>
 
@@ -228,7 +248,7 @@
   <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="./js/main2.js"></script>
+  <script src="./js/main3.js"></script>
   
 
 

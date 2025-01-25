@@ -1,0 +1,39 @@
+.card-body {
+    background-color: #f7f7f7;
+  }
+  .error {
+    color: red;
+  }
+  .animated {
+    animation: pulse 1s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  /* Estilo para ajustar la tabla al contenedor */
+  .table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    table-layout: fixed; /* Asegura que las columnas no se desborden */
+  }
+  .valid {
+    background-color: #d4edda; /* verde claro */
+  }
+  .invalid {
+    background-color: #f8d7da; /* rojo claro */
+  }
