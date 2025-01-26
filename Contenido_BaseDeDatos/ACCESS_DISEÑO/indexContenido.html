@@ -60,31 +60,7 @@
 
             <!-- Para un jueguito -->  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".toggle-info").click(function(){
-                $(this).next(".info-content").slideToggle();
-                $(this).find("i").toggleClass("bi-chevron-right bi-chevron-down");
-            });
-        });
-    </script>
-    <script>
-      $(document).ready(function(){
-          $(".toggle-info").click(function(){
-              $(this).next(".info-content").slideToggle();
-              $(this).find("i").toggleClass("bi-chevron-right bi-chevron-down");
-          });
-
-          $(".answer").click(function(){
-              let answer = $(this).data("answer");
-              if (answer === "correcto") {
-                  $("#feedback").text("¡Correcto! 'Uno a Muchos' es la relación más común en Access.").css("color", "#28a745");
-              } else {
-                  $("#feedback").text("Incorrecto, intenta de nuevo.").css("color", "#dc3545");
-              }
-          });
-      });
-  </script>
+    
     <style>
       .draggable {
           width: 150px;
@@ -116,62 +92,7 @@
         .incorrect {
             background-color: #dc3545 !important;
         }
-  </style>
-   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('startQuiz').addEventListener('click', function() {
-            document.getElementById('quizContainer').style.display = 'block';
-        });
-
-        document.querySelectorAll('.answer').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.textContent.trim() === "Tablas") {
-                    alert("¡Correcto!");
-                } else {
-                    alert("Incorrecto, intenta de nuevo.");
-                }
-            });
-        });
-
-        document.getElementById('startTableGame').addEventListener('click', function() {
-            document.getElementById('tableGameContainer').style.display = 'block';
-        });
-
-        document.querySelectorAll('.game-answer').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.textContent.trim() === "Filas y columnas") {
-                    alert("¡Correcto!");
-                } else {
-                    alert("Incorrecto, intenta de nuevo.");
-                }
-            });
-        });
-
-        document.querySelectorAll('.accordion-body button').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.textContent.trim() === "Uno a muchos") {
-                    alert("¡Correcto!");
-                } else {
-                    alert("Incorrecto, intenta de nuevo.");
-                }
-            });
-        });
-    });
-</script>
-
-                      
-<script>
-  document.querySelectorAll('.query-game').forEach(button => {
-      button.addEventListener('click', function() {
-          if (this.textContent.trim() === "Consulta de selección") {
-              alert("¡Correcto! Las consultas de selección permiten obtener información específica de las tablas.");
-          } else {
-              alert("Incorrecto, intenta de nuevo.");
-          }
-      });
-  });
-</script>
-    
+  </style>  
 
 </head>
 
@@ -388,20 +309,66 @@
                               <button class="btn btn-outline-primary query-game">Dirección</button>
                           </div>
                       </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                              <strong>Formularios: <span> Introducir y visualizar datos</span></strong>
+                          </button>
+                      </h2>
+                      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Los formularios en Access permiten la entrada y visualización de datos de una manera estructurada y amigable.</p>
+                              <p>Estos ayudan a los usuarios a interactuar con la base de datos sin necesidad de acceder directamente a las tablas, proporcionando una interfaz clara y ordenada.</p>
+                              <img src="img/Formulario_Access.jpg" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Formulario en Access">
+                              <p>Juego: Identifica los elementos correctos de un formulario.</p>
+                              <button class="btn btn-outline-primary">Campos de entrada</button>
+                              <button class="btn btn-outline-primary">Gráfico de barras</button>
+                              <button class="btn btn-outline-primary">Relaciones</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                              <strong>Informes: <span> Presentación y análisis de datos</span></strong>
+                          </button>
+                      </h2>
+                      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Los informes permiten generar documentos organizados para presentar los datos almacenados en la base de datos.</p>
+                              <p>Son utilizados para visualizar información de manera estructurada, facilitando la impresión y análisis de datos críticos.</p>
+                              <img src="img/Informe_Access.jpg" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Informe en Access">
+                              <p>Juego: ¿Cuál de estas opciones es una funcionalidad de un informe?</p>
+                              <button class="btn btn-outline-primary">Filtrar datos</button>
+                              <button class="btn btn-outline-primary">Mostrar datos en formato impreso</button>
+                              <button class="btn btn-outline-primary">Crear una nueva tabla</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+                              <strong>Índices: <span> Optimización de búsqueda</span></strong>
+                          </button>
+                      </h2>
+                      <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Los índices permiten acelerar la búsqueda y recuperación de datos en una tabla.</p>
+                              <p>Ayudan a optimizar las consultas en grandes volúmenes de información, mejorando la eficiencia de la base de datos.</p>
+                              <img src="img/Indice_Access.gif" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Índices en Access">
+                              <p>Juego: ¿Qué hace un índice en una base de datos?</p>
+                              <button class="btn btn-outline-primary">Optimizar la búsqueda</button>
+                              <button class="btn btn-outline-primary">Eliminar registros</button>
+                              <button class="btn btn-outline-primary">Crear relaciones</button>
+                          </div>
+                      </div>
+                  </div>
+
+                  </div>
                 </div>
               </div>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-        document.getElementById("tableCreationForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const field1 = document.getElementById("field1").value;
-            const field2 = document.getElementById("field2").value;
-            document.getElementById("tableResult").innerHTML = `<table class='table'><tr><th>${field1}</th><th>${field2}</th></tr><tr><td>Dato 1</td><td>Dato 2</td></tr></table>`;
-        });
-    </script>
+      </section>
 </main>
 
 
@@ -441,51 +408,6 @@
           </section>
   
       <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script>
-          document.querySelectorAll(".draggable").forEach(item => {
-              item.addEventListener("dragstart", event => {
-                  event.dataTransfer.setData("text", event.target.id);
-              });
-          });
-  
-          document.querySelector(".dropzone").addEventListener("dragover", event => {
-              event.preventDefault();
-          });
-  
-          document.querySelector(".dropzone").addEventListener("drop", event => {
-              event.preventDefault();
-              let data = event.dataTransfer.getData("text");
-              let droppedElement = document.getElementById(data);
-              if (!event.target.contains(droppedElement)) {
-                  event.target.appendChild(droppedElement);
-              }
-          });
-  
-          document.getElementById("checkOrder").addEventListener("click", function() {
-              let dropzone = document.getElementById("dropzone");
-              let steps = Array.from(dropzone.children).map(el => el.id);
-              let correctOrder = ["step2", "step1", "step3", "step4"];
-  
-              if (JSON.stringify(steps) === JSON.stringify(correctOrder)) {
-                  document.getElementById("feedback-order").textContent = "¡Correcto! Has ordenado bien los pasos.";
-                  dropzone.classList.add("correct");
-              } else {
-                  document.getElementById("feedback-order").textContent = "Inténtalo de nuevo. El orden no es correcto.";
-                  dropzone.classList.add("incorrect");
-                  setTimeout(() => dropzone.classList.remove("incorrect"), 1000);
-              }
-          });
-  
-          document.getElementById("resetGame").addEventListener("click", function() {
-              let dropzone = document.getElementById("dropzone");
-              let stepsContainer = document.getElementById("steps");
-              while (dropzone.firstChild) {
-                  stepsContainer.appendChild(dropzone.firstChild);
-              }
-              document.getElementById("feedback-order").textContent = "";
-              dropzone.classList.remove("correct", "incorrect");
-          });
-      </script>
     
     </section><!-- /Stats Section -->
 
@@ -504,153 +426,111 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">Todo</li>
-            <li data-filter=".filter-app">Mini tutoriales</li>
-            <li data-filter=".filter-product">Casos reales</li>
-            <li data-filter=".filter-branding">Descargables</li>
+            <li data-filter=".filter-video">Mini tutoriales</li>
+            <li data-filter=".filter-casos">Casos reales</li>
+            <li data-filter=".filter-descargables">Descargables</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+                <img src="img/tik_crear_BD_Access.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Creacion de Tablas</h4>
-                  <p>Este video te enseña a crear tablas en Access</p>
-                  <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Creación de BD</h4>
+                  <p>Crea tu primera Base de Datos en Access</p>
+                 <a href="videos/Creación_BD_Access.mp4" title="Video 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-casos">
+              <div class="portfolio-content h-100">
+                <img src="img/LOGO_ZURITA.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Laboratorios Zurita</h4>
+                  <p>Aprende como se aplica Access a un Laboratorio</p>
+                  <a href="img/LOGO_ZURITA.jpg" title="Laboratorio" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="detalles-laboratorio.html" title="Mas Detalles" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+                <img src="img/tik_crear_tabla_Acess.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Creación de Tablas</h4>
+                  <p>Crea tu primera tabla en Access</p>
+                  <a href="videos/Creación_Tabla_Access.mp4" title="Video 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+                <img src="img/tik_consulta_seleccion_Access.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Consulta de Selección</h4>
+                  <p>Crea tu consulta de selección en Acces</p>
+                  <a href="videos/Consulta_Selección_Access.mp4" title="Video 3" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+          
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-descargables">
+              <div class="portfolio-content h-100">
+                <img src="img/Descarga_Access.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Descarga Access</h4>
+                  <p>Te damos un lick de Acceso al instalador de Access</p>
+                  <a href="img/Descarga_Access.png" title="Descarga" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="LICK A DRIVE CON NSTALADOR" title="Mas detalles" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
+                <img src="img/tik_consulta_eliminar_Acess.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Consulta de Eliminar</h4>
+                  <p>Crea tu consulta de eliminar en Access</p>
+                  <a href="videos/Consulta_Eliminar_Access.mp4" title="Video 4" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
+                <img src="img/tik_consulta_Anexar_Access.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Consulta de Anexar</h4>
+                  <p>Crea tu consulta de anexar en Access</p>
+                  <a href="videos/Consulta_Anexar_Access.mp4" title="Video 5" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+                <img src="img/tik_consulta_Actualizacion_Access.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Consulta de Actualización</h4>
+                  <p>Crea tu consulta de actualización en Access</p>
+                  <a href="videos/Consulta_Actualizar_Acces.mp4" title="Video 6" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-casos">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
+                <img src="img/Banc_Logo.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <h4>Banco Pichincha</h4>
+                  <p>Aprende como se aplica Access a un Banco</p>
+                  <a href="img/Banc_Logo.jpg" title="Empresa" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="detalles-empresa.html" title="Mas Detalles" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
