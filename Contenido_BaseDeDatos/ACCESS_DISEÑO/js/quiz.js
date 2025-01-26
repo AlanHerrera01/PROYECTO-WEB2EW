@@ -219,6 +219,6 @@ function calculateResult() {
   });
 
   certificateBtn.addEventListener('click', function () {
-    window.location.href = "./certificate.html"; // Cambia esto a la página de certificado
+    window.location.href = "./Cetificado/certificate.html"; // Cambia esto a la página de certificado
   });
 }
