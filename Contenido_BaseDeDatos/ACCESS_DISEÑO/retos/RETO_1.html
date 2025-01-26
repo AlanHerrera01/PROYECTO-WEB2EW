@@ -92,7 +92,7 @@
         <li><a href="../indexContenido.html" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
         <li><a href="../indexContenido.html"><i class="bi bi-person navicon"></i>Conceptos Básicos</a></li>
         <li><a href="../indexContenido.html"><i class="bi bi-file-earmark-text navicon"></i> Base de Datos de Ejemplo</a></li>
-        <li><a href="../indexContenido.html"><i class="bi bi-images navicon"></i> Videos Tutoriales</a></li>
+        <li><a href="../indexContenido.html"><i class="bi bi-images navicon"></i> Recursos Interactivos</a></li>
         <li class="dropdown"><a href="../indexContenido.html"><i class="bi bi-menu-button navicon"></i> <span>Desafios y Retos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Reto 1</a></li>
@@ -151,55 +151,54 @@
     </div>
   </nav>
   <!-- Navbar End -->
-    <!-- About Section -->
-    <section id="about" class="about section">
-    <!-- Contenedor de introducción -->
-    <div id="start-container" class="container text-center my-5">
-      <h1>Juego 1: Identificar el Tipo de Campo</h1>
-      <p>
-          En este juego, debes asociar los conceptos con el tipo de campo correspondiente en Access.  
-          Hay cuatro conceptos y ocho opciones posibles, tanto correctas como incorrectas.  
-          Solo hay una respuesta correcta para cada concepto.  
-      </p>
-      <p>¿Estás listo para comenzar?</p>
-      <button id="start-btn" class="btn btn-primary">¡Iniciar Juego!</button>
+<!-- About Section -->
+<section id="about" class="about section">
+  <!-- Contenedor de introducción -->
+  <div id="start-container" class="container text-center my-5">
+    <h1>Juego 1: Identificar el Tipo de Campo</h1>
+    <p>
+      En este juego, debes asociar los conceptos con el tipo de campo correspondiente en Access.  
+      Hay cuatro conceptos y ocho opciones posibles, tanto correctas como incorrectas.  
+      Solo hay una respuesta correcta para cada concepto.  
+    </p>
+    <p>¿Estás listo para comenzar?</p>
+    <button id="start-btn" class="btn btn-primary">¡Iniciar Juego!</button>
   </div>
 
   <!-- Contenedor del juego -->
   <div id="game-container" class="container my-5" style="display: none;">
-      <div class="row mb-3">
-          <div class="col text-center">
-              <h2>Asocia los Conceptos con el Tipo de Campo Correcto</h2>
-              <p id="timer" class="text-danger fw-bold">Tiempo restante: 1:00</p>
-          </div>
+    <div class="row mb-3">
+      <div class="col text-center">
+        <h2>Asocia los Conceptos con el Tipo de Campo Correcto</h2>
+        <p id="timer" class="text-danger fw-bold">Tiempo restante: 1:00</p>
       </div>
-      <div class="row">
-          <!-- Conceptos -->
-          <div class="col-md-6">
-              <h4>Conceptos</h4>
-              <div id="conceptos-container" class="border p-3">
-                  <!-- Los conceptos se cargarán dinámicamente -->
-              </div>
-          </div>
-          <!-- Opciones -->
-          <div class="col-md-6">
-              <h4>Opciones</h4>
-              <div id="opciones-container" class="border p-3 d-flex flex-wrap">
-                  <!-- Las opciones se cargarán dinámicamente -->
-              </div>
-          </div>
+    </div>
+    <div class="row">
+      <!-- Conceptos -->
+      <div class="col-md-6">
+        <h4>Conceptos</h4>
+        <div id="conceptos-container" class="border p-3">
+          <!-- Los conceptos se cargarán dinámicamente -->
+        </div>
       </div>
-      <div class="text-center mt-4">
-          <button id="validate-btn" class="btn btn-success" disabled>Validar Respuestas</button>
-        <!-- Mensaje de resultado y botón de redirección -->
-        <div id="result-container" class="mt-4 text-center" style="display: none;">
-          <h3 id="result-message"></h3>
-          <button id="next-btn" class="btn btn-success mt-3" style="display: none;" onclick="window.location.href='retos/RETO%202.html'">
-              Siguiente reto
-          </button>
+      <!-- Opciones -->
+      <div class="col-md-6">
+        <h4>Opciones</h4>
+        <div id="opciones-container" class="border p-3 d-flex flex-wrap">
+          <!-- Las opciones se cargarán dinámicamente -->
+        </div>
       </div>
+    </div>
+    <div class="text-center mt-4">
+      <button id="validate-btn" class="btn btn-success" disabled>Validar Respuestas</button>
+      <!-- Mensaje de resultado y botón de redirección -->
+      <div id="result-container" class="mt-4 text-center" style="display: none;">
+        <h3 id="result-message"></h3>
+      </div>
+    </div>
   </div>
-    </section><!-- /About Section -->
+</section>
+
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
