@@ -59,16 +59,16 @@
     <link href="css/style.css" rel="stylesheet">
 
 
-
+    <link href="css/examen.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body class="index-page d-flex flex-column" style="height: 100vh;">
 
   
   <header id="header" class="header dark-background d-flex flex-column">
      
     <i class="header-toggle d-xl-none bi bi-list"></i>
- <!--
+ 
     <div class="profile-img">
       <img src="img/Logo_Access.png" alt="" class="img-fluid rounded-circle">
     </div>
@@ -102,7 +102,7 @@
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Examen Final</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Certificado </a></li>
       </ul>
-    </nav> -->
+    </nav> 
 
   </header>
     
@@ -137,58 +137,50 @@
   </nav>
   <!-- Navbar End -->
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="img/Fondo_Access.jpg" alt="" data-aos="fade-in" class="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2 style="color: white;">Bienvenido</h2>
-        <p> A su curso Access: <span class="typed" data-typed-items="Diseño, Creación, Gestión"> </span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+  <section id="exam-section" class="exam-section">
+    <div class="container">
+      <!-- Contexto del examen -->
+      <div id="context-container" class="context-container">
+        <h3>Examen Teorico de Microsoft Access</h3>
+        <p>Este examen consta de 20 preguntas relacionadas con Microsoft Access. Para aprobar, necesitas obtener al menos 14 respuestas correctas.</p>
+        <button id="startExamBtn" class="btn start-btn">Iniciar examen</button>
       </div>
-
-    </section><!-- /Hero Section -->
-
-    <div class="container mt-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Examen de Microsoft Access</h2>
-        <span id="timer" class="badge bg-danger fs-5">25:00</span>
+  
+      <!-- Examen -->
+      <div id="exam-container" class="hidden exam-container">
+        <div id="timer" class="timer">30:00</div>
+        <div id="questions" class="questions-container"></div>
+  
+        <!-- Botones dentro del contenedor de preguntas -->
+        <div class="nav-buttons">
+          <button id="previousBtn" class="btn previous-btn" style="display: none;">Anterior</button>
+          <button id="nextBtn" class="btn next-btn">Siguiente</button>
+        </div>
       </div>
-      <form id="quizForm">
-        <!-- Preguntas generadas dinámicamente por JavaScript -->
-      </form>
-      <button id="finishBtn" class="btn btn-success mt-4">Finalizar</button>
+  
+      <!-- Resultados -->
+      <div id="result-container" class="hidden result-container">
+        <p id="result-message" class="result-message"></p>
+        <div class="buttons-container">
+          <button id="retryBtn" class="btn retry-btn">Reintentar examen</button>
+          <button id="homeBtn" class="btn home-btn">Volver al inicio</button>
+          <button id="certificateBtn" class="btn certificate-btn" disabled>Obtener certificado</button>
+        </div>
+      </div>
     </div>
-    <script src="./js/questions.js"></script>
-    <script src="./js/quiz.js"></script>
+  </section>
+  
 
-<!--      About Section 
-    <section id="about" class="about section">
-
-      Section Title 
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>End Section Title 
-
-    </section> /About Section 
- -->
-
-  <footer id="footer" class="footer position-relative light-background">
-
+  <footer id="footer" class="footer position-relative light-background mt-auto">
     <div class="container">
       <div class="copyright text-center ">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Grupo02</strong> <span>Todo los derechos reservados</span></p>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
       </div>
     </div>
-
+  </footer>
   </footer>
 
   <!-- Scroll Top -->
@@ -211,6 +203,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="js/quiz.js"></script>
 
 </body>
 

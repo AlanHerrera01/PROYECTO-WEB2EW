@@ -1,55 +1,224 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const quizForm = document.getElementById("quizForm");
-    const timer = document.getElementById("timer");
-    const finishBtn = document.getElementById("finishBtn");
-  
-    let timeLeft = 25 * 60;
-  
-    // Renderizar preguntas
-    questions.forEach((q, index) => {
-      const questionDiv = document.createElement("div");
-      questionDiv.classList.add("mb-4");
-      questionDiv.innerHTML = `
-        <h5>${index + 1}. ${q.question}</h5>
-        ${q.options.map((opt, i) => `
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="q${index}" value="${i}" id="q${index}_${i}">
-            <label class="form-check-label" for="q${index}_${i}">${opt}</label>
-          </div>
-        `).join("")}
-      `;
-      quizForm.appendChild(questionDiv);
-    });
-  
-    // Temporizador
-    const timerInterval = setInterval(() => {
+// Definir las preguntas y las opciones de respuesta
+const questions = [
+  {
+    question: "¿Qué es una base de datos en Microsoft Access?",
+    options: ["Un conjunto de tablas", "Una hoja de cálculo", "Un documento de texto", "Un gráfico"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Cuál es el formato de archivo predeterminado de Access?",
+    options: [".xlsx", ".mdb", ".docx", ".pptx"],
+    correctAnswer: 1
+  },
+  {
+    question: "¿Qué es una tabla en Access?",
+    options: ["Un objeto para almacenar datos", "Un gráfico de barras", "Un reporte visual", "Un formulario de entrada"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué es una clave primaria?",
+    options: ["Un campo único para identificar registros", "Un tipo de consulta", "Una relación entre tablas", "Un reporte"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué es una consulta en Access?",
+    options: ["Una forma de analizar datos", "Un tipo de tabla", "Un formulario de ingreso", "Un campo de texto"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Cómo se pueden agregar registros a una tabla en Access?",
+    options: ["Usando formularios", "Con consultas", "Mediante relaciones", "Ambas anteriores"],
+    correctAnswer: 3
+  },
+  {
+    question: "¿Cuál es la función de un formulario en Access?",
+    options: ["Introducir datos en una tabla", "Mostrar los resultados de una consulta", "Guardar archivos en la base de datos", "Ninguna de las anteriores"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué es una relación entre tablas?",
+    options: ["Conectar dos tablas mediante campos comunes", "Una consulta que une los datos", "Un campo calculado", "Una forma de agrupar registros"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué tipo de datos puede tener una tabla?",
+    options: ["Texto", "Número", "Fecha y hora", "Todos los anteriores"],
+    correctAnswer: 3
+  },
+  {
+    question: "¿Qué hace una consulta de selección?",
+    options: ["Filtra y muestra datos según criterios", "Elimina datos de una tabla", "Actualiza registros en una tabla", "Crea un informe"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Cuál es la función principal de un informe en Access?",
+    options: ["Generar una vista de impresión de los datos", "Crear relaciones entre tablas", "Filtrar datos", "Registrar datos"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué es un índice en Access?",
+    options: ["Un campo que optimiza la búsqueda", "Una relación entre tablas", "Un formulario de entrada", "Un tipo de consulta"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Cuál de los siguientes no es un tipo de dato en Access?",
+    options: ["Texto", "Número", "Fecha", "Archivo adjunto"],
+    correctAnswer: 3
+  },
+  {
+    question: "¿Qué es una consulta de acción en Access?",
+    options: ["Modifica datos", "Muestra datos", "Solo consulta datos", "Crea tablas"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Cómo se pueden agregar condiciones en una consulta?",
+    options: ["Mediante el uso de filtros", "Utilizando expresiones matemáticas", "Con la función 'Order By'", "Ambas anteriores"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué es un campo calculado en Access?",
+    options: ["Un campo que realiza cálculos automáticamente", "Un campo de texto", "Un campo de imagen", "Un campo de fecha"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué es un formulario de búsqueda en Access?",
+    options: ["Permite buscar y filtrar registros en un formulario", "Muestra un informe de búsqueda", "Una forma de crear tablas", "Ninguna de las anteriores"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Qué es una base de datos relacional?",
+    options: ["Es una base de datos que almacena datos en tablas relacionadas", "Una base de datos de solo lectura", "Una base de datos que no permite relaciones", "Ninguna de las anteriores"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Cuál es la principal diferencia entre una tabla y una consulta?",
+    options: ["La tabla almacena datos, la consulta los busca", "La consulta almacena datos, la tabla los busca", "Ambas hacen lo mismo", "Ninguna de las anteriores"],
+    correctAnswer: 0
+  },
+  {
+    question: "¿Cómo se pueden crear relaciones entre dos tablas?",
+    options: ["Mediante campos comunes", "Usando consultas", "A través de formularios", "Con informes"],
+    correctAnswer: 0
+  },
+
+];
+
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let correctAnswers = 0;
+let timer;
+let timeLeft = 30 * 60; // 30 minutos en segundos
+
+const startExamBtn = document.getElementById('startExamBtn');
+const examContainer = document.getElementById('exam-container');
+const contextContainer = document.getElementById('context-container');
+const timerDisplay = document.getElementById('timer');
+const questionsContainer = document.getElementById('questions');
+const nextBtn = document.getElementById('nextBtn');
+const previousBtn = document.getElementById('previousBtn');
+const resultContainer = document.getElementById('result-container');
+const resultMessage = document.getElementById('result-message');
+const retryBtn = document.getElementById('retryBtn');
+const homeBtn = document.getElementById('homeBtn');
+const certificateBtn = document.getElementById('certificateBtn');
+
+// Iniciar examen
+startExamBtn.addEventListener('click', startExam);
+
+function startExam() {
+  contextContainer.style.display = 'none';
+  examContainer.style.display = 'block';
+  loadQuestion();
+  startTimer();
+}
+
+// Cargar preguntas
+function loadQuestion() {
+  const question = questions[currentQuestionIndex];
+  questionsContainer.innerHTML = `
+    <div class="question">
+      <h4>${question.question}</h4>
+      <div class="options">
+        ${question.options.map((option, index) => `
+          <label>
+            <input type="radio" name="question${currentQuestionIndex}" value="${index}" ${userAnswers[currentQuestionIndex] === index ? 'checked' : ''}>
+            ${option}
+          </label>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// Iniciar cronómetro
+function startTimer() {
+  timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      finishExam();
+    } else {
+      timeLeft--;
       const minutes = Math.floor(timeLeft / 60);
       const seconds = timeLeft % 60;
-      timer.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
-      timeLeft--;
-  
-      if (timeLeft < 0) {
-        clearInterval(timerInterval);
-        finishExam();
-      }
-    }, 1000);
-  
-    // Botón finalizar
-    finishBtn.addEventListener("click", finishExam);
-  
-    function finishExam() {
-      clearInterval(timerInterval);
-      const formData = new FormData(quizForm);
-      let score = 0;
-  
-      questions.forEach((q, index) => {
-        if (parseInt(formData.get(`q${index}`)) === q.correct) {
-          score++;
-        }
-      });
-  
-      localStorage.setItem("score", score);
-      window.location.href = "results.html";
+      timerDisplay.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+  }, 1000);
+}
+
+// Navegar entre preguntas
+nextBtn.addEventListener('click', function () {
+  const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+  if (selectedOption) {
+    userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+  }
+
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++;
+    loadQuestion();
+  } else {
+    finishExam();
+  }
+  previousBtn.style.display = 'block';
+});
+
+previousBtn.addEventListener('click', function () {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--;
+    loadQuestion();
+  }
+});
+
+function finishExam() {
+  clearInterval(timer);
+  examContainer.style.display = 'none';
+  resultContainer.style.display = 'block';
+  calculateResult();
+}
+
+// Calcular los resultados
+function calculateResult() {
+  correctAnswers = 0;
+  userAnswers.forEach((answer, index) => {
+    if (answer === questions[index].correctAnswer) {
+      correctAnswers++;
     }
   });
-  
+
+  resultMessage.innerHTML = `Obtuviste ${correctAnswers} de ${questions.length} respuestas correctas.`;
+
+  if (correctAnswers >= 14) {
+    certificateBtn.disabled = false;
+  }
+
+  retryBtn.addEventListener('click', function () {
+    location.reload();
+  });
+
+  homeBtn.addEventListener('click', function () {
+    window.location.href = "indexContenido.html"; // Cambia esto a la página de inicio
+  });
+
+  certificateBtn.addEventListener('click', function () {
+    window.location.href = "./certificate.html"; // Cambia esto a la página de certificado
+  });
+}
