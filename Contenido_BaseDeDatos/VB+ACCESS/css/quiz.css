@@ -1,50 +1,242 @@
-.quiz-container {
-    margin-top: 20px;
-    background: #fff;
-    border: solid;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  button {
-    background-color: #1500ff;
-    color: rgb(249, 249, 249);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  button:hover {
-    background-color: #d826267e;
-    color: black;
-  }
-  
-  .question {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .options label {
-    display: block;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  #results {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #007bff;
-  }
+/*ESTILOS DEL JUEGO*/
+/* Estilo del contenedor del juego */
+#game-container {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f0f8ff;
+}
 
- 
+/* Estilo de las burbujas */
+.burbujas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.bubble {
+  width: 150px;
+  height: 150px;
+  background: url("../img/burbuja.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: flotar 3s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+/* Animación de flotación de las burbujas */
+@keyframes flotar {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Efecto hover en burbuja */
+.bubble:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Estilo del texto de retroalimentación */
+#feedback {
+  text-align: center;
+  font-size: 18px;
+  color: green;
+  margin-top: 10px;
+}
+
+/* Estilo de la burbuja correcta */
+.bubble.correcta {
+  background-color: #28ffe6;
+  color: white;
+}
+
+/* Estilo del mensaje de fin de juego */
+.game-over {
+  display: none;
+  font-size: 2em;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin-top: 20px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.game-over.win {
+  background-color: #2ecc71;
+  color: rgb(0, 0, 0);
+  animation: pop-up 1s ease-out forwards;
+}
+
+.game-over.lose {
+  background-color: #e74c3c;
+  color: rgb(0, 0, 0);
+  animation: shake 0.5s ease-out forwards;
+}
+
+/* Animación de aparición para ganar */
+@keyframes pop-up {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animación de sacudida para perder */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Estilo del botón */
+.button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo de los resultados */
+.resultados {
+  margin-top: 30px;
+}
+
+.pez {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffddd2;
+  border: 2px solid #e63946;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #e63946;
+  font-weight: bold;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*DESAFIO CSS*/
+/*codigo desafio*/
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid #000;
+}
+
+.drag-item {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  background-color: rgba(0, 0, 255, 0.5);
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  cursor: move;
+}
+
+#infoMessage {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#botonEjercicios {
+  background-color: #22ad4567;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: background-color 0.3s;
+
+}
+
+#botonEjercicios:hover {
+  background-color: #1919d780;
+}
+
+#botonEjercicios :disabled {
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+
+.message {
+  display: none;
+  font-size: 18px;
+  color: green;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* Si deseas que los mensajes tengan estilos diferentes según el tipo de mensaje */
+#infoMessage {
+  background-color: #e0ffe0;
+}
+
+#infoDato {
+  background-color: #f0f0f0;
+}
+
+
+
