@@ -46,7 +46,7 @@
       <img src="img/Logo_Access.png" alt="" class="img-fluid rounded-circle">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <a href="#" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Bases de Datos</h1>
@@ -74,8 +74,8 @@
             <li><a href="./retos/RETO_4.html">Reto 4</a></li>
           </ul>
         </li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Examen Final</a></li>
-        <li><a href="#Certificado"><i class="bi bi-envelope navicon"></i> Certificado </a></li>
+        <li><a href="indexContenido.html#services"><i class="bi bi-hdd-stack navicon"></i> Examen Final</a></li>
+        <li><a href="indexContenido.html#Certificado"><i class="bi bi-envelope navicon"></i> Certificado </a></li>
       </ul>
     </nav>
 
@@ -144,7 +144,6 @@
               <div class="swiper-pagination"></div>
             </div>
           </div>
-
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
                 <h3>Información del Proyecto</h3>
@@ -155,13 +154,25 @@
                     <li><strong>URL del Proyecto</strong>: <a href="#">www.laboratorioszurita.com</a></li>
                 </ul>
             </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-                <h2>Optimización del Manejo de Registros Clínicos</h2>
-                <p>
-                    Laboratorios Zurita y Zurita utilizan Microsoft Access para gestionar eficientemente los registros médicos de sus pacientes, incluyendo resultados de exámenes, historiales clínicos y programación de citas. La base de datos facilita el acceso rápido a la información y permite la generación de reportes detallados para mejorar la atención al paciente.
-                </p>
-            </div>
         </div>
+        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+          <h2>Optimización del Manejo de Registros Clínicos</h2>
+          <p>
+              Laboratorios Zurita y Zurita utilizan Microsoft Access para gestionar eficientemente los registros médicos de sus pacientes, incluyendo resultados de exámenes, historiales clínicos y programación de citas. La base de datos facilita el acceso rápido a la información y permite la generación de reportes detallados para mejorar la atención al paciente.
+          </p>
+          <p>
+              La base de datos está estructurada en varias tablas interrelacionadas:
+          </p>
+          <ul>
+              <li><strong>Pacientes</strong>: Contiene información personal de los pacientes, como nombre, dirección, fecha de nacimiento y número de teléfono. Cada paciente tiene uno o más registros médicos asociados.</li>
+              <li><strong>Registros Médicos</strong>: Cada registro contiene detalles sobre los exámenes realizados, diagnósticos, tratamientos y observaciones. Está vinculado a un paciente mediante el *ID Paciente*.</li>
+              <li><strong>Citas Médicas</strong>: Almacena información sobre las citas médicas, incluyendo la fecha, el médico asignado, el motivo de la consulta, y el paciente relacionado mediante el *ID Paciente*.</li>
+              <li><strong>Exámenes de Laboratorio</strong>: Detalles de los exámenes de laboratorio realizados, como los resultados y la fecha en que se realizaron. Está asociado a un registro médico específico mediante el *ID Registro Médico*.</li>
+          </ul>
+          <p>
+              Gracias a estas relaciones, la base de datos de Laboratorios Zurita y Zurita mejora la gestión de la información clínica, proporcionando acceso rápido y seguro a los registros médicos, facilitando la programación de citas y mejorando la atención al paciente.
+          </p>
+      </div>
 
         </div>
 

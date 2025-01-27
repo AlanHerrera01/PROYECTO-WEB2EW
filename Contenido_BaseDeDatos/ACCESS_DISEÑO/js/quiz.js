@@ -168,6 +168,6 @@ function calculateResult() {
   });
 
   certificateBtn.addEventListener('click', function () {
-    window.location.href = "./Certificado/certificado.html"; // Cambia esto a la página de certificado
+    window.location.href = "certificado.html"; // Cambia esto a la página de certificado
   });
 }
