@@ -208,176 +208,317 @@
 
 <main class="container my-5 px-4 py-5">
   <section id="contenido" class="about section">
-          <div class="container section-title" data-aos="fade-up">
-            <h2>Conceptos Básicos de Microsoft Access</h2>
-            <p>Microsoft Access es una herramienta poderosa para gestionar bases de datos de manera eficiente. A continuación, exploraremos los temas fundamentales que necesitas conocer.</p>
-          </div>
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="accordion" id="accessAccordion"> 
-              <!-- Tema 1: Tablas -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTablas">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTablas" aria-expanded="true" aria-controls="collapseTablas">
-                    1. Tablas
-                  </button>
-                </h2>
-                <div id="collapseTablas" class="accordion-collapse collapse show" aria-labelledby="headingTablas" data-bs-parent="#accessAccordion">
-                  <div class="accordion-body text-center">
-                    <p>Las tablas son el componente principal de Access. Permiten almacenar datos de manera estructurada mediante filas y columnas.</p>
-                    <img src="img/Tablas_Access.jpg" class="img-fluid rounded shadow-sm mb-3" alt="Tablas en Access">
-                    <br>
-                    <button class="btn btn-primary" onclick="mostrarVideo('videoTablas')">Ver Video</button>
-                    <button class="btn btn-warning" onclick="mostrarEjercicio('ejercicioTablas')">Ejercicio Práctico</button>
-                    <div id="videoTablas" class="collapse mt-3">
-                      <video controls width="100%">
-                        <source src="videos/Creacion_Tabla_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
-                      </video>
-                    </div>
-                    <div id="ejercicioTablas" class="collapse mt-3">
-                      <p><strong>Ejercicio:</strong> Crea una tabla en Access para almacenar información de estudiantes e identifica la clave primaria.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Tema 2: Relaciones -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingRelaciones">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRelaciones" aria-expanded="false" aria-controls="collapseRelaciones">
-                    2. Relaciones
-                  </button>
-                </h2>
-                <div id="collapseRelaciones" class="accordion-collapse collapse" aria-labelledby="headingRelaciones" data-bs-parent="#accessAccordion">
-                  <div class="accordion-body text-center">
-                    <p>Las relaciones en Access permiten conectar diferentes tablas a través de campos comunes para una mejor organización de los datos.</p>
-                    <img src="img/Conceptos_Relaciones.png" class="img-fluid rounded shadow-sm mb-3" alt="Relaciones en Access">
-                    <br>
-                    <button class="btn btn-primary" onclick="mostrarVideo('videoRelaciones')">Ver Video</button>
-                    <button class="btn btn-warning" onclick="mostrarEjercicio('ejercicioRelaciones')">Ejercicio Práctico</button>
-                    <div id="videoRelaciones" class="collapse mt-3">
-                      <video controls width="100%">
-                        <source src="videos/Relaciones_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
-                      </video>
-                    </div>
-                    <div id="ejercicioRelaciones" class="collapse mt-3">
-                      <p><strong>Ejercicio:</strong> Define una relación uno a muchos entre una tabla de estudiantes y una tabla de cursos.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        
-              <!-- Tema 3: Tipos de Campo -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingCampos">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCampos" aria-expanded="false" aria-controls="collapseCampos">
-                    3. Tipos de Campo
-                  </button>
-                </h2>
-                <div id="collapseCampos" class="accordion-collapse collapse" aria-labelledby="headingCampos" data-bs-parent="#accessAccordion">
-                  <div class="accordion-body text-center">
-                    <p>Los tipos de campo en Access determinan la naturaleza de los datos que se pueden almacenar en una tabla.</p>
-                    <img src="img/Tipo_Datos.png" class="img-fluid rounded shadow-sm mb-3" alt="Tipos de Campos en Access">
-                    <br>
-                    <button class="btn btn-primary" onclick="mostrarVideo('videoCampos')">Ver Video</button>
-                    <button class="btn btn-warning" onclick="mostrarEjercicio('ejercicioCampos')">Ejercicio Práctico</button>
-                    <div id="videoCampos" class="collapse mt-3">
-                      <video controls width="100%">
-                        <source src="videos/Tipo_Dato.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
-                      </video>
-                    </div>
-                    <div id="ejercicioCampos" class="collapse mt-3">
-                      <p><strong>Ejercicio:</strong> Identifica qué tipo de campo usarías para almacenar datos de contactos en una base de datos.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <!-- Tema 4: Consultas -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingConsultas">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConsultas" aria-expanded="false" aria-controls="collapseConsultas">
-                    4. Consultas
-                  </button>
-                </h2>
-                <div id="collapseConsultas" class="accordion-collapse collapse" aria-labelledby="headingConsultas" data-bs-parent="#accessAccordion">
-                  <div class="accordion-body text-center">
-                    <p>Las consultas en Access permiten extraer información específica de una o varias tablas, facilitando el análisis de datos.</p>
-                    <img src="img/Consultas_Access.png" class="img-fluid rounded shadow-sm mb-3" alt="Consultas en Access">
-                    <br>
-                    <button class="btn btn-primary" onclick="mostrarVideo('videoConsultas')">Ver Video</button>
-                    <button class="btn btn-warning" onclick="mostrarEjercicio('ejercicioConsultas')">Ejercicio Práctico</button>
-                    <div id="videoConsultas" class="collapse mt-3">
-                      <video controls width="100%">
-                        <source src="videos/Consulta_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
-                      </video>
-                    </div>
-                    <div id="ejercicioConsultas" class="collapse mt-3">
-                      <p><strong>Ejercicio:</strong> Crea una consulta en Access para listar todos los estudiantes con calificación mayor a 80.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Conceptos Básicos de Microsoft Access</h2>
+    <p>Microsoft Access es una herramienta poderosa para gestionar bases de datos de manera eficiente. A continuación, exploraremos los temas fundamentales que necesitas conocer.</p>
+  </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="accordion" id="accessAccordion">
 
-              <!-- Tema 5: Formularios -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFormularios">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormularios" aria-expanded="false" aria-controls="collapseFormularios">
-                    5. Formularios
-                  </button>
-                </h2>
-                <div id="collapseFormularios" class="accordion-collapse collapse" aria-labelledby="headingFormularios" data-bs-parent="#accessAccordion">
-                  <div class="accordion-body text-center">
-                    <p>Los formularios en Access permiten una entrada de datos más amigable y organizada para los usuarios.</p>
-                    <img src="img/Formularios_Access.png" class="img-fluid rounded shadow-sm mb-3" alt="Formularios en Access">
-                    <br>
-                    <button class="btn btn-primary" onclick="mostrarVideo('videoFormularios')">Ver Video</button>
-                    <button class="btn btn-warning" onclick="mostrarEjercicio('ejercicioFormularios')">Ejercicio Práctico</button>
-                    <div id="videoFormularios" class="collapse mt-3">
-                      <video controls width="100%">
-                        <source src="videos/Formulario_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
-                      </video>
-                    </div>
-                    <div id="ejercicioFormularios" class="collapse mt-3">
-                      <p><strong>Ejercicio:</strong> Crea un formulario para ingresar datos de nuevos estudiantes en Access.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tema 6: Índices y Claves Primarias -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingIndices">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIndices" aria-expanded="false" aria-controls="collapseIndices">
-                    6. Índices y Claves Primarias
-                  </button>
-                </h2>
-                <div id="collapseIndices" class="accordion-collapse collapse" aria-labelledby="headingIndices" data-bs-parent="#accessAccordion">
-                  <div class="accordion-body text-center">
-                    <p>Las claves primarias garantizan la unicidad de los registros en Access, mientras que los índices mejoran la eficiencia de las consultas.</p>
-                    <img src="img/Indices_Access.png" class="img-fluid rounded shadow-sm mb-3" alt="Índices y Claves Primarias en Access">
-                    <br>
-                    <button class="btn btn-primary" onclick="mostrarVideo('videoIndices')">Ver Video</button>
-                    <button class="btn btn-warning" onclick="mostrarEjercicio('ejercicioIndices')">Ejercicio Práctico</button>
-                    <div id="videoIndices" class="collapse mt-3">
-                      <video controls width="100%">
-                        <source src="videos/Indices_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
-                      </video>
-                    </div>
-                    <div id="ejercicioIndices" class="collapse mt-3">
-                      <p><strong>Ejercicio:</strong> Define una clave primaria en una tabla de Access y crea un índice para mejorar la búsqueda.</p>
-                    </div>
-                  </div>
-                </div>
+      <!-- Tema 1: Tablas -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTablas">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTablas" aria-expanded="true" aria-controls="collapseTablas">
+            1. Tablas
+          </button>
+        </h2>
+        <div id="collapseTablas" class="accordion-collapse collapse show" aria-labelledby="headingTablas" data-bs-parent="#accessAccordion">
+          <div class="accordion-body text-center">
+            <p>Las tablas son el componente principal de Access. Permiten almacenar datos de manera estructurada mediante filas y columnas.</p>
+            <img src="img/Tabla_Access.jpg" class="img-fluid rounded shadow-sm mb-3" alt="Tablas en Access">
+            <br>
+            <button class="btn btn-primary" onclick="mostrarVideo('videoTablas')">Ver Video</button>
+            <div id="videoTablas" class="collapse mt-3">
+              <video controls width="100%">
+                <source src="videos/Creación_Tabla_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <!-- Subtemas de Tablas -->
+            <div class="mt-3">
+              <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#subtema1_2" aria-expanded="false" aria-controls="subtema1_2">Subtema: Establecer una Clave Primaria</button>
+              <div id="subtema1_2" class="collapse mt-2">
+                <p>Una clave primaria garantiza la unicidad de los registros dentro de la tabla.</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Tema 2: Tipos de Campo -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingCampos">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCampos" aria-expanded="false" aria-controls="collapseCampos">
+            2. Tipos de Campo
+          </button>
+        </h2>
+        <div id="collapseCampos" class="accordion-collapse collapse" aria-labelledby="headingCampos" data-bs-parent="#accessAccordion">
+          <div class="accordion-body text-center">
+            <p>Los tipos de campo en Access determinan la naturaleza de los datos que se pueden almacenar en una tabla.</p>
+            <br>
+            <button class="btn btn-primary" onclick="mostrarVideo('videoCampos')">Ver Video</button>
+            <div id="videoCampos" class="collapse mt-3">
+              <video controls width="100%">
+                <source src="videos/Tipo_Dato.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <!-- Subtema de Campos -->
+            <div class="mt-3">
+              <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#subtema2_1" aria-expanded="false" aria-controls="subtema2_1">Subtema: Tipos Comunes de Campos</button>
+              <div id="subtema2_1" class="collapse mt-2">
+                <p>Algunos tipos comunes incluyen Texto, Número, Fecha/Hora, y Booleano.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tema 3: Relaciones -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingRelaciones">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRelaciones" aria-expanded="false" aria-controls="collapseRelaciones">
+            3. Relaciones
+          </button>
+        </h2>
+        <div id="collapseRelaciones" class="accordion-collapse collapse" aria-labelledby="headingRelaciones" data-bs-parent="#accessAccordion">
+          <div class="accordion-body text-center">
+            <p>Las relaciones permiten conectar diferentes tablas a través de campos comunes.</p>
+            <img src="img/Conceptos_Relaciones.png" class="img-fluid rounded shadow-sm mb-3" alt="Relaciones en Access">
+            <br>
+            <button class="btn btn-primary" onclick="mostrarVideo('videoRelaciones')">Ver Video</button>
+            <div id="videoRelaciones" class="collapse mt-3">
+              <video controls width="100%">
+                <source src="videos/Relaciones_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <!-- Subtemas de Relaciones -->
+            <div class="mt-3">
+              <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#subtema3_1" aria-expanded="false" aria-controls="subtema3_1">Subtema: Relaciones Uno a Uno</button>
+              <div id="subtema3_1" class="collapse mt-2">
+                <p>En una relación uno a uno, cada registro de una tabla está relacionado con un solo registro de otra tabla.</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#subtema3_2" aria-expanded="false" aria-controls="subtema3_2">Subtema: Relaciones Uno a Muchos</button>
+              <div id="subtema3_2" class="collapse mt-2">
+                <p>En una relación uno a muchos, un registro en una tabla puede estar relacionado con múltiples registros en otra tabla.</p>
+              </div>
+            </div>
+            <div class="mt-3">
+              <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#subtema3_3" aria-expanded="false" aria-controls="subtema3_3">Subtema: Relaciones Muchos a Muchos</button>
+              <div id="subtema3_3" class="collapse mt-2">
+                <p>En una relación muchos a muchos, varios registros en una tabla pueden estar relacionados con varios registros en otra tabla.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tema 4: Formularios -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFormularios">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormularios" aria-expanded="false" aria-controls="collapseFormularios">
+            4. Formularios
+          </button>
+        </h2>
+        <div id="collapseFormularios" class="accordion-collapse collapse" aria-labelledby="headingFormularios" data-bs-parent="#accessAccordion">
+          <div class="accordion-body text-center">
+            <p>Los formularios en Access permiten una entrada de datos más amigable y organizada para los usuarios.</p>
+            <img src="img/Formulario_Access.jpg" class="img-fluid rounded shadow-sm mb-3" alt="Formularios en Access">
+            <br>
+            <button class="btn btn-primary" onclick="mostrarVideo('videoFormularios')">Ver Video</button>
+            <div id="videoFormularios" class="collapse mt-3">
+              <video controls width="100%">
+                <source src="videos/Formulario_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <!-- Subtemas de Formularios -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Tema 5: Consultas -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingConsultas">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConsultas" aria-expanded="false" aria-controls="collapseConsultas">
+            5. Consultas
+          </button>
+        </h2>
+        <div id="collapseConsultas" class="accordion-collapse collapse" aria-labelledby="headingConsultas" data-bs-parent="#accessAccordion">
+          <div class="accordion-body text-center">
+            <p>Las consultas en Access permiten extraer información específica de una o varias tablas.</p>
+            <img src="img/Consulta_Access.png" class="img-fluid rounded shadow-sm mb-3" alt="Consultas en Access">
+            <br>
+            <button class="btn btn-primary" onclick="mostrarVideo('videoConsultas')">Ver Video</button>
+            <div id="videoConsultas" class="collapse mt-3">
+              <video controls width="100%">
+                <source src="videos/Consulta_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <!-- Subtemas de Consultas -->
+            <div class="mt-3">
+              <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#subtema5_1" aria-expanded="false" aria-controls="subtema5_1">Subtema: Consultas de Selección</button>
+              <div id="subtema5_1" class="collapse mt-2">
+                <p>Las consultas de selección permiten obtener datos de las tablas mediante condiciones específicas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tema 6: Claves Primarias y Foráneas -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingIndices">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIndices" aria-expanded="false" aria-controls="collapseIndices">
+            6. Claves Primarias y Foráneas
+          </button>
+        </h2>
+        <div id="collapseIndices" class="accordion-collapse collapse" aria-labelledby="headingIndices" data-bs-parent="#accessAccordion">
+          <div class="accordion-body text-center">
+            <p>Las claves primarias y foráneas permiten establecer relaciones entre tablas y garantizar la integridad de los datos.</p>
+            <br>
+            <button class="btn btn-primary" onclick="mostrarVideo('videoIndices')">Ver Video</button>
+            <div id="videoIndices" class="collapse mt-3">
+              <video controls width="100%">
+                <source src="videos/Indices_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal para videos -->
+      <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Video Tutorial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeModal"></button>
+                </div>
+                <div class="modal-body">
+                    <video controls width="100%" id="videoModalSource">
+                        <source src="" type="video/mp4">Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+      </div>
   </section>
-  
+  <section id="drag-game" class="game section">
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+          <div class="col-md-8 col-lg-6">
+              <div class="card shadow-lg p-4 rounded-lg">
+                  <h2 class="text-center mb-4">Cuestionario de Microsoft Access</h2>
+                  <form id="quizForm">
+                      <div class="mb-3">
+                          <label for="q1" class="form-label">1. ¿Qué es una tabla en Microsoft Access?</label>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q1" value="a" id="q1a">
+                              <label class="form-check-label" for="q1a">
+                                  Un archivo de texto con datos
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q1" value="b" id="q1b">
+                              <label class="form-check-label" for="q1b">
+                                  Una colección de datos organizados en filas y columnas
+                              </label>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="q2" class="form-label">2. ¿Qué tipo de campo es utilizado para almacenar texto?</label>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q2" value="a" id="q2a">
+                              <label class="form-check-label" for="q2a">
+                                  Campo Fecha
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q2" value="b" id="q2b">
+                              <label class="form-check-label" for="q2b">
+                                  Campo de Texto
+                              </label>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="q3" class="form-label">3. ¿Qué es una clave primaria?</label>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q3" value="a" id="q3a">
+                              <label class="form-check-label" for="q3a">
+                                  Un campo único que identifica un registro
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q3" value="b" id="q3b">
+                              <label class="form-check-label" for="q3b">
+                                  Un campo que se utiliza para cálculos
+                              </label>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="q4" class="form-label">4. ¿Cómo se llama el enlace entre dos tablas?</label>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q4" value="a" id="q4a">
+                              <label class="form-check-label" for="q4a">
+                                  Relación
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q4" value="b" id="q4b">
+                              <label class="form-check-label" for="q4b">
+                                  Llave
+                              </label>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="q5" class="form-label">5. ¿Qué es una consulta?</label>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q5" value="a" id="q5a">
+                              <label class="form-check-label" for="q5a">
+                                  Una operación para obtener datos de una o más tablas
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q5" value="b" id="q5b">
+                              <label class="form-check-label" for="q5b">
+                                  Un formulario para ingresar datos
+                              </label>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="q6" class="form-label">6. ¿Qué es un formulario en Access?</label>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q6" value="a" id="q6a">
+                              <label class="form-check-label" for="q6a">
+                                  Una vista para visualizar los registros de la base de datos
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="q6" value="b" id="q6b">
+                              <label class="form-check-label" for="q6b">
+                                  Una interfaz para ingresar y modificar datos
+                              </label>
+                          </div>
+                      </div>
+                      <div class="text-center">
+                          <button type="button" class="btn btn-primary" onclick="checkAnswers()">Enviar Respuestas</button>
+                      </div>
+                  </form>
+                  <div id="result" class="mt-4 text-center"></div>
+              </div>
+          </div>
+      </div>
+  </div>    
+  </section> 
     <!-- Stats Section -->
     <section id="ejempl" class="stats section">
       <main class="container my-5">
         <section id="ejemplo" class="example section">
           <div class="container section-title" data-aos="fade-up">
-            <h2>Ejemplo de Creación de Base de Datos en Access</h2>
+            <h2>Ejemplo de Creación de Base de Datos en Access Clientes</h2>
             <p>¡Hola a todos! Bienvenidos a este tutorial donde aprenderemos a crear una base de datos desde cero en Microsoft Access. A lo largo del video, exploraremos los pasos esenciales para diseñar tu propia base de datos, creando tablas para almacenar información, formularios para facilitar la entrada de datos y reportes para visualizar esos datos de manera organizada.</p>
             <p>Este video está diseñado especialmente para principiantes, así que no te preocupes si nunca has trabajado con Access antes; aquí te guiaré en cada paso del proceso. ¡Prepárense para sumergirse en el mundo de las bases de datos y dar el primer paso hacia la gestión efectiva de la información! Así que, ¡empecemos!</p>
             <!-- Etiqueta de video -->
@@ -387,26 +528,6 @@
             </video>
           </div>
         </section>
-
-          <section id="drag-game" class="game section">
-              <div class="container section-title" data-aos="fade-up">
-                  <h2>Juego Interactivo: Ordena los Pasos</h2>
-                  <p>Arrastra los pasos en el orden correcto para crear una base de datos en Access.</p>
-                  <div class="dropzone" id="dropzone">Arrastra aquí los pasos en orden</div>
-                  <div id="steps">
-                      <div class="draggable" draggable="true" id="step2">Abrir Microsoft Access</div>
-                      <div class="draggable" draggable="true" id="step1">Crear una tabla</div>
-                      <div class="draggable" draggable="true" id="step3">Definir clave primaria</div>
-                      <div class="draggable" draggable="true" id="step4">Guardar la base de datos</div>
-                  </div>
-                  <button class="btn btn-success mt-3" id="checkOrder">Validar Orden</button>
-                  <button class="btn btn-secondary mt-3" id="resetGame">Volver a Intentar</button>
-                  <p id="feedback-order" class="mt-3"></p>
-              </div>
-          </section>
-  
-      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
     </section><!-- /Stats Section -->
 
     <!-- Recursos Interativos Section -->
@@ -680,7 +801,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="./js/conceptos.js"></script>
 </body>
 
 </html>
