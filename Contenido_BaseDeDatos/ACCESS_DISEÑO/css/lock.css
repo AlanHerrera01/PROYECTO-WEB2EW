@@ -4,10 +4,6 @@ body {
   background-color: #f4f7fa;
 }
 
-.container {
-  max-width: 720px;
-  margin: auto;
-}
 
 .accordion-button {
   background-color: #007bff;
@@ -84,12 +80,6 @@ img {
 }
  
 
-.card {
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-}
 
 h2 {
   font-size: 2rem;
@@ -138,3 +128,270 @@ button:hover {
 #result p {
   margin: 0;
 }
+
+/*cosas estrax*/
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-section,
+.result-section,
+.form-data-section,
+.data-display-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-item {
+  margin-bottom: 15px;
+}
+
+.form-item label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-item input, .form-item select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  border-color: red;
+}
+
+.result-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.result-table th, .result-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.result-table th {
+  background-color: #f2f2f2;
+}
+
+.result-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.result-table tbody tr:hover {
+  background-color: #e2e2e2;
+}
+
+/* Ajustes de disposición */
+.form-section {
+  grid-column: span 2;
+}
+
+.result-section {
+  grid-column: span 2;
+}
+
+.form-data-section {
+  grid-column: span 2;
+}
+
+.data-display-section {
+  grid-column: span 2;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* quiz*/
+/* Contenedor principal del cuestionario */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.quiz-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.quiz-column {
+  width: 100%;
+  max-width: 600px;
+}
+
+.quiz-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.quiz-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilo de cada pregunta */
+.quiz-question {
+  margin-bottom: 20px;
+}
+
+.quiz-label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Estilo para las opciones de respuestas */
+.quiz-option {
+  margin-bottom: 10px;
+}
+
+.quiz-input {
+  margin-right: 10px;
+}
+
+.quiz-option-label {
+  font-size: 16px;
+}
+
+/* Botón de enviar */
+.quiz-submit {
+  text-align: center;
+}
+
+.quiz-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Resultado */
+.quiz-result {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
+
+/*ques*/
+/* Contenedor de la sección */
+.quest {
+  padding: 50px 0;
+}
+
+/* Título de la sección */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Estilo para las tarjetas */
+.reto-card {
+  margin-bottom: 30px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 200px; /* Ajustar la altura de las imágenes */
+}
+
+.card-body {
+  padding: 15px;
+  flex-grow: 1; /* Esto asegura que el contenido de la tarjeta se expanda correctamente */
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Efecto de hover en las tarjetas */
+.reto-card:hover {
+  transform: translateY(-5px);
+}
+
+.reto-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Ajuste para las columnas en pantallas grandes y medianas */
+@media (min-width: 768px) {
+  .col-md-3 {
+      flex: 0 0 23%;
+      max-width: 23%;
+  }
+}
+
+/* Para pantallas pequeñas y móviles */
+@media (max-width: 767px) {
+  .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+

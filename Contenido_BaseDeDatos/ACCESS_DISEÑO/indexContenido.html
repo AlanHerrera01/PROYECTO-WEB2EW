@@ -202,7 +202,7 @@
       <h1>Microsoft Access</h1>
     </header>
 
-<main class="container my-5 px-4 py-5">
+<main class="container my-5 px-4 py5">
   <section id="contenido" class="about section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Conceptos Básicos de Microsoft Access</h2>
@@ -226,7 +226,7 @@
             <button class="btn btn-primary" onclick="mostrarVideo('videoTablas')">Ver Video</button>
             <div id="videoTablas" class="collapse mt-3">
               <video controls width="100%">
-                <source src="./videos/TABLA.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                <source src="videos/TABLA.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
               </video>
             </div>
             <!-- Subtemas de Tablas -->
@@ -352,12 +352,12 @@
               </video>
             </div>
             <!-- Subtemas de Consultas -->
-            <div class="mt-3">
+       <!--      <div class="mt-3">
               <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#subtema5_1" aria-expanded="false" aria-controls="subtema5_1">Subtema: Consultas de Selección</button>
               <div id="subtema5_1" class="collapse mt-2">
                 <p>Las consultas de selección permiten obtener datos de las tablas mediante condiciones específicas.</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -404,113 +404,98 @@
         </div>
       </div>
   </section>
+
   <section id="drag-game" class="game section">
-    <div class="container">
-      <div class="row justify-content-center mt-5">
-          <div class="col-md-8 col-lg-6">
-              <div class="card shadow-lg p-4 rounded-lg">
-                  <h2 class="text-center mb-4">Cuestionario de Microsoft Access</h2>
-                  <form id="quizForm">
-                      <div class="mb-3">
-                          <label for="q1" class="form-label">1. ¿Qué es una tabla en Microsoft Access?</label>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q1" value="a" id="q1a">
-                              <label class="form-check-label" for="q1a">
-                                  Un archivo de texto con datos
-                              </label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q1" value="b" id="q1b">
-                              <label class="form-check-label" for="q1b">
-                                  Una colección de datos organizados en filas y columnas
-                              </label>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                          <label for="q2" class="form-label">2. ¿Qué tipo de campo es utilizado para almacenar texto?</label>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q2" value="a" id="q2a">
-                              <label class="form-check-label" for="q2a">
-                                  Campo Fecha
-                              </label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q2" value="b" id="q2b">
-                              <label class="form-check-label" for="q2b">
-                                  Campo de Texto
-                              </label>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                          <label for="q3" class="form-label">3. ¿Qué es una clave primaria?</label>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q3" value="a" id="q3a">
-                              <label class="form-check-label" for="q3a">
-                                  Un campo único que identifica un registro
-                              </label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q3" value="b" id="q3b">
-                              <label class="form-check-label" for="q3b">
-                                  Un campo que se utiliza para cálculos
-                              </label>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                          <label for="q4" class="form-label">4. ¿Cómo se llama el enlace entre dos tablas?</label>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q4" value="a" id="q4a">
-                              <label class="form-check-label" for="q4a">
-                                  Relación
-                              </label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q4" value="b" id="q4b">
-                              <label class="form-check-label" for="q4b">
-                                  Llave
-                              </label>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                          <label for="q5" class="form-label">5. ¿Qué es una consulta?</label>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q5" value="a" id="q5a">
-                              <label class="form-check-label" for="q5a">
-                                  Una operación para obtener datos de una o más tablas
-                              </label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q5" value="b" id="q5b">
-                              <label class="form-check-label" for="q5b">
-                                  Un formulario para ingresar datos
-                              </label>
-                          </div>
-                      </div>
-                      <div class="mb-3">
-                          <label for="q6" class="form-label">6. ¿Qué es un formulario en Access?</label>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q6" value="a" id="q6a">
-                              <label class="form-check-label" for="q6a">
-                                  Una vista para visualizar los registros de la base de datos
-                              </label>
-                          </div>
-                          <div class="form-check">
-                              <input class="form-check-input" type="radio" name="q6" value="b" id="q6b">
-                              <label class="form-check-label" for="q6b">
-                                  Una interfaz para ingresar y modificar datos
-                              </label>
-                          </div>
-                      </div>
-                      <div class="text-center">
-                          <button type="button" class="btn btn-primary" onclick="checkAnswers()">Enviar Respuestas</button>
-                      </div>
-                  </form>
-                  <div id="result" class="mt-4 text-center"></div>
-              </div>
-          </div>
-      </div>
-  </div>    
-  </section> 
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Cuestionario de conceptos Basicos de Access</h2>
+      <p>¡Bienvenidos al quiz interactivo sobre la creación de bases de datos en Microsoft Access! En este ejercicio, pondremos a prueba tus conocimientos sobre la creación y gestión de bases de datos utilizando Access. A lo largo de las preguntas, se cubrirán conceptos como tablas, relaciones, claves primarias y foráneas, consultas y formularios, todos los cuales son esenciales al trabajar con bases de datos en Access.</p>
+      <p>Este quiz está dirigido a aquellos que están aprendiendo o desean reforzar su comprensión de cómo usar Microsoft Access para organizar y gestionar datos de manera efectiva. ¡Es el momento perfecto para aplicar lo que has aprendido y probar tus habilidades! Si alguna pregunta te resulta difícil, no te preocupes, las respuestas te ayudarán a comprender mejor el tema.</p>
+      <p>¡Comencemos y veamos qué tanto sabes sobre la creación de bases de datos en Access!</p>
+  </div>
+    <div class="quiz-container">
+        <div class="quiz-row">
+            <div class="quiz-column">
+                <div class="quiz-card">
+                    <h2 class="quiz-title">Cuestionario de Microsoft Access</h2>
+                    <form id="quizForm">
+                        <div class="quiz-question">
+                            <label for="q1" class="quiz-label">1. ¿Qué es una tabla en Microsoft Access?</label>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q1" value="a" id="q1a">
+                                <label class="quiz-option-label" for="q1a">Un archivo de texto con datos</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q1" value="b" id="q1b">
+                                <label class="quiz-option-label" for="q1b">Una colección de datos organizados en filas y columnas</label>
+                            </div>
+                        </div>
+                        <div class="quiz-question">
+                            <label for="q2" class="quiz-label">2. ¿Qué tipo de campo es utilizado para almacenar texto?</label>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q2" value="a" id="q2a">
+                                <label class="quiz-option-label" for="q2a">Campo Fecha</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q2" value="b" id="q2b">
+                                <label class="quiz-option-label" for="q2b">Campo de Texto</label>
+                            </div>
+                        </div>
+                        <div class="quiz-question">
+                            <label for="q3" class="quiz-label">3. ¿Qué es una clave primaria?</label>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q3" value="a" id="q3a">
+                                <label class="quiz-option-label" for="q3a">Un campo único que identifica un registro</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q3" value="b" id="q3b">
+                                <label class="quiz-option-label" for="q3b">Un campo que se utiliza para cálculos</label>
+                            </div>
+                        </div>
+                        <div class="quiz-question">
+                            <label for="q4" class="quiz-label">4. ¿Cómo se llama el enlace entre dos tablas?</label>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q4" value="a" id="q4a">
+                                <label class="quiz-option-label" for="q4a">Relación</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q4" value="b" id="q4b">
+                                <label class="quiz-option-label" for="q4b">Llave</label>
+                            </div>
+                        </div>
+                        <div class="quiz-question">
+                            <label for="q5" class="quiz-label">5. ¿Qué es una consulta?</label>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q5" value="a" id="q5a">
+                                <label class="quiz-option-label" for="q5a">Una operación para obtener datos de una o más tablas</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q5" value="b" id="q5b">
+                                <label class="quiz-option-label" for="q5b">Un formulario para ingresar datos</label>
+                            </div>
+                        </div>
+                        <div class="quiz-question">
+                            <label for="q6" class="quiz-label">6. ¿Qué es un formulario en Access?</label>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q6" value="a" id="q6a">
+                                <label class="quiz-option-label" for="q6a">Una vista para visualizar los registros de la base de datos</label>
+                            </div>
+                            <div class="quiz-option">
+                                <input class="quiz-input" type="radio" name="q6" value="b" id="q6b">
+                                <label class="quiz-option-label" for="q6b">Una interfaz para ingresar y modificar datos</label>
+                            </div>
+                        </div>
+                        <div class="quiz-submit">
+                            <button type="button" class="quiz-btn" onclick="checkAnswers()">Enviar Respuestas</button>
+                        </div>
+                    </form>
+                    <div id="result" class="quiz-result"></div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
+
+
     <!-- Stats Section -->
     <section id="ejempl" class="stats section">
       <main class="container my-5">
@@ -525,7 +510,64 @@
               Tu navegador no soporta la reproducción de videos. Por favor, utiliza un navegador actualizado.
             </video>
           </div>
-        </section>
+
+          <h1>Creación de Tablas en Access</h1>
+
+          <div class="container1">
+              <!-- Primer div: Creación de la tabla -->
+              <div class="form-section">
+                  <h2>Ejercicio 1: Crear Tabla</h2>
+                  <div class="form-item">
+                      <label for="tablaNombre">Nombre de la tabla:</label>
+                      <input type="text" id="tablaNombre" placeholder="Nombre de la tabla">
+                  </div>
+      
+                  <div class="form-item">
+                      <label for="campoNombre">Nombre del campo:</label>
+                      <input type="text" id="campoNombre" placeholder="Nombre del campo">
+                  </div>
+      
+                  <div class="form-item">
+                      <label for="tipoCampo">Tipo de campo:</label>
+                      <select id="tipoCampo">
+                          <option value="Texto">Texto</option>
+                          <option value="Número">Número</option>
+                          <option value="Fecha">Fecha</option>
+                          <option value="Sí/No">Sí/No</option>
+                          <option value="AutoNumérico">AutoNumérico</option>
+                      </select>
+                  </div>
+      
+                  <button onclick="agregarCampo()">Agregar Campo</button>
+                  <br><br>
+                  <button onclick="crearNuevaTabla()">Crear Otra Tabla</button>
+              </div>
+      
+              <!-- Segundo div: Resumen de la tabla creada -->
+              <div class="result-section">
+                  <h2>Resumen de la Tabla Creada</h2>
+                  <div id="tablaResumen"></div>
+              </div>
+      
+              <!-- Tercer div: Formulario de ingreso de datos -->
+              <div class="form-data-section">
+                  <h2>Formulario de Ingreso de Datos</h2>
+                  <div id="formIngreso"></div>
+                  <button onclick="guardarDatos()">Guardar</button>
+              </div>
+      
+              <!-- Cuarto div: Mostrar datos ingresados -->
+              <div class="data-display-section">
+                  <h2>Datos Ingresados</h2>
+                  <table id="tablaDatos" class="result-table">
+                      <thead>
+                          <tr id="cabeceraTabla"></tr>
+                      </thead>
+                      <tbody></tbody>
+                  </table>
+              </div>
+          </div>  
+  </section>
     </section><!-- /Stats Section -->
 
     <!-- Recursos Interativos Section -->
@@ -660,64 +702,63 @@
 
     </section><!-- /Portfolio Section -->
 
-    <!-- Recursos Interativos Section -->
-    <section id="quest" class="quest section light-background">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-          <h2>DESAFIOS Y RETOS</h2>
-          <p>¡Prepárate para poner a prueba tus conocimientos con Access! En esta sección, encontrarás juegos y retos interactivos diseñados para desafiarte y ayudarte a mejorar tu dominio de las bases de datos. ¿Estás listo para aceptar el reto?</p>
-      </div><!-- End Section Title -->
-      
-      <!-- Retos Section -->
-      <div class="container">
-          <div class="row">
-              <!-- Reto 1: Identificar el Tipo de Campo -->
-              <div class="col-md-6 col-lg-3">
-                  <div class="card" data-aos="fade-up">
-                      <img src="./img/RETO2.png" class="card-img-top" alt="Juego 1">
-                      <div class="card-body">
-                          <h5 class="card-title">Juego 1: Identificar el Tipo de Campo</h5>
-                          <p class="card-text">Asocia los tipos de datos correctos con situaciones específicas en Microsoft Access. ¡Demuestra tus conocimientos!</p>
-                      </div>
-                  </div>
-              </div>
-
-              <!-- Reto 2: Identificar la Relación que tienen las Tablas -->
-              <div class="col-md-6 col-lg-3">
-                  <div class="card" data-aos="fade-up">
-                      <img src="./img/RETO1.png" class="card-img-top" alt="Juego 2">
-                      <div class="card-body">
-                          <h5 class="card-title">Juego 2: Identificar la Relación que tienen las Tablas</h5>
-                          <p class="card-text">Analiza las tablas de una base de datos y encuentra cómo se relacionan entre sí para establecer conexiones adecuadas.</p>
-                      </div>
-                  </div>
-              </div>
-
-              <!-- Reto 3: Corregir Errores en la Base de Datos -->
-              <div class="col-md-6 col-lg-3">
-                  <div class="card" data-aos="fade-up">
-                      <img src="./img/RETO3.png" class="card-img-top" alt="Reto 1">
-                      <div class="card-body">
-                          <h5 class="card-title">Reto 1: Corregir Errores en la Base de Datos</h5>
-                          <p class="card-text">Identifica y soluciona los errores comunes en una base de datos, como registros duplicados o datos faltantes.</p>
-                      </div>
-                  </div>
-              </div>
-
-              <!-- Reto 4: Quiz de Access -->
-              <div class="col-md-6 col-lg-3">
-                  <div class="card" data-aos="fade-up">
-                      <img src="./img/RETO4.png" class="card-img-top" alt="Reto 2">
-                      <div class="card-body">
-                          <h5 class="card-title">Reto 2: Bienvenido al Quiz de Access</h5>
-                          <p class="card-text">Pon a prueba tu conocimiento con un cuestionario sobre Access. ¡Ve qué tan bien lo sabes!</p>
-                      </div>
+<!-- Recursos Interativos Section -->
+<section id="quest" class="quest section light-background">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+      <h2>DESAFIOS Y RETOS</h2>
+      <p>¡Prepárate para poner a prueba tus conocimientos con Access! En esta sección, encontrarás juegos y retos interactivos diseñados para desafiarte y ayudarte a mejorar tu dominio de las bases de datos. ¿Estás listo para aceptar el reto?</p>
+  </div><!-- End Section Title -->
+  
+  <!-- Retos Section -->
+  <div class="quiz-container ">
+      <div class="row">
+          <!-- Reto 1: Identificar el Tipo de Campo -->
+          <div class="col-12 col-sm-6 col-md-3 mb-4">
+              <div class="card reto-card" data-aos="fade-up">
+                  <img src="./img/RETO2.png" class="card-img-top" alt="Juego 1">
+                  <div class="card-body">
+                      <h5 class="card-title">Juego 1: Identificar el Tipo de Campo</h5>
+                      <p class="card-text">Asocia los tipos de datos correctos con situaciones específicas en Microsoft Access. ¡Demuestra tus conocimientos!</p>
                   </div>
               </div>
           </div>
-      </div><!-- End Retos Section -->
-    </section><!-- End Section -->
 
+          <!-- Reto 2: Identificar la Relación que tienen las Tablas -->
+          <div class="col-12 col-sm-6 col-md-3 mb-4">
+              <div class="card reto-card" data-aos="fade-up">
+                  <img src="./img/RETO1.png" class="card-img-top" alt="Juego 2">
+                  <div class="card-body">
+                      <h5 class="card-title">Juego 2: Identificar la Relación que tienen las Tablas</h5>
+                      <p class="card-text">Analiza las tablas de una base de datos y encuentra cómo se relacionan entre sí para establecer conexiones adecuadas.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Reto 3: Corregir Errores en la Base de Datos -->
+          <div class="col-12 col-sm-6 col-md-3 mb-4">
+              <div class="card reto-card" data-aos="fade-up">
+                  <img src="./img/RETO3.png" class="card-img-top" alt="Reto 1">
+                  <div class="card-body">
+                      <h5 class="card-title">Reto 1: Corregir Errores en la Base de Datos</h5>
+                      <p class="card-text">Identifica y soluciona los errores comunes en una base de datos, como registros duplicados o datos faltantes.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Reto 4: Quiz de Access -->
+          <div class="col-12 col-sm-6 col-md-3 mb-4">
+              <div class="card reto-card" data-aos="fade-up">
+                  <img src="./img/RETO4.png" class="card-img-top" alt="Reto 2">
+                  <div class="card-body">
+                      <h5 class="card-title">Reto 2: Bienvenido al Quiz de Access</h5>
+                      <p class="card-text">Pon a prueba tu conocimiento con un cuestionario sobre Access. ¡Ve qué tan bien lo sabes!</p>
+                  </div>
+              </div>
+          </div>
+      </div><!-- End Row -->
+  </div><!-- End Retos Section -->
+</section><!-- End Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">

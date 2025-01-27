@@ -59,6 +59,7 @@
       <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
       <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
+
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="indexContenido.html#hero" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
@@ -77,6 +78,7 @@
         <li><a href="indexContenido.html#Certificado"><i class="bi bi-envelope navicon"></i> Certificado </a></li>
       </ul>
     </nav>
+
   </header>
 
   <main class="main">
@@ -153,14 +155,25 @@
                     <li><strong>URL del Proyecto</strong>: <a href="#">www.bancopichincha.com</a></li>
                 </ul>
             </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-                <h2>Optimización de Datos Financieros</h2>
-                <p>
-                    Banco Pichincha utiliza Microsoft Access para gestionar información de clientes, cuentas bancarias y transacciones. La base de datos facilita la organización y seguridad de los datos financieros, permitiendo un acceso rápido a la información y asegurando la integridad en la administración de cuentas.
-                </p>
-            </div>
         </div>
-
+        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+          <h2>Optimización de Datos Financieros</h2>
+          <p>
+              Banco Pichincha utiliza Microsoft Access para gestionar información de clientes, cuentas bancarias y transacciones. La base de datos facilita la organización y seguridad de los datos financieros, permitiendo un acceso rápido a la información y asegurando la integridad en la administración de cuentas.
+          </p>
+          <p>
+              La base de datos está estructurada en varias tablas relacionadas entre sí:
+          </p>
+          <ul>
+              <li><strong>Clientes</strong>: Almacena la información personal de los clientes, como nombre, dirección y tipo de cliente. Cada cliente puede tener múltiples cuentas bancarias asociadas.</li>
+              <li><strong>Cuentas Bancarias</strong>: Cada cuenta está vinculada a un cliente mediante el *ID Cliente*, permitiendo gestionar las cuentas (por ejemplo, ahorros o corriente) y sus saldos.</li>
+              <li><strong>Transacciones</strong>: Las transacciones están asociadas a una cuenta específica mediante el *ID Cuenta*. Esto permite realizar un seguimiento de todas las transacciones (depósitos, retiros, transferencias) realizadas en las cuentas de los clientes.</li>
+          </ul>
+          <p>
+              Gracias a estas relaciones, la base de datos asegura la integridad de la información y permite un acceso eficiente a los datos financieros de los clientes, facilitando la generación de informes y el monitoreo de las transacciones.
+          </p>
+      </div>
+      
         </div>
 
       </div>
