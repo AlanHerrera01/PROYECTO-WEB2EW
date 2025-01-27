@@ -212,10 +212,23 @@
       <h2>Conceptos Básicos de Microsoft Access</h2>
       <p>Microsoft Access es una herramienta poderosa para gestionar bases de datos de manera eficiente. A continuación, exploraremos los temas fundamentales que necesitas conocer.</p>
     </div>
+<<<<<<< HEAD
     <div class="container" data-aos="fade-up" data-aos-delay="100">        
         <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4 ">
+=======
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <!-- Tema 1: Tablas -->
+      <div class="row gy-4 justify-content-center mt-5">
+        <div class="col-lg-4 text-center">
+          <img src="img/Tablas_Access.jpg" class="img-fluid rounded shadow-sm" alt="Tablas en Access">
+        </div>
+        
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4 ">
+                <div class="col-lg-4 text-center">
+>>>>>>> 8898f5978f5a28c8140dcda1043a69be0cb8f72d
                     <img src="img/Base_Datos_Seccion_Conceptos.jpg" class="img-fluid rounded shadow-sm" alt="Microsoft Access">
                 </div>
 
@@ -226,6 +239,7 @@
                         Es una herramienta de bases de datos relacionales desarrollada por Microsoft, utilizada para administrar grandes volúmenes de datos de manera estructurada.
                     </p>
                 </div>
+<<<<<<< HEAD
             </div>
         </div>  
       </div>
@@ -246,6 +260,149 @@
                 <h5>¿Qué son las Tablas?</h5>
                 <p>Son estructuras que contienen datos organizados en registros (filas) y campos (columnas).</p>
                 <img src="img/Tabla_Access.jpg" class="img-fluid rounded shadow-sm" alt="Ejemplo de Tabla">
+=======
+
+                <div class="accordion" id="accessConcepts">
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                              <strong>Elemento clave: <spam>Tablas</spam> </strong> 
+                          </button>
+                      </h2>
+                      <div id="collapseOne" style="text-align: center;" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Las tablas son la base del almacenamiento de datos en Access, organizadas en filas y columnas.</p>
+                              <img src="img/Tabla_Access.jpg" style="width: 65%;"  class="img-fluid rounded shadow-sm" alt="Ejemplo de Tabla en Access">
+                              <br></br>
+                              <p>Práctica: Crea una mini tabla simulada con los siguientes campos:</p>
+                              <form id="tableCreationForm">
+                                  <label for="field1">Campo 1:</label>
+                                  <input type="text" id="field1" required>
+                                  <label for="field2">Campo 2:</label>
+                                  <input type="text" id="field2" required>
+                                  <button type="submit" class="btn btn-success mt-2">Crear Tabla</button>
+                              </form>
+                              <div id="tableResult" class="mt-3"></div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                              <strong>Tipo de relación común:<spam> Uno a muchos</spam> </strong> 
+                          </button>
+                      </h2>
+                      <div id="collapseTwo" style="text-align: center;" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>En Access, la relación más utilizada es "uno a muchos", donde una tabla puede estar relacionada con múltiples registros en otra.
+                                Aunque existen otras relaciones como de "uno a uno" y de "muchos a muchos" </p>
+                              <img src="img/Relacion_Access.jpg" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Relaciones en Access">
+                              <br></br>
+                              <p>Juego: Identifica la relación correcta en este esquema:</p>
+                              <button class="btn btn-outline-primary">Uno a muchos</button>
+                              <button class="btn btn-outline-primary">Muchos a muchos</button>
+                              <button class="btn btn-outline-primary">Uno a uno</button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            <strong>Consultas:<span> Extraer y organizar datos</span></strong>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" style="text-align: center;" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                        <div class="accordion-body">
+                            <p>Las consultas permiten filtrar información específica en una base de datos.</p>
+                            <img src="img/Consulta_Access.png" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Consultas en Access">
+                            <br></br>
+                            <p>Juego: Selecciona el tipo de consulta correcto según el criterio dado.</p>
+                            <button class="btn btn-outline-primary query-game">Consulta de selección</button>
+                            <button class="btn btn-outline-primary query-game">Consulta de acción</button>
+                            <button class="btn btn-outline-primary query-game">Consulta de parámetros</button>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                              <strong>Claves Primarias: <span> Identificador de cada Tabla</span></strong> 
+                          </button>
+                      </h2>
+                      <div id="collapseFour" style="text-align: center;" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Las claves primarias definen los campos unicos que identificaran cada registro en cada tabla.
+                                Estas permitiran establecer relaciones entre tablas.</p>
+                                <img src="img/Clave_Primaria.jpg" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Clave Primaria en Access">
+                                <br></br>
+                                <p>Juego: ¿Cuál es la clave primaria de la Tabla 1 que se muestra en la imagen?</p> 
+                              <button class="btn btn-outline-primary query-game">IdEstudiante</button>
+                              <button class="btn btn-outline-primary query-game">Nombre</button>
+                              <button class="btn btn-outline-primary query-game">Dirección</button>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                              <strong>Formularios: <span> Introducir y visualizar datos</span></strong>
+                          </button>
+                      </h2>
+                      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Los formularios en Access permiten la entrada y visualización de datos de una manera estructurada y amigable.</p>
+                              <p>Estos ayudan a los usuarios a interactuar con la base de datos sin necesidad de acceder directamente a las tablas, proporcionando una interfaz clara y ordenada.</p>
+                              <img src="img/Formulario_Access.jpg" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Formulario en Access">
+                              <p>Juego: Identifica los elementos correctos de un formulario.</p>
+                              <button class="btn btn-outline-primary">Campos de entrada</button>
+                              <button class="btn btn-outline-primary">Gráfico de barras</button>
+                              <button class="btn btn-outline-primary">Relaciones</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                              <strong>Informes: <span> Presentación y análisis de datos</span></strong>
+                          </button>
+                      </h2>
+                      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Los informes permiten generar documentos organizados para presentar los datos almacenados en la base de datos.</p>
+                              <p>Son utilizados para visualizar información de manera estructurada, facilitando la impresión y análisis de datos críticos.</p>
+                              <img src="img/Informe_Access.jpg" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Informe en Access">
+                              <p>Juego: ¿Cuál de estas opciones es una funcionalidad de un informe?</p>
+                              <button class="btn btn-outline-primary">Filtrar datos</button>
+                              <button class="btn btn-outline-primary">Mostrar datos en formato impreso</button>
+                              <button class="btn btn-outline-primary">Crear una nueva tabla</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+                              <strong>Índices: <span> Optimización de búsqueda</span></strong>
+                          </button>
+                      </h2>
+                      <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accessConcepts">
+                          <div class="accordion-body">
+                              <p>Los índices permiten acelerar la búsqueda y recuperación de datos en una tabla.</p>
+                              <p>Ayudan a optimizar las consultas en grandes volúmenes de información, mejorando la eficiencia de la base de datos.</p>
+                              <img src="img/Indice_Access.gif" style="width: 65%;" class="img-fluid rounded shadow-sm" alt="Índices en Access">
+                              <p>Juego: ¿Qué hace un índice en una base de datos?</p>
+                              <button class="btn btn-outline-primary">Optimizar la búsqueda</button>
+                              <button class="btn btn-outline-primary">Eliminar registros</button>
+                              <button class="btn btn-outline-primary">Crear relaciones</button>
+                          </div>
+                      </div>
+                  </div>
+
+                  </div>
+                </div>
+>>>>>>> 8898f5978f5a28c8140dcda1043a69be0cb8f72d
               </div>
               <div class="col-md-6 mb-3">
                 <h5>Cómo crear Tablas</h5>
