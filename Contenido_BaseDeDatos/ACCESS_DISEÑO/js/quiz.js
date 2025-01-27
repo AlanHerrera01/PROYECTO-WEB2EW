@@ -26,18 +26,8 @@ const questions = [
     correctAnswer: 0
   },
   {
-    question: "¿Cómo se pueden agregar registros a una tabla en Access?",
-    options: ["Usando formularios", "Con consultas", "Mediante relaciones", "Ambas anteriores"],
-    correctAnswer: 3
-  },
-  {
     question: "¿Cuál es la función de un formulario en Access?",
     options: ["Introducir datos en una tabla", "Mostrar los resultados de una consulta", "Guardar archivos en la base de datos", "Ninguna de las anteriores"],
-    correctAnswer: 0
-  },
-  {
-    question: "¿Qué es una relación entre tablas?",
-    options: ["Conectar dos tablas mediante campos comunes", "Una consulta que une los datos", "Un campo calculado", "Una forma de agrupar registros"],
     correctAnswer: 0
   },
   {
@@ -46,44 +36,9 @@ const questions = [
     correctAnswer: 3
   },
   {
-    question: "¿Qué hace una consulta de selección?",
-    options: ["Filtra y muestra datos según criterios", "Elimina datos de una tabla", "Actualiza registros en una tabla", "Crea un informe"],
-    correctAnswer: 0
-  },
-  {
-    question: "¿Cuál es la función principal de un informe en Access?",
-    options: ["Generar una vista de impresión de los datos", "Crear relaciones entre tablas", "Filtrar datos", "Registrar datos"],
-    correctAnswer: 0
-  },
-  {
-    question: "¿Qué es un índice en Access?",
-    options: ["Un campo que optimiza la búsqueda", "Una relación entre tablas", "Un formulario de entrada", "Un tipo de consulta"],
-    correctAnswer: 0
-  },
-  {
     question: "¿Cuál de los siguientes no es un tipo de dato en Access?",
     options: ["Texto", "Número", "Fecha", "Archivo adjunto"],
     correctAnswer: 3
-  },
-  {
-    question: "¿Qué es una consulta de acción en Access?",
-    options: ["Modifica datos", "Muestra datos", "Solo consulta datos", "Crea tablas"],
-    correctAnswer: 0
-  },
-  {
-    question: "¿Cómo se pueden agregar condiciones en una consulta?",
-    options: ["Mediante el uso de filtros", "Utilizando expresiones matemáticas", "Con la función 'Order By'", "Ambas anteriores"],
-    correctAnswer: 0
-  },
-  {
-    question: "¿Qué es un campo calculado en Access?",
-    options: ["Un campo que realiza cálculos automáticamente", "Un campo de texto", "Un campo de imagen", "Un campo de fecha"],
-    correctAnswer: 0
-  },
-  {
-    question: "¿Qué es un formulario de búsqueda en Access?",
-    options: ["Permite buscar y filtrar registros en un formulario", "Muestra un informe de búsqueda", "Una forma de crear tablas", "Ninguna de las anteriores"],
-    correctAnswer: 0
   },
   {
     question: "¿Qué es una base de datos relacional?",
@@ -95,12 +50,6 @@ const questions = [
     options: ["La tabla almacena datos, la consulta los busca", "La consulta almacena datos, la tabla los busca", "Ambas hacen lo mismo", "Ninguna de las anteriores"],
     correctAnswer: 0
   },
-  {
-    question: "¿Cómo se pueden crear relaciones entre dos tablas?",
-    options: ["Mediante campos comunes", "Usando consultas", "A través de formularios", "Con informes"],
-    correctAnswer: 0
-  },
-
 ];
 
 let currentQuestionIndex = 0;
