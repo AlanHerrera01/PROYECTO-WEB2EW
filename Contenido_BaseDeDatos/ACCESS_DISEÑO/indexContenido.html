@@ -107,7 +107,7 @@
       <img src="img/Logo_Access.png" alt="" class="img-fluid rounded-circle">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <a href="indexContenido.html" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Bases de Datos</h1>
@@ -143,12 +143,9 @@
   </header>
     
   <main class="main">
-   
-    
-
   <!-- Navbar Start -->
   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="./indexContenido.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <a href="/indexhome.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>PROYECTO WEB</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -156,7 +153,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="../indexHOME.html" class="nav-item nav-link">INICIO</a>
+            <a href="/indexhome.html" class="nav-item nav-link">INICIO</a>
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Programacion</a>
               <div class="dropdown-menu fade-down m-0">
@@ -169,19 +166,18 @@
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">REDES</a>
             <div class="dropdown-menu fade-down m-0">
-                <a href="team.html" class="dropdown-item">Medios de Conexion</a>
-                <a href="testimonial.html" class="dropdown-item">Redes LAN</a>
-                <a href="404.html" class="dropdown-item">Internet</a>
+                <a href="/Contenido_Redes/MEDIOSCONEXION/indexContenido.html" class="dropdown-item">Medios de Conexion</a>
+                <a href="/Contenido_Redes/REDESLAN/indexContenido.html" class="dropdown-item">Redes LAN</a>
+                <a href="/Contenido_Redes/INTERNET-SERVICIOS/indexContenido.html" class="dropdown-item">Internet</a>
             </div>
-            
-        </div>
+          </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">BASE DE DATOS</a>
-                <div class="dropdown-menu fade-down m-0">
-                    <a href="../ACCESS_DISEÑO/indexContenido.html" class="dropdown-item">Acces</a>
-                    <a href="../VB+ACCESS/indexContenido.html" class="dropdown-item">Visual Basic + Access</a>
-                    <a href="../RDBMS-MYSQL(WORBECH)/indexContenido.html" class="dropdown-item">RDBMS - MySQL WorkBench</a>
-                </div>
+              <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">BASE DE DATOS</a>
+              <div class="dropdown-menu fade-down m-0">
+                  <a href="../ACCESS_DISEÑO/indexContenido.html" class="dropdown-item">Acces</a>
+                  <a href="../VB+ACCESS/indexContenido.html" class="dropdown-item">Visual Basic + Access</a>
+                  <a href="../RDBMS-MYSQL(WORBECH)/indexContenido.html" class="dropdown-item">RDBMS - MySQL WorkBench</a>
+              </div>
             </div>
         </div>
         <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
@@ -230,7 +226,7 @@
             <button class="btn btn-primary" onclick="mostrarVideo('videoTablas')">Ver Video</button>
             <div id="videoTablas" class="collapse mt-3">
               <video controls width="100%">
-                <source src="videos/Creación_Tabla_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                <source src="./videos/TABLA.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
               </video>
             </div>
             <!-- Subtemas de Tablas -->
@@ -254,11 +250,12 @@
         <div id="collapseCampos" class="accordion-collapse collapse" aria-labelledby="headingCampos" data-bs-parent="#accessAccordion">
           <div class="accordion-body text-center">
             <p>Los tipos de campo en Access determinan la naturaleza de los datos que se pueden almacenar en una tabla.</p>
+            <img src="img/Tipo_Datos.png" class="img-fluid rounded shadow-sm mb-3" alt="Tablas en Access">
             <br>
             <button class="btn btn-primary" onclick="mostrarVideo('videoCampos')">Ver Video</button>
             <div id="videoCampos" class="collapse mt-3">
               <video controls width="100%">
-                <source src="videos/Tipo_Dato.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                <source src="videos/Tipos.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
               </video>
             </div>
             <!-- Subtema de Campos -->
@@ -375,11 +372,12 @@
         <div id="collapseIndices" class="accordion-collapse collapse" aria-labelledby="headingIndices" data-bs-parent="#accessAccordion">
           <div class="accordion-body text-center">
             <p>Las claves primarias y foráneas permiten establecer relaciones entre tablas y garantizar la integridad de los datos.</p>
+            <img src="./img/extra.png" class="img-fluid rounded shadow-sm mb-3" alt="Consultas en Access">
             <br>
             <button class="btn btn-primary" onclick="mostrarVideo('videoIndices')">Ver Video</button>
             <div id="videoIndices" class="collapse mt-3">
               <video controls width="100%">
-                <source src="videos/Indices_Access.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                <source src="./videos/Foraneas_clave.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
               </video>
             </div>
           </div>
