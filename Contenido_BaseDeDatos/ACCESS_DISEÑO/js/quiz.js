@@ -56,7 +56,7 @@ let currentQuestionIndex = 0;
 let userAnswers = [];
 let correctAnswers = 0;
 let timer;
-let timeLeft = 30 * 60; // 30 minutos en segundos
+let timeLeft = 10 * 60; // 30 minutos en segundos
 
 const startExamBtn = document.getElementById('startExamBtn');
 const examContainer = document.getElementById('exam-container');
@@ -155,7 +155,7 @@ function calculateResult() {
 
   resultMessage.innerHTML = `Obtuviste ${correctAnswers} de ${questions.length} respuestas correctas.`;
 
-  if (correctAnswers >= 14) {
+  if (correctAnswers >= 7) {
     certificateBtn.disabled = false;
   }
 
