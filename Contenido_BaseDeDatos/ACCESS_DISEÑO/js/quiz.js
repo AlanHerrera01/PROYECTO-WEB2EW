@@ -56,7 +56,7 @@ let currentQuestionIndex = 0;
 let userAnswers = [];
 let correctAnswers = 0;
 let timer;
-let timeLeft = 10 * 60; // 30 minutos en segundos
+let timeLeft = 6 * 60; // 30 minutos en segundos
 
 const startExamBtn = document.getElementById('startExamBtn');
 const examContainer = document.getElementById('exam-container');
@@ -168,6 +168,6 @@ function calculateResult() {
   });
 
   certificateBtn.addEventListener('click', function () {
-    window.location.href = "./Cetificado/certificate.html"; // Cambia esto a la página de certificado
+    window.location.href = "./Certificado/certificado.html"; // Cambia esto a la página de certificado
   });
 }
