@@ -92,7 +92,7 @@
         <li><a href="../indexContenido.html" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
         <li><a href="../indexContenido.html"><i class="bi bi-person navicon"></i>Conceptos Básicos</a></li>
         <li><a href="../indexContenido.html"><i class="bi bi-file-earmark-text navicon"></i> Base de Datos de Ejemplo</a></li>
-        <li><a href="../indexContenido.html"><i class="bi bi-images navicon"></i> Videos Tutoriales</a></li>
+        <li><a href="../indexContenido.html"><i class="bi bi-images navicon"></i> Recursos Interactivos</a></li>
         <li class="dropdown"><a href="../indexContenido.html"><i class="bi bi-menu-button navicon"></i> <span>Desafios y Retos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="./RETO_1.html">Reto 1</a></li>
@@ -169,49 +169,52 @@
     </section> /Hero Section --> 
 
     <!-- About Section -->
-    <section id="about" class="about section">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h1>Reto: Corregir Errores en la Base de Datos</h1>
-          <p>En este reto, tu tarea es corregir los errores en una base de datos de clientes. Algunas filas tienen datos erróneos que debes corregir para pasar al siguiente reto. Si corriges más del 80% de los errores, podrás avanzar.</p>
-          <button id="startBtn" class="btn btn-primary">Iniciar Reto</button>
+<!-- About Section -->
+<section id="about" class="about section">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h1>Reto: Corregir Errores en la Base de Datos</h1>
+      <p>
+        En este reto, tu tarea es corregir los errores en una base de datos de clientes. Algunas filas tienen datos erróneos que debes corregir para pasar al siguiente reto. Si corriges más del 80% de los errores, podrás avanzar.
+      </p>
+      <button id="startBtn" class="btn btn-primary">Iniciar Reto</button>
+    </div>
+
+    <div id="gameArea" class="card" style="display: none;">
+      <div class="card-body">
+        <h4>Lista de Clientes con Errores</h4>
+        <div class="table-wrapper">
+          <table class="table table-bordered" id="clientsTable">
+            <thead>
+              <tr>
+                <th>Cliente ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo Electrónico</th>
+                <th>Fecha de Registro</th>
+                <th>Edad</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí se cargarán dinámicamente los registros -->
+            </tbody>
+          </table>
         </div>
-    
-        <div id="gameArea" class="card" style="display: none;">
-          <div class="card-body">
-            <h4>Lista de Clientes con Errores</h4>
-            <div class="table-wrapper">
-              <table class="table table-bordered" id="clientsTable">
-                <thead>
-                  <tr>
-                    <th>Cliente ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Correo Electrónico</th>
-                    <th>Fecha de Registro</th>
-                    <th>Edad</th>
-                    <th>Acción</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Aquí se cargarán dinámicamente los registros -->
-                </tbody>
-              </table>
-            </div>
-            <button id="submitBtn" class="btn btn-success mt-3">Enviar Correcciones</button>
-          </div>
-        </div>
-    
-    
-        <div id="result" style="display: none;" class="mt-4">
-          <p id="resultText"></p>
-          <div id="nextButtonContainer" class="d-none">
-            <a href="RETO_4.html" class="btn btn-primary">Siguiente Reto</a>
-          </div>
-          <button id="restartBtn" class="btn btn-warning mt-3">Reiniciar Juego</button>
-        </div>
+        <button id="submitBtn" class="btn btn-success mt-3">Enviar Correcciones</button>
       </div>
-    </section><!-- /About Section -->
+    </div>
+
+    <div id="result" style="display: none;" class="mt-4">
+      <p id="resultText"></p>
+      <div id="nextButtonContainer" class="d-none">
+        <a href="RETO_4.html" class="btn btn-primary">Siguiente Reto</a>
+      </div>
+      <button id="restartBtn" class="btn btn-warning mt-3">Reiniciar Juego</button>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
