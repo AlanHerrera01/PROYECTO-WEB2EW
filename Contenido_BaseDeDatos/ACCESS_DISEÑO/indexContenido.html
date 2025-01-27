@@ -212,7 +212,6 @@
       <h2>Conceptos Básicos de Microsoft Access</h2>
       <p>Microsoft Access es una herramienta poderosa para gestionar bases de datos de manera eficiente. A continuación, exploraremos los temas fundamentales que necesitas conocer.</p>
     </div>
-  
     <div class="container" data-aos="fade-up" data-aos-delay="100">
       <!-- Tema 1: Tablas -->
       <div class="row gy-4 justify-content-center mt-5">
@@ -221,9 +220,7 @@
         </div>
         <div class="col-lg-8 content">
           <h2>1. Tablas</h2>
-          <p class="fst-italic py-3">
-            Las tablas son el componente principal donde se almacenan los datos en Access, organizados en filas y columnas.
-          </p>
+          <p class="fst-italic py-3">Las tablas son el componente principal donde se almacenan los datos en Access, organizados en filas y columnas.</p>
           <button class="btn btn-primary mt-2" data-bs-toggle="collapse" data-bs-target="#tablasSection">
             Ver más sobre Tablas
           </button>
@@ -238,12 +235,16 @@
                 <h5>Cómo crear Tablas</h5>
                 <p>Puedes crear tablas definiendo los campos y tipos de datos requeridos. Ejemplo: almacenar información de estudiantes.</p>
                 <video controls width="100%">
-                  <source src="videos/Crear_Tablas.mp4" type="video/mp4">
-                  Tu navegador no soporta el elemento de video.
+                  <source src="videos/Crear_Tablas.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
                 </video>
               </div>
             </div>
-            <button class="btn btn-warning mt-3">Aprendamos Jugando</button>
+            <button class="btn btn-warning mt-3" onclick="startGame('Tablas')">Aprendamos Jugando</button>
+            <div id="gameTablas" class="collapse mt-3">
+              <h5>Juego Interactivo: ¿Qué tipo de datos usarías para almacenar "Nombre del Estudiante"?</h5>
+              <button class="btn btn-success" onclick="checkAnswer('Tablas', 'Texto corto')">Texto corto</button>
+              <button class="btn btn-danger" onclick="checkAnswer('Tablas', 'Número')">Número</button>
+            </div>
           </div>
         </div>
       </div>
@@ -255,9 +256,7 @@
         </div>
         <div class="col-lg-8 content">
           <h2>2. Relaciones</h2>
-          <p class="fst-italic py-3">
-            Las relaciones conectan tablas mediante campos comunes, permitiendo gestionar datos vinculados de manera eficiente.
-          </p>
+          <p class="fst-italic py-3">Las relaciones conectan tablas mediante campos comunes, permitiendo gestionar datos vinculados de manera eficiente.</p>
           <button class="btn btn-primary mt-2" data-bs-toggle="collapse" data-bs-target="#relacionesSection">
             Ver más sobre Relaciones
           </button>
@@ -272,12 +271,16 @@
                 <h5>Cómo establecer Relaciones</h5>
                 <p>Define relaciones desde el diseñador de relaciones, asegurándote de establecer claves primarias y foráneas.</p>
                 <video controls width="100%">
-                  <source src="videos/Establecer_Relaciones.mp4" type="video/mp4">
-                  Tu navegador no soporta el elemento de video.
+                  <source src="videos/Establecer_Relaciones.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
                 </video>
               </div>
             </div>
-            <button class="btn btn-warning mt-3">Aprendamos Jugando</button>
+            <button class="btn btn-warning mt-3" onclick="startGame('Relaciones')">Aprendamos Jugando</button>
+            <div id="gameRelaciones" class="collapse mt-3">
+              <h5>Juego Interactivo: Elige el tipo de relación correcto</h5>
+              <button class="btn btn-success" onclick="checkAnswer('Relaciones', 'Uno a Muchos')">Uno a Muchos</button>
+              <button class="btn btn-danger" onclick="checkAnswer('Relaciones', 'Muchos a Muchos')">Muchos a Muchos</button>
+            </div>
           </div>
         </div>
       </div>
@@ -285,48 +288,35 @@
       <!-- Tema 3: Tipos de Campos -->
       <div class="row gy-4 justify-content-center mt-5">
         <div class="col-lg-4 text-center">
-          <img src="img/Tipos_Campos.jpg" class="img-fluid rounded shadow-sm" alt="Tipos de Campos en Access">
+          <img src="img/Tipos_Campos_Access.jpg" class="img-fluid rounded shadow-sm" alt="Tipos de Campos en Access">
         </div>
         <div class="col-lg-8 content">
           <h2>3. Tipos de Campos</h2>
-          <p class="fst-italic py-3">
-            Los tipos de campos definen el formato de los datos que puedes almacenar, como texto, números o fechas.
-          </p>
+          <p class="fst-italic py-3">Los campos en Access definen el tipo de dato que puede almacenarse. Existen varios tipos según el tipo de información que se necesite.</p>
           <button class="btn btn-primary mt-2" data-bs-toggle="collapse" data-bs-target="#tiposCamposSection">
             Ver más sobre Tipos de Campos
           </button>
           <div id="tiposCamposSection" class="collapse mt-3">
             <div class="row">
               <div class="col-md-6 mb-3">
-                <h5>Tipos más comunes</h5>
-                <ul>
-                  <li><b>Texto corto:</b> Para nombres o descripciones cortas.</li>
-                  <li><b>Número:</b> Para cálculos matemáticos.</li>
-                  <li><b>Fecha/Hora:</b> Para almacenar fechas específicas.</li>
-                </ul>
-                <img src="img/Ejemplo_Tipo_Campo.jpg" class="img-fluid rounded shadow-sm" alt="Ejemplo de Tipos de Campos">
+                <h5>Tipos de Campos</h5>
+                <p>Existen tipos como Texto corto, Número, Fecha/Hora, Moneda, entre otros, cada uno destinado a diferentes tipos de datos.</p>
+                <img src="img/Ejemplo_Tipo_Campo.jpg" class="img-fluid rounded shadow-sm" alt="Ejemplo de Tipo de Campo">
               </div>
               <div class="col-md-6 mb-3">
-                <h5>Ejercicio Interactivo</h5>
-                <p>Selecciona el tipo de campo correcto para almacenar los datos:</p>
-                <div>
-                  <label>Nombre del estudiante:</label>
-                  <select class="form-select mb-3">
-                    <option>Texto corto</option>
-                    <option>Número</option>
-                    <option>Fecha/Hora</option>
-                  </select>
-                  <label>Edad:</label>
-                  <select class="form-select mb-3">
-                    <option>Texto corto</option>
-                    <option>Número</option>
-                    <option>Fecha/Hora</option>
-                  </select>
-                  <button class="btn btn-success">Verificar</button>
-                </div>
+                <h5>Cómo seleccionar el tipo de campo</h5>
+                <p>Elige el tipo adecuado según el dato que necesites almacenar. Por ejemplo, usa "Fecha/Hora" para fechas y "Número" para valores numéricos.</p>
+                <video controls width="100%">
+                  <source src="videos/Seleccionar_Tipo_Campo.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                </video>
               </div>
             </div>
-            <button class="btn btn-warning mt-3">Aprendamos Jugando</button>
+            <button class="btn btn-warning mt-3" onclick="startGame('TiposCampos')">Aprendamos Jugando</button>
+            <div id="gameTiposCampos" class="collapse mt-3">
+              <h5>Juego Interactivo: ¿Qué tipo de campo usarías para almacenar "Fecha de Nacimiento"?</h5>
+              <button class="btn btn-success" onclick="checkAnswer('TiposCampos', 'Fecha/Hora')">Fecha/Hora</button>
+              <button class="btn btn-danger" onclick="checkAnswer('TiposCampos', 'Texto corto')">Texto corto</button>
+            </div>
           </div>
         </div>
       </div>
@@ -334,39 +324,107 @@
       <!-- Tema 4: Índices y Claves Primarias -->
       <div class="row gy-4 justify-content-center mt-5">
         <div class="col-lg-4 text-center">
-          <img src="img/Indices_Claves.jpg" class="img-fluid rounded shadow-sm" alt="Índices y Claves Primarias en Access">
+          <img src="img/Indices_Claves_Primarias_Access.jpg" class="img-fluid rounded shadow-sm" alt="Índices y Claves Primarias en Access">
         </div>
         <div class="col-lg-8 content">
           <h2>4. Índices y Claves Primarias</h2>
-          <p class="fst-italic py-3">
-            Los índices mejoran el rendimiento de las consultas y las claves primarias garantizan la unicidad de los registros en una tabla.
-          </p>
+          <p class="fst-italic py-3">Las claves primarias identifican de manera única cada registro en una tabla, mientras que los índices mejoran la velocidad de consulta.</p>
           <button class="btn btn-primary mt-2" data-bs-toggle="collapse" data-bs-target="#indicesClavesSection">
             Ver más sobre Índices y Claves Primarias
           </button>
           <div id="indicesClavesSection" class="collapse mt-3">
             <div class="row">
               <div class="col-md-6 mb-3">
-                <h5>¿Qué son los Índices?</h5>
-                <p>Son estructuras que aceleran la búsqueda y recuperación de datos en tablas.</p>
-                <h5>¿Qué son las Claves Primarias?</h5>
-                <p>Son campos únicos que identifican de manera exclusiva un registro en una tabla.</p>
+                <h5>Claves Primarias</h5>
+                <p>Son campos que garantizan que cada registro en la tabla sea único. Se usan comúnmente como referencia para establecer relaciones entre tablas.</p>
+                <img src="img/Ejemplo_Clave_Primaria.jpg" class="img-fluid rounded shadow-sm" alt="Ejemplo de Clave Primaria">
               </div>
               <div class="col-md-6 mb-3">
-                <h5>Ejemplo Interactivo</h5>
-                <p>Elige el mejor campo para usar como clave primaria en una tabla de estudiantes:</p>
-                <div>
-                  <label>Opciones:</label>
-                  <select class="form-select mb-3">
-                    <option>Nombres</option>
-                    <option>Código de estudiante</option>
-                    <option>Fecha de nacimiento</option>
-                  </select>
-                  <button class="btn btn-success">Validar</button>
-                </div>
+                <h5>Índices</h5>
+                <p>Mejoran la velocidad de las consultas en bases de datos, especialmente cuando se trabaja con grandes volúmenes de datos.</p>
+                <video controls width="100%">
+                  <source src="videos/Indices_Claves_Primarias.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                </video>
               </div>
             </div>
-            <button class="btn btn-warning mt-3">Aprendamos Jugando</button>
+            <button class="btn btn-warning mt-3" onclick="startGame('IndicesClaves')">Aprendamos Jugando</button>
+            <div id="gameIndicesClaves" class="collapse mt-3">
+              <h5>Juego Interactivo: ¿Qué campo usarías como Clave Primaria?</h5>
+              <button class="btn btn-success" onclick="checkAnswer('IndicesClaves', 'ID de Estudiante')">ID de Estudiante</button>
+              <button class="btn btn-danger" onclick="checkAnswer('IndicesClaves', 'Nombre')">Nombre</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Tema 5: Formularios -->
+      <div class="row gy-4 justify-content-center mt-5">
+        <div class="col-lg-4 text-center">
+          <img src="img/Formularios_Access.jpg" class="img-fluid rounded shadow-sm" alt="Formularios en Access">
+        </div>
+        <div class="col-lg-8 content">
+          <h2>5. Formularios</h2>
+          <p class="fst-italic py-3">Los formularios permiten la entrada de datos de manera más amigable para el usuario.</p>
+          <button class="btn btn-primary mt-2" data-bs-toggle="collapse" data-bs-target="#formulariosSection">
+            Ver más sobre Formularios
+          </button>
+          <div id="formulariosSection" class="collapse mt-3">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <h5>Cómo crear Formularios</h5>
+                <p>Los formularios permiten interactuar con los datos de manera gráfica. Puedes crear formularios desde cero o usar plantillas prediseñadas.</p>
+                <img src="img/Ejemplo_Formulario.jpg" class="img-fluid rounded shadow-sm" alt="Ejemplo de Formulario">
+              </div>
+              <div class="col-md-6 mb-3">
+                <h5>Tipos de Formularios</h5>
+                <p>Existen formularios de entrada de datos, formularios de presentación, entre otros. Se elige el tipo según las necesidades del proyecto.</p>
+                <video controls width="100%">
+                  <source src="videos/Crear_Formulario.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                </video>
+              </div>
+            </div>
+            <button class="btn btn-warning mt-3" onclick="startGame('Formularios')">Aprendamos Jugando</button>
+            <div id="gameFormularios" class="collapse mt-3">
+              <h5>Juego Interactivo: ¿Qué tipo de formulario crearías para ingresar datos?</h5>
+              <button class="btn btn-success" onclick="checkAnswer('Formularios', 'Formulario de Entrada')">Formulario de Entrada</button>
+              <button class="btn btn-danger" onclick="checkAnswer('Formularios', 'Formulario de Presentación')">Formulario de Presentación</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Tema 6: Consultas -->
+      <div class="row gy-4 justify-content-center mt-5">
+        <div class="col-lg-4 text-center">
+          <img src="img/Consultas_Access.jpg" class="img-fluid rounded shadow-sm" alt="Consultas en Access">
+        </div>
+        <div class="col-lg-8 content">
+          <h2>6. Consultas</h2>
+          <p class="fst-italic py-3">Las consultas en Access se usan para obtener información específica de una o varias tablas.</p>
+          <button class="btn btn-primary mt-2" data-bs-toggle="collapse" data-bs-target="#consultasSection">
+            Ver más sobre Consultas
+          </button>
+          <div id="consultasSection" class="collapse mt-3">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <h5>Tipos de Consultas</h5>
+                <p>Las consultas pueden ser de selección, de actualización, de eliminación, entre otras, y permiten manipular los datos según las necesidades.</p>
+                <img src="img/Ejemplo_Consulta.jpg" class="img-fluid rounded shadow-sm" alt="Ejemplo de Consulta">
+              </div>
+              <div class="col-md-6 mb-3">
+                <h5>Cómo crear Consultas</h5>
+                <p>Las consultas se crean desde la vista de diseño o mediante SQL, y se pueden utilizar para extraer, actualizar o eliminar datos.</p>
+                <video controls width="100%">
+                  <source src="videos/Crear_Consulta.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
+                </video>
+              </div>
+            </div>
+            <button class="btn btn-warning mt-3" onclick="startGame('Consultas')">Aprendamos Jugando</button>
+            <div id="gameConsultas" class="collapse mt-3">
+              <h5>Juego Interactivo: ¿Qué consulta usarías para obtener todos los estudiantes?</h5>
+              <button class="btn btn-success" onclick="checkAnswer('Consultas', 'Consulta de Selección')">Consulta de Selección</button>
+              <button class="btn btn-danger" onclick="checkAnswer('Consultas', 'Consulta de Actualización')">Consulta de Actualización</button>
+            </div>
           </div>
         </div>
       </div>
