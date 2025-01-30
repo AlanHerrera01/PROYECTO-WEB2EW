@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipos de Conexiones a Internet - Cuestionario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d6efd, #198754);
+      color: #fff;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      color: #198754;
+      font-weight: bold;
+    }
+
+    p {
+      color: #0d6efd;
+      font-size: 18px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      color: #0d6efd;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .option {
+      background-color: #ffffff;
+      color: #0d6efd;
+      border: 2px solid #0d6efd;
+      border-radius: 8px;
+      padding: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .option:hover {
+      background-color: #0d6efd;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .next-btn {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 16px;
+      display: none;
+    }
+
+    .summary {
+      color: #198754;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1>Conexiones a Internet - Cuestionario</h1>
+    <p>Responde las siguientes preguntas sobre los tipos de conexiones a Internet.</p>
+
+    <div id="game">
+      <div class="question">
+        <h3 id="question-text">Pregunta aquí</h3>
+      </div>
+
+      <div id="options" class="d-grid gap-3"></div>
+
+      <div id="feedback" class="feedback text-primary"></div>
+
+      <button id="next-btn" class="btn btn-success next-btn">Siguiente Pregunta</button>
+    </div>
+
+    <div id="summary" class="summary mt-4" style="display: none;">
+      <h3>Resumen del Juego</h3>
+      <p id="correct-answers"></p>
+      <p id="incorrect-answers"></p>
+      <p id="score"></p>
+      <button id="restart-btn" class="btn btn-primary">Reiniciar Juego</button>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "¿Qué conexión es ideal para áreas rurales?",
+        options: ["Fibra Óptica", "Satélite", "DSL", "Cable"],
+        answer: "Satélite"
+      },
+      {
+        question: "¿Cuál conexión ofrece mayor velocidad promedio?",
+        options: ["DSL", "Fibra Óptica", "Inalámbrica", "Móvil"],
+        answer: "Fibra Óptica"
+      },
+      {
+        question: "¿Qué conexión no requiere cables para funcionar?",
+        options: ["Cable", "Fibra Óptica", "Inalámbrica", "DSL"],
+        answer: "Inalámbrica"
+      },
+      {
+        question: "¿Qué conexión utiliza las líneas telefónicas?",
+        options: ["DSL", "Cable", "Fibra Óptica", "Satélite"],
+        answer: "DSL"
+      },
+      {
+        question: "¿Qué conexión es más común en dispositivos móviles?",
+        options: ["Cable", "Fibra Óptica", "Inalámbrica", "Móvil"],
+        answer: "Móvil"
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+    let incorrectAnswers = 0;
+
+    function loadQuestion() {
+      const currentQuestion = questions[currentQuestionIndex];
+      $("#question-text").text(currentQuestion.question);
+
+      const optionsContainer = $("#options");
+      optionsContainer.empty();
+
+      currentQuestion.options.forEach(option => {
+        const optionElement = $(
+          `<button class="option">${option}</button>`
+        );
+        optionElement.click(() => checkAnswer(option));
+        optionsContainer.append(optionElement);
+      });
+
+      $("#feedback").text("").removeClass("text-success text-danger");
+      $("#next-btn").hide();
+    }
+
+    function checkAnswer(selectedOption) {
+      const currentQuestion = questions[currentQuestionIndex];
+      if (selectedOption === currentQuestion.answer) {
+        $("#feedback")
+          .text("¡Correcto!")
+          .addClass("text-success");
+        correctAnswers++;
+      } else {
+        $("#feedback")
+          .text("Incorrecto. La respuesta correcta es: " + currentQuestion.answer)
+          .addClass("text-danger");
+        incorrectAnswers++;
+      }
+      $("#next-btn").show();
+    }
+
+    function showSummary() {
+      const totalQuestions = questions.length;
+      const score = Math.round((correctAnswers / totalQuestions) * 100);
+
+      $("#correct-answers").text(`Preguntas correctas: ${correctAnswers}`);
+      $("#incorrect-answers").text(`Preguntas incorrectas: ${incorrectAnswers}`);
+      $("#score").text(`Puntaje obtenido: ${score}%`);
+
+      $("#game").hide();
+      $("#summary").show();
+    }
+
+    $("#next-btn").click(() => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        showSummary();
+      }
+    });
+
+    $("#restart-btn").click(() => {
+      currentQuestionIndex = 0;
+      correctAnswers = 0;
+      incorrectAnswers = 0;
+
+      $("#summary").hide();
+      $("#game").show();
+      loadQuestion();
+    });
+
+    $(document).ready(() => {
+      loadQuestion();
+    });
+  </script>
+</body>
+
+</html>
