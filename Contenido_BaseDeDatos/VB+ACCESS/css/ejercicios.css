@@ -1,0 +1,21 @@
+#botonEjercicios {
+    background-color: #22ad4567;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: background-color 0.3s;
+    
+}
+
+#botonEjercicios:hover {
+    background-color: #0000ff;
+}
+
+#botonEjercicios :disabled {
+    background-color: #ffffff;
+    cursor: not-allowed;
+}

@@ -103,3 +103,27 @@ window.onload = () => {
 
  // Inicializar la página
  updateContent();
+
+
+ /*COPIAR CODIGO DE CUADRO DE CODIGO*/
+ function copyCode() {
+  const codeElement = document.getElementById('code');
+  const codeText = codeElement.innerText;
+
+  // Crea un elemento temporal para copiar el texto
+  const tempTextArea = document.createElement('textarea');
+  tempTextArea.value = codeText;
+  document.body.appendChild(tempTextArea);
+
+  // Selecciona y copia el texto
+  tempTextArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempTextArea);
+
+  // Mostrar mensaje de éxito
+  const copySuccess = document.getElementById('copySuccess');
+  copySuccess.style.display = 'block';
+  setTimeout(() => {
+    copySuccess.style.display = 'none';
+  }, 2000);
+}

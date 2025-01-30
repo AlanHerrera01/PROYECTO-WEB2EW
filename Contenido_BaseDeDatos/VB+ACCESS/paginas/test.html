@@ -59,11 +59,13 @@
 
   <!-- Customized Bootstrap Stylesheet -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estiloTest.css">
 
   <!-- Template Stylesheet -->
   <link href="../css/style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 
 </head>
@@ -85,30 +87,25 @@
       <h1 class="sitename">Test</h1>
     </a>
 
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
-
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="../indexContenido.html" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
 
-       
+
         <li class="dropdown">
-          <a href="#"><i class="bi bi-menu-button navicon"></i> Contenido teórico <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#"><i class="bi bi-menu-button navicon"></i> Contenido teórico <i
+              class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="crud.html">¿Qué es un CRUD?</a></li>
-            <li><a href="ebFormulario.html">Elementos básicos de un formulario</a></li>
-            <li><a href="video.html">Video Tutorial</a></li>
+            <li><a href="ebFormulario.html">Elementos básicos <br> de un formulario</a></li>
+            <li><a href="vb.html">Visual Basic Access</a></li>
+
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#"><i class="bi bi-menu-button navicon"></i> Material de aprendizaje<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#"><i class="bi bi-menu-button navicon"></i> Material de aprendizaje<i
+              class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="simulacion.html">Simulacion</a></li>
             <li><a href="juego.html">Juegos</a></li>
@@ -117,7 +114,8 @@
         </li>
 
         <li class="dropdown">
-          <a href="#"><i class="bi bi-menu-button navicon"></i> Ejemplos y ejercicios<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#"><i class="bi bi-menu-button navicon"></i> Ejemplos y ejercicios<i
+              class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="ejemplo.html">Ejemplos</a></li>
             <li><a href="ejercicios.html">Ejercicios</a></li>
@@ -180,6 +178,106 @@
         
     </nav>
 
+    <div class="test container section-title" data-aos="fade-up">
+      <form id="testForm">
+        <!-- Pregunta 1 -->
+        <div class="question active">
+          <div>
+            <h3>1. ¿Qué significa CRUD en Access?</h3>
+            <label><input type="radio" name="question1" value="incorrecto"> Crear, Reemplazar, Utilizar,
+              Definir</label><br>
+            <label><input type="radio" name="question1" value="correcto"> Crear, Leer, Actualizar, Eliminar</label><br>
+            <label><input type="radio" name="question1" value="incorrecto"> Crear, Revisar, Unir, Descartar</label><br>
+            <label><input type="radio" name="question1" value="incorrecto"> Conectar, Reemplazar, Unir,
+              Desarrollar</label>
+          </div>
+          <img src="../img/crud.png" alt="Pregunta 1">
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question">
+          <div>
+            <h3>2. ¿Cuáles son los elementos básicos de un formulario en Access?</h3>
+            <label><input type="radio" name="question2" value="correcto"> Controles, Cuadros de texto,
+              Etiquetas</label><br>
+            <label><input type="radio" name="question2" value="incorrecto"> Tablas, Consultas, Informes</label><br>
+            <label><input type="radio" name="question2" value="incorrecto"> Consultas, Formularios, Reportes</label><br>
+            <label><input type="radio" name="question2" value="incorrecto"> Bases de datos, Formularios, Macros</label>
+          </div>
+          <img src="../img/form.gif" alt="Pregunta 1">
+
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question">
+          <div>
+            <h3>3. ¿Qué es VBA y cómo se aplica en Access para monitorear una base de datos?</h3>
+            <label><input type="radio" name="question3" value="incorrecto"> Es un lenguaje para crear gráficos en
+              Access</label><br>
+            <label><input type="radio" name="question3" value="incorrecto"> Se usa solo para crear tablas en
+              Access</label><br>
+            <label><input type="radio" name="question3" value="correcto"> Se utiliza para automatizar tareas y realizar
+              monitoreos de base de datos</label><br>
+            <label><input type="radio" name="question3" value="incorrecto"> Es utilizado para diseñar interfaces
+              gráficas de usuario</label>
+          </div>
+          <img src="../img/vba.jpg" alt="Pregunta 1">
+
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question">
+          <div>
+            <h3>4. ¿Cómo puedes utilizar Access para eliminar datos de una tabla?</h3>
+            <label><input type="radio" name="question4" value="correcto"> Usando la accion de eliminación en un boton</label><br>
+            <label><input type="radio" name="question4" value="incorrecto"> Usando la opción de guardar
+              cambios</label><br>
+            <label><input type="radio" name="question4" value="incorrecto"> Usando una consulta de
+              actualización</label><br>
+            <label><input type="radio" name="question4" value="incorrecto"> Usando la opción de importar datos</label>
+          </div>
+          <img src="../img/elim.png" alt="Pregunta 4">
+
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question">
+          <div>
+            <h3>5. ¿En qué escenario de la vida real se utilizaría un formulario en Access?</h3>
+            <label><input type="radio" name="question5" value="correcto"> Para ingresar y gestionar información de
+              clientes en una tienda</label><br>
+            <label><input type="radio" name="question5" value="incorrecto"> Para crear gráficos de barras en
+              Excel</label><br>
+            <label><input type="radio" name="question5" value="incorrecto"> Para realizar cálculos complejos en un
+              programa de contabilidad</label><br>
+            <label><input type="radio" name="question5" value="incorrecto"> Para diseñar presentaciones de
+              PowerPoint</label>
+          </div>
+          <img src="../img/cli.jfif" alt="Pregunta 1">
+
+        </div>
+        <!-- Botones de navegación -->
+        <div class="navigation-buttons">
+          <button type="button" class="btn" id="prevButton" disabled>Anterior</button>
+          <button type="button" class="btn" id="nextButton">Siguiente</button>
+          <button type="button" class="btn btn-finalizar" id="finalizeButton" style="display: none;"
+            disabled>Finalizar</button>
+          <!-- Botón para reiniciar el quiz -->
+          <button id="resetButton" class="btn-reset">Reiniciar Quiz</button>
+        </div>
+      </form>
+    </div>
+    <!-- Mensaje de Felicitaciones -->
+    <div id="congratulations" style="display: none;">
+      <h2>¡Felicidades!</h2>
+      <p>¡Has obtenido una puntuación excelente! 🎉</p>
+    </div>
+
+    <!-- Mensaje si no alcanzó el 80% -->
+    <div id="tryAgain" style="display: none;">
+      <h2>Inténtalo de nuevo</h2>
+      <p>No te preocupes, puedes mejorar. 💪</p>
+    </div>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -202,8 +300,8 @@
 
     <!-- Main JS File -->
     <script src="../assets/js/main.js"></script>
-    <script src="../js/script.js"></script>
     <script src="../js/quiz.js"></script>
+
 
 </body>
 

@@ -28,7 +28,7 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
-  
+
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -62,111 +62,8 @@
 
   <!-- Template Stylesheet -->
   <link href="../css/style.css" rel="stylesheet">
-
-  <style>
-
-  h2 {
-    font-size: 1.8rem;
-    color: #457b9d;
-    margin-bottom: 30px;
-  }
-  #game-container {
-    position: relative;
-    width: 80%;
-    height: 500px; /* Tamaño fijo para contener las burbujas */
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden; /* Impide que algo se salga */
-     background: #f0f8ff;
-  } 
-  .burbujas {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Para que las burbujas se ajusten automáticamente */
-    gap: 20px;  /* Espacio entre burbujas */
-    padding: 20px;
-  }
-
-  .bubble {
-    width: 150px;
-    height: 150px;
-    background:  url("../img/burbuja.png");
-    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    user-select: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: float 3s ease-in-out infinite;
-    margin-bottom: 20px;  /* Añadir espacio entre burbujas */
-  }
-
-  .burbuja:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-  #feedback {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 10px;
-    color: green;
-  }
-
-  .bubble.correcta {
-    background-color: #28ffe6;
-    color: white;
-  }
-  .resultados {
-    margin-top: 30px;
-  }
-
-  .pez {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffddd2;
-    border: 2px solid #e63946;
-    border-radius: 50px;
-    padding: 10px 20px;
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #e63946;
-    font-weight: bold;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @keyframes flotar {
-    0% {
-      transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translateY(-20px); /* Subir */
-      }
-    100% {
-        transform: translateY(0); /* Volver a bajar */
-      }
-  }
-  #game-over {
-    position: relative; /* Clave para mantener las burbujas dentro */
-    width: 80%;
-    height: 500px; /* Tamaño fijo para contener las burbujas */
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden; /* Impide que algo se salga */
-    background: #f0f8ff;
-  
-  }
-  </style>
+  <link rel="stylesheet" href="../css/quiz.css">
+  <link rel="stylesheet" href="../css/cruci.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -174,6 +71,7 @@
 </head>
 
 <body class="index-page">
+
 
   <header id="header" class="header dark-background d-flex flex-column">
 
@@ -189,30 +87,27 @@
       <h1 class="sitename">Juegos</h1>
     </a>
 
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
+
 
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="../indexContenido.html" class="active"><i class="bi bi-house navicon"></i>Inicio</a></li>
 
-       
+
         <li class="dropdown">
-          <a href="#"><i class="bi bi-menu-button navicon"></i> Contenido teórico <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#"><i class="bi bi-menu-button navicon"></i> Contenido teórico <i
+              class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="crud.html">¿Qué es un CRUD?</a></li>
-            <li><a href="ebFormulario.html">Elementos básicos de un formulario</a></li>
-            <li><a href="video.html">Video Tutorial</a></li>
+            <li><a href="ebFormulario.html">Elementos básicos <br> de un formulario</a></li>
+            <li><a href="vb.html">Visual Basic Access</a></li>
+
           </ul>
         </li>
 
         <li class="dropdown">
-          <a href="#"><i class="bi bi-menu-button navicon"></i> Material de aprendizaje<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#"><i class="bi bi-menu-button navicon"></i> Material de aprendizaje<i
+              class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="simulacion.html">Simulacion</a></li>
             <li><a href="juego.html">Juegos</a></li>
@@ -221,17 +116,18 @@
         </li>
 
         <li class="dropdown">
-          <a href="#"><i class="bi bi-menu-button navicon"></i> Ejemplos y ejercicios<i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#"><i class="bi bi-menu-button navicon"></i> Ejemplos y ejercicios<i
+              class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="ejemplo.html">Ejemplos</a></li>
             <li><a href="ejercicios.html">Ejercicios</a></li>
           </ul>
         </li>
 
-       
+
       </ul>
     </nav>
-    
+
 
   </header>
 
@@ -242,170 +138,189 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
       <a href="../index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-          <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>PROYECTO WEB</h2>
+        <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>PROYECTO WEB</h2>
       </a>
       <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-          <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto p-4 p-lg-0">
-              <a href="../indexHOME.html" class="nav-item nav-link">INICIO</a>
-              <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Programacion</a>
-                <div class="dropdown-menu fade-down m-0">
-                    <a href="team.html" class="dropdown-item">Algoritmos</a>
-                    <a href="testimonial.html" class="dropdown-item">Diagramas de Flujo</a>
-                    <a href="404.html" class="dropdown-item">Python</a>
-                </div>
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="../indexHOME.html" class="nav-item nav-link">INICIO</a>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Programacion</a>
+            <div class="dropdown-menu fade-down m-0">
+              <a href="team.html" class="dropdown-item">Algoritmos</a>
+              <a href="testimonial.html" class="dropdown-item">Diagramas de Flujo</a>
+              <a href="404.html" class="dropdown-item">Python</a>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">REDES</a>
+            <div class="dropdown-menu fade-down m-0">
+              <a href="team.html" class="dropdown-item">Medios de Conexion</a>
+              <a href="testimonial.html" class="dropdown-item">Redes LAN</a>
+              <a href="404.html" class="dropdown-item">Internet</a>
             </div>
 
-            <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">REDES</a>
-              <div class="dropdown-menu fade-down m-0">
-                  <a href="team.html" class="dropdown-item">Medios de Conexion</a>
-                  <a href="testimonial.html" class="dropdown-item">Redes LAN</a>
-                  <a href="404.html" class="dropdown-item">Internet</a>
-              </div>
-              
           </div>
-              <div class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">BASE DE DATOS</a>
-                  <div class="dropdown-menu fade-down m-0">
-                      <a href="team.html" class="dropdown-item">Acces</a>
-                      <a href="testimonial.html" class="dropdown-item">Visual Basic + Access</a>
-                      <a href="404.html" class="dropdown-item">RDBMS - MySQL WorkBench</a>
-                  </div>
-              </div>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">BASE DE DATOS</a>
+            <div class="dropdown-menu fade-down m-0">
+              <a href="team.html" class="dropdown-item">Acces</a>
+              <a href="testimonial.html" class="dropdown-item">Visual Basic + Access</a>
+              <a href="404.html" class="dropdown-item">RDBMS - MySQL WorkBench</a>
+            </div>
           </div>
-          <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
-      </div>
-  </nav>
+        </div>
+        <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i
+            class="fa fa-arrow-right ms-3"></i></a>
+         
+      </div>
+        
+    </nav>
+    <section class="container section-title" data-aos="fade-up">
 
-<!-- Títulos -->
-<h1>¡Sumérgete en la aventura de aprender ACCESS!</h1>
-<h2>JUEGO DE BURBUJAS: ELIGE EL ORDEN CORRECTO</h2>
 
-<!-- Contenedor de burbujas -->
+      <!-- Títulos -->
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>¡Sumérgete en la aventura de aprender ACCESS!</h2>
 
-<div id="game-container">
-  <div class="burbujas"></div>
-</div>
-<div id="feedback"></div>
-<div id="game-over"></div>
+        <p>JUEGO DE BURBUJAS: ELIGE EL ORDEN CORRECTO</p>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+      </div><!-- End Section Title -->
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+      <!-- Contenedor de burbujas -->
+      <section class="container section-title" data-aos="fade-up">
 
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script>
-const steps = [
-  "Abrir Microsoft Access.",
-  "Seleccionar 'Base de Datos en Blanco'.",
-  "Crear una tabla con los campos necesarios.",
-  "Ir a la pestaña 'Crear' y seleccionar 'Formulario'.",
-  "Personalizar el formulario agregando campos.",
-  "Guardar y probar el formulario creado.",
-  "Cerrar Access.",
-  "Abrir un archivo existente.",
-  "Revisar las tablas creadas.",
-  "Exportar datos a Excel."
-];
+        <div id="game-container">
+          <div class="burbujas"></div>
+        </div>
+        <div id="feedback"></div>
+        <div id="game-over" class="game-over">
 
-const correctSteps = [
-  "Abrir Microsoft Access.",
-  "Seleccionar 'Base de Datos en Blanco'.",
-  "Crear una tabla con los campos necesarios.",
-  "Ir a la pestaña 'Crear' y seleccionar 'Formulario'.",
-  "Personalizar el formulario agregando campos.",
-  "Guardar y probar el formulario creado."
-];
+        </div>
 
-let attempts = 5;
-let currentStepIndex = 0; // Índice del paso que se espera seleccionar
-let selectedOrder = []; // Almacena el orden de los pasos seleccionados correctamente
+        <button class="button" onclick="restartGame()">Reiniciar Juego</button>
 
-const container = document.getElementById("game-container");
-const feedbackDiv = document.getElementById("feedback");
-const gameOverDiv = document.getElementById("game-over");
+      </section>
 
-function createBubble(step) {
-  const bubble = document.createElement("div");
-  bubble.className = "bubble";
-  bubble.textContent = step;
 
-  // Posicionar la burbuja dentro del contenedor
-  const containerWidth = container.offsetWidth;
-  const containerHeight = container.offsetHeight;
-  const bubbleSize = 120;
 
-  bubble.style.top = `${Math.random() * (containerHeight - bubbleSize)}px`;
-  bubble.style.left = `${Math.random() * (containerWidth - bubbleSize)}px`;
+      <BR>
+      <BR>
+      <BR>
 
-  // Agregar comportamiento al hacer clic
-  bubble.addEventListener("click", () => {
-    if (step === correctSteps[currentStepIndex]) {
-      // Paso correcto y en el orden correcto
-      currentStepIndex++;
-      selectedOrder.push(step);
-      bubble.classList.add("hidden");
-      feedbackDiv.innerHTML = `¡Correcto! Orden seleccionado: ${selectedOrder.join(' -> ')}`;
+      <!--DESAFIO-->
 
-      if (currentStepIndex === correctSteps.length) {
-        endGame(true);
-      }
-    } else {
-      // Paso incorrecto o fuera de orden
-      attempts--;
-      feedbackDiv.textContent = "¡Elección incorrecta o fuera de orden! Pierdes un intento.";
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>¡Desafio!</h2>
 
-      if (attempts === 0) {
-        endGame(false);
-      }
-    }
-  });
+        <p>Arrastra los puntos rojos para señalar dónde crees que hay errores en el formulario de Access.</p>
 
-  container.querySelector(".burbujas").appendChild(bubble);
-}
+      </div><!-- End Section Title -->
+      <div class="image-container">
+        <img src="../img/desafio.jpg" alt="Imagen Interactiva" style="width: 100%;">
 
-function startGame() {
-  steps.forEach((step) => {
-    createBubble(step);
-  });
-}
+        <!-- Elemento 1 -->
+        <div id="item1" class="drag-item" style="top: 20%; left: 10%;">Error 1</div>
 
-function endGame(win) {
-  feedbackDiv.textContent = ""; // Limpiar el mensaje de feedback
-  gameOverDiv.style.display = "block";
-  gameOverDiv.textContent = win
-    ? "¡Felicidades! Completaste el juego correctamente."
-    : "Juego terminado. Te quedaste sin intentos.";
+        <!-- Elemento 2 -->
+        <div id="item2" class="drag-item" style="top: 40%; left: 40%;">Error 2</div>
 
-  // Eliminar burbujas restantes
-  document.querySelectorAll(".bubble").forEach((bubble) => bubble.remove());
-}
+        <!-- Elemento 3 -->
+        <div id="item3" class="drag-item" style="top: 60%; left: 70%;">Error 3</div>
+      </div>
 
-startGame();
+      <BR>
+      <BR>
+      <BR>
 
-</script>
+      <div class="msj container section-title" data-aos="fade-up">
+        <div class="message" id="infoMessage">
+          Arrastra los puntos para marcarlos correctamente.
+        </div>
+        <div class="message" id="infoDato">
+          Arrastra los puntos para marcarlos correctamente.
+        </div>
+      </div>
 
-  <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
-  <script src="../js/script.js"></script>
-  <script src="../js/quiz.js"></script>
+      <BR>
+      <BR>
+      <BR>
+
+      <!--CRUCIGRAMA-->
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Desafío de Palabras</h2>
+
+        <p>Llena los cuadros de texto con una sola palabra.</p>
+
+      </div><!-- End Section Title -->
+
+      <div class="container section-title" data-aos="fade-up">
+        <form id="crucigramaForm">
+          <div>
+            <label for="respuesta-1">1. ¿Qué acción realiza un formulario en Access cuando se utiliza la opción "Agregar
+              nuevo registro"?:</label>
+            <input type="text" id="respuesta-1" name="respuesta-1">
+          </div>
+          <div>
+            <label for="respuesta-2">2. ¿Donde se visualiza un registro específico en un formulario de Access?:</label>
+            <input type="text" id="respuesta-2" name="respuesta-2">
+          </div>
+          <div>
+            <label for="respuesta-3">3. ¿Qué sucede si deseas eliminar un registro en un formulario de Access?</label>
+            <input type="text" id="respuesta-3" name="respuesta-3">
+          </div>
+          <div>
+            <label for="respuesta-4">4. Proceso para modificar datos existentes:</label>
+            <input type="text" id="respuesta-4" name="respuesta-4">
+          </div>
+          <div>
+            <label for="respuesta-5">5. Lenguaje de programación relacionado con la automatización:</label>
+            <input type="text" id="respuesta-5" name="respuesta-5">
+          </div>
+
+          <button type="submit">Verificar respuestas</button>
+        </form>
+
+        <div id="resultado"></div>
+      </div>
+
+
+
+    </section>
+
+
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../js/juego.js"></script>
+    <script src="../js/desafio.js"></script>
+    <script src="../js/cruci.js"></script>
 
 </body>
 
