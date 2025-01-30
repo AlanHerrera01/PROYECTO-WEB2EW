@@ -47,7 +47,7 @@ function loadQuestion() {
     .map((option, index) => `
       <div>
         <input type="radio" name="answer" value="${index}" id="option${index}" />
-        <label for="option${index}">${option}</label>
+        <label for="option${index}">${String.fromCharCode(65 + index)}. ${option}</label>
       </div>
     `)
     .join("");
@@ -95,11 +95,44 @@ function showResult() {
     buttonsContainer.innerHTML = `
       <button id="retryBtn" class="retry-btn">Reiniciar Quiz</button>
       <button id="goToHome" class="home-btn">Inicio</button>
+      <button id="viewAnswersBtn" class="view-answers-btn">Ver Respuestas</button>
     `;
 
     document.getElementById("retryBtn").addEventListener("click", () => location.reload());
     document.getElementById("goToHome").addEventListener("click", () => window.location.href = '/Contenido_BaseDeDatos/ACCESS_DISEÑO/indexContenido.html');
+    
+    // Mostrar las respuestas al hacer clic en "Ver Respuestas"
+    document.getElementById("viewAnswersBtn").addEventListener("click", showAnswers);
   }, 500); // Añadir un pequeño retardo antes de mostrar el resultado
+}
+
+// Mostrar las respuestas correctas al usuario
+function showAnswers() {
+  const answersContainer = document.getElementById("answers-container");
+  answersContainer.classList.remove("hidden");
+  
+  answersContainer.innerHTML = questions.map((question, index) => {
+    const selectedOption = userAnswers[index] === question.correct ? "✔️" : "❌";
+    return `
+      <div>
+        <p><strong>Pregunta ${index + 1}: ${question.question}</strong></p>
+        <ul>
+          ${question.options.map((option, i) => `
+            <li>${String.fromCharCode(65 + i)}. ${option} ${i === question.correct ? "(Correcta)" : ""}</li>
+          `).join('')}
+        </ul>
+        <p>Tu respuesta: ${String.fromCharCode(65 + userAnswers[index])} - ${selectedOption}</p>
+      </div>
+    `;
+  }).join('');
+  
+  const buttonsContainer = document.querySelector(".buttons-container");
+  buttonsContainer.innerHTML = `
+    <button id="retryBtn" class="retry-btn">Reiniciar Quiz</button>
+    <button id="goToHome" class="home-btn">Inicio</button>
+  `;
+  document.getElementById("retryBtn").addEventListener("click", () => location.reload());
+  document.getElementById("goToHome").addEventListener("click", () => window.location.href = '/Contenido_BaseDeDatos/ACCESS_DISEÑO/indexContenido.html');
 }
 
 // Manejo de botones de navegación
