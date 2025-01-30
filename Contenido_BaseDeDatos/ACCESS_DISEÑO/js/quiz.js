@@ -56,7 +56,7 @@ let currentQuestionIndex = 0;
 let userAnswers = [];
 let correctAnswers = 0;
 let timer;
-let timeLeft = 6 * 60; // 30 minutos en segundos
+let timeLeft = 6 * 60; // 6 minutos en segundos
 
 const startExamBtn = document.getElementById('startExamBtn');
 const examContainer = document.getElementById('exam-container');
@@ -70,6 +70,7 @@ const resultMessage = document.getElementById('result-message');
 const retryBtn = document.getElementById('retryBtn');
 const homeBtn = document.getElementById('homeBtn');
 const certificateBtn = document.getElementById('certificateBtn');
+const seeCorrectAnswersBtn = document.getElementById('seeCorrectAnswersBtn'); // Nuevo botón
 
 // Iniciar examen
 startExamBtn.addEventListener('click', startExam);
@@ -84,16 +85,21 @@ function startExam() {
 // Cargar preguntas
 function loadQuestion() {
   const question = questions[currentQuestionIndex];
+  const options = question.options.map((option, index) => {
+    const optionLetter = String.fromCharCode(65 + index); // A, B, C, D
+    return `
+      <label>
+        <input type="radio" name="question${currentQuestionIndex}" value="${index}" ${userAnswers[currentQuestionIndex] === index ? 'checked' : ''}>
+        ${optionLetter}. ${option}
+      </label>
+    `;
+  }).join('');
+
   questionsContainer.innerHTML = `
     <div class="question">
       <h4>${question.question}</h4>
       <div class="options">
-        ${question.options.map((option, index) => `
-          <label>
-            <input type="radio" name="question${currentQuestionIndex}" value="${index}" ${userAnswers[currentQuestionIndex] === index ? 'checked' : ''}>
-            ${option}
-          </label>
-        `).join('')}
+        ${options}
       </div>
     </div>
   `;
@@ -170,4 +176,30 @@ function calculateResult() {
   certificateBtn.addEventListener('click', function () {
     window.location.href = "certificado.html"; // Cambia esto a la página de certificado
   });
+
+  // Asegúrate de que el botón "Ver respuestas correctas" aparezca aquí
+  seeCorrectAnswersBtn.style.display = 'block';
 }
+
+// Mostrar respuestas correctas (con la opción correcta marcada)
+seeCorrectAnswersBtn.addEventListener('click', function () {
+  let resultHTML = '';
+  
+  questions.forEach((question, index) => {
+    const correctOptionLetter = String.fromCharCode(65 + question.correctAnswer); // A, B, C, D
+    const selectedOptionLetter = String.fromCharCode(65 + (userAnswers[index] !== undefined ? userAnswers[index] : -1)); // A, B, C, D
+    const selectedOption = userAnswers[index] !== undefined ? question.options[userAnswers[index]] : '';
+    
+    resultHTML += `
+      <div class="question">
+        <h4>${question.question}</h4>
+        <div class="options">
+          <p><strong>Respuesta correcta:</strong> ${correctOptionLetter}. ${question.options[question.correctAnswer]}</p>
+          <p><strong>Tu respuesta:</strong> ${selectedOptionLetter}. ${selectedOption}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  resultMessage.innerHTML += `<hr><h4>Respuestas Correctas:</h4>${resultHTML}`;
+});

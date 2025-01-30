@@ -140,3 +140,29 @@ body {
   50% { color: #ff4500; }
   100% { color: #ff6347; }
 }
+#seeCorrectAnswersBtn {
+  background-color: #0099ff; /* Fondo verde */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Relleno del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  font-size: 16px; /* Tamaño de la fuente */
+  margin-top: 20px; /* Margen superior */
+  display: block; /* Asegura que se muestre como bloque */
+  width: 200px; /* Ancho del botón */
+  text-align: center; /* Alinear texto al centro */
+}
+
+#seeCorrectAnswersBtn:hover {
+  background-color: #b3b4cf; /* Color verde oscuro al pasar el ratón */
+}
+
+#seeCorrectAnswersBtn:active {
+  background-color: #000000; /* Color verde aún más oscuro al hacer clic */
+}
+
+#seeCorrectAnswersBtn:disabled {
+  background-color: #ccc; /* Fondo gris cuando el botón está deshabilitado */
+  cursor: not-allowed; /* Cursor de no permitido cuando está deshabilitado */
+}

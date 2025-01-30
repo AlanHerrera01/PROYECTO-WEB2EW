@@ -71,6 +71,10 @@ label {
   color: #4a5568;
 }
 
+input[type="radio"] {
+  accent-color: #4f46e5;
+}
+
 /* Navigation Buttons */
 .nav-buttons {
   display: flex;
@@ -193,5 +197,39 @@ label {
   button {
     font-size: 0.9rem;
     padding: 8px 16px;
+  }
+
+  .option-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #prevBtn, #nextBtn {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  /* Result container */
+  .result-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .result-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .result-container p {
+    font-size: 1.1rem;
   }
 }

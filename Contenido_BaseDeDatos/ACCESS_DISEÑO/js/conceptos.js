@@ -10,6 +10,10 @@ function mostrarVideo(videoId) {
         videoElement.src = 'videos/Tipos.mp4';
     } else if (videoId === 'videoRelaciones') {
         videoElement.src = 'videos/Relacion.mp4';
+    } else if (videoId === 'unoauno') {
+        videoElement.src = 'videos/UNO.mp4';
+    } else if (videoId === 'varios') {
+        videoElement.src = 'videos/VARIOS.mp4';
     } else if (videoId === 'videoFormularios') {
         videoElement.src = 'videos/Formulario_Access.mp4';
     } else if (videoId === 'videoConsultas') {
@@ -17,7 +21,15 @@ function mostrarVideo(videoId) {
     } else if (videoId === 'videoIndices') {
         videoElement.src = 'videos/llave_primaria.mp4';
     }
-
+    else if (videoId === 'seleccion') {
+        videoElement.src = 'videos/SELECCION.mp4';
+    }
+    else if (videoId === 'accion') {
+        videoElement.src = 'videos/acción.mp4';
+    }
+    else if (videoId === 'parametro') {
+        videoElement.src = 'videos/PARAMETROS.mp4';
+    }
     // Mostrar el modal con el video
     videoModal.show();
 }
@@ -28,7 +40,7 @@ document.getElementById('closeModal').addEventListener('click', function() {
     videoElement.pause();
     videoElement.currentTime = 0;
 });
-
+//ACORDION
 document.querySelectorAll('.accordion-button').forEach(button => {
     button.addEventListener('click', function () {
       let collapse = this.closest('.accordion-item').querySelector('.accordion-collapse');
@@ -40,41 +52,50 @@ document.querySelectorAll('.accordion-button').forEach(button => {
     });
   });
 
-  // Función para verificar las respuestas y mostrar los resultados
-  function checkAnswers() {
-    const correctAnswers = {
-        q1: 'b',
-        q2: 'b',
-        q3: 'a',
-        q4: 'a',
-        q5: 'a',
-        q6: 'b'
-    };
-
+// Función para verificar las respuestas y mostrar los resultados
+function checkAnswers() {
     let score = 0;
     let totalQuestions = 6;
+    let answers = {
+      q1: 'b',
+      q2: 'b',
+      q3: 'a',
+      q4: 'a',
+      q5: 'a',
+      q6: 'b'
+    };
 
+    // Check answers
     for (let i = 1; i <= totalQuestions; i++) {
-        const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
-        if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
-            score++;
-        }
+      let question = document.querySelector(`input[name="q${i}"]:checked`);
+      if (question && question.value === answers[`q${i}`]) {
+        score++;
+      }
     }
 
-    const resultDiv = document.getElementById('result');
-    resultDiv.style.display = 'block';
-    resultDiv.innerHTML = `<h3>Resultado:</h3><p>Has respondido correctamente ${score} de ${totalQuestions} preguntas.</p>`;
-    
-    if (score === totalQuestions) {
-        resultDiv.classList.add('correct');
-        resultDiv.classList.remove('incorrect');
-        resultDiv.innerHTML += `<p>¡Excelente! Has respondido todo correctamente.</p>`;
-    } else {
-        resultDiv.classList.add('incorrect');
-        resultDiv.classList.remove('correct');
-        resultDiv.innerHTML += `<p>¡Sigue practicando! Puedes mejorar.</p>`;
-    }
-}
+    // Display result
+    document.getElementById('result').innerHTML = `Tu puntuación es: ${score} de ${totalQuestions}`;
+    document.getElementById('result').style.display = 'block';
+
+    // Enable the "Ver Soluciones" button
+    document.getElementById('showSolutionBtn').style.display = 'block';
+  }
+
+  function showSolution() {
+    let solutionText = `
+      <h3>Soluciones Correctas:</h3>
+      <ul>
+        <li><strong>1. ¿Qué es una tabla en Microsoft Access?</strong> Respuesta Correcta: B) Una colección de datos organizados en filas y columnas</li>
+        <li><strong>2. ¿Qué tipo de campo es utilizado para almacenar texto?</strong> Respuesta Correcta: B) Campo de Texto</li>
+        <li><strong>3. ¿Qué es una clave primaria?</strong> Respuesta Correcta: A) Un campo único que identifica un registro</li>
+        <li><strong>4. ¿Cómo se llama el enlace entre dos tablas?</strong> Respuesta Correcta: A) Relación</li>
+        <li><strong>5. ¿Qué es una consulta?</strong> Respuesta Correcta: A) Una operación para obtener datos de una o más tablas</li>
+        <li><strong>6. ¿Qué es un formulario en Access?</strong> Respuesta Correcta: B) Una interfaz para ingresar y modificar datos</li>
+      </ul>
+    `;
+    document.getElementById('solution').innerHTML = solutionText;
+    document.getElementById('solution').style.display = 'block';
+  }
     // Cambio entre los ejercicios
         // Variables globales
         let tabla = {};

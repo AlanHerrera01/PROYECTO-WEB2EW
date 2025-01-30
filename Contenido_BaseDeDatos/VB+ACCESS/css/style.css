@@ -1,3 +1,65 @@
+
+            /*Estilo Preguntas*/
+            #questionButton {
+                position: fixed;
+                bottom: 72px; /* Cambia según tu preferencia */
+                right: 10px;
+                z-index: 1050;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: url('../assetsBot/robot.png');
+                background-size: contain; /* Asegura que la imagen se ajuste al botón */
+                border: none; /* Opcional, para quitar el borde del botón */
+                cursor: pointer;
+                }
+      
+            #questionMenu {
+                position: fixed;
+                border: none; 
+                bottom: 150px;
+                right: 8px;
+                z-index: 1040;
+                display:none ;
+                
+              }
+      
+            .speech-bubble {
+              position: relative;
+              background: #f0f0f000;
+              border: none;
+              border-radius: 15px;
+              padding: 2px;
+              max-width: 300px;
+              
+              }
+      
+            .speech-bubble::after {
+              content: '';
+              position: absolute;
+              bottom: -18px; /* Ubicación de la punta */
+              left: 70px; /* Ajusta según quieras centrar o mover la punta */
+              width: 0;
+              height: 0;
+              border-style: solid  ;
+              border-width: 15px 15px 0 15px;
+              border-color: #15c4ec00 transparent transparent transparent;
+              }
+      
+            .BotonNav{
+              position: fixed;
+              bottom: 30px; /* Cambia según tu preferencia */
+              left: 320px;
+              z-index: 1050;
+              width: 600px;
+              height: 25px;
+              border-radius: 50%;
+              background-size: contain; /* Asegura que la imagen se ajuste al botón */
+              border: none; /* Opcional, para quitar el borde del botón */
+              cursor: pointer;
+              }
+      
+      /*Estilo Preguntas*/
 /********** Template CSS **********/
 :root {
     --primary: #06BBCC;
